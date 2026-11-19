@@ -20,6 +20,9 @@
 | S9 | 비공개 테스트 사이트 배포 기록과 해당 소스 | 2026-11-19 조회 | 2026-11-19 | 사이트 56~75번 배포 성공 및 소스의 앱 버전 확인. 최신 v1.13.12 |
 | S10 | [공개 저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/b940e28fc44a8c5bda2b2c8c17a007111b053a50/VERSION.json), [서비스 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-19 조회 | 2026-11-19 | 두 채널 모두 v1.11.0 확인 |
 | S11 | [v1.13.12 버전 파일](../raw/v1.13.12/VERSION.json), [디자인 가이드](../raw/v1.13.12/COLOR-TOKENS.md) | 2026-11-19 | 2026-11-19 | GitHub Pages 업로드용 패키지의 버전 파일과 배포 소스의 원본 디자인 가이드. ZIP 압축 검사 및 소스 테스트 122개 통과 |
+| S12 | 비공개 테스트 사이트 배포 기록과 해당 소스 | 2026-11-19 조회 | 2026-11-19 | 사이트 버전 76~80번 배포 성공과 앱 버전 확인. 최신 v1.13.17 |
+| S13 | [공개 저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/4641c1ccd1c5eea623206b4ed6e5cbe610e0b868/VERSION.json), [서비스 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-19 조회 | 2026-11-19 | 두 채널에서 v1.13.12 확인 |
+| S14 | [v1.13.17 버전 파일](../raw/v1.13.17/VERSION.json), [디자인 가이드](../raw/v1.13.17/COLOR-TOKENS.md) | 2026-11-19 | 2026-11-19 | GitHub Pages 업로드용 패키지의 버전 및 디자인 가이드 원본. 압축 검사와 소스 테스트 122개 통과 |
 
 S1은 기존 파일 등록일이 2026-11-17로 전달됐지만, 문서 자체의 작성 날짜는 없어 ‘미상’으로 기록합니다.
 S2도 파일 등록일과 실제 코드 작성·배포 날짜를 동일시하지 않습니다.
@@ -29,6 +32,7 @@ S2도 파일 등록일과 실제 코드 작성·배포 날짜를 동일시하지
 | 자료 | SHA-256 |
 | --- | --- |
 | S1 README | `cbc3775912923d350fb22be2fd603d411b3ff5ade18acb6cd98c5a4f2ee5c320` |
+| S14 v1.13.17 배포용 ZIP | `58b2c2d0e6787aff4326108e18a92592db69064f718827ef447f9b368b1fbb72` |
 | S2 ZIP | `8aa9caf10af2bf99ce3337518ddee0ec4fc9890297a08b91b6ff6ae1f079a6b8` |
 
 ZIP과 기존 README를 그대로 보관했습니다. raw/v1.4.1/source/는 S2의 압축 해제본이며 별도 구현 수정은 하지 않았습니다.
