@@ -1,18 +1,18 @@
 # 저장과 배포
 
-- 기준 날짜: 2026-11-18 · 확인한 코드 v1.4.1
+- 기준 날짜: 2026-11-19 · v1.13.12 소스 및 채널별 배포 확인
 - 최종 수정일: 2026-11-19
 - 출처: [버전 파일](../raw/v1.4.1/source/VERSION.json), [배포 안내](../raw/v1.4.1/source/DEPLOY.md), [화면·저장 처리](../raw/v1.4.1/source/dust.mjs), [기록 내보내기·불러오기](../raw/v1.4.1/source/save-files.mjs), [플레이어 설정](../raw/v1.4.1/source/player-settings.mjs)
-- 상태: 2026-11-19 비공개 사이트 배포 이력 확인. 아래 저장 규칙은 v1.4.1 이력입니다.
+- 상태: 2026-11-19 비공개 사이트 배포 이력 확인. 저장 키와 내보내기 스키마는 v1.13.12 코드에서도 확인했습니다.
 
 ## 최신 배포 상태
 
 | 채널 | 2026-11-19 확인 결과 | 근거 |
 | --- | --- | --- |
-| 비공개 테스트 사이트 | **v1.9.4** · 배포 성공 · 12:57 KST | 사이트 배포 기록 55번과 해당 소스의 버전 상수 |
-| 공개 게임 저장소 `main` | **v1.7.1** | [VERSION.json](https://github.com/crazyjamy/dustgame/blob/b82ecef95cccbb7289069ddd18ecfdd92406b/VERSION.json) |
-| 공개 GitHub Pages | 실제 서비스 버전 미확인 | 공개 저장소 버전 파일의 확인 범위는 소스까지입니다. |
-| GitHub Pages 업로드용 패키지 | **v1.9.4** ZIP 생성 및 압축 검사 통과 | 2026-11-19 패키징 기록 |
+| 비공개 테스트 사이트 | **v1.13.12** · 배포 성공 · 21:16 KST | 사이트 배포 기록 75번과 해당 소스의 버전 상수 |
+| 공개 게임 저장소 `main` | **v1.11.0** | [저장소 VERSION.json](https://github.com/crazyjamy/dustgame/blob/b940e28fc44a8c5bda2b2c8c17a007111b053a50/VERSION.json) |
+| 공개 GitHub Pages | **v1.11.0** | [서비스 VERSION.json](https://crazyjamy.github.io/dustgame/VERSION.json) |
+| GitHub Pages 업로드용 패키지 | **v1.13.12** ZIP 생성 및 압축 검사 통과 | [패키지 VERSION.json](../raw/v1.13.12/VERSION.json) |
 
 [전체 배포 이력](release-history.md)에서 배포 시각과 변경 사항을 볼 수 있습니다.
 
@@ -29,7 +29,7 @@
 | 위키 저장소 | https://github.com/crazyjamy/lmmwiki |
 
 sourceCommit은 ZIP의 버전 파일에 적힌 값이며 원격 게임 저장소와 대조하지 않았습니다.
-공개 GitHub Pages의 실제 서비스 버전은 미확인입니다.
+공개 GitHub Pages의 확인 결과는 위의 최신 배포 상태를 참고하세요.
 
 ## 기록 저장
 
