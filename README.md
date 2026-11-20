@@ -5,7 +5,7 @@
 - 기준 날짜: 2026-11-20
 - 최종 수정일: 2026-11-20
 - 출처: [자료 목록](wiki/sources.md), [위키 구성 요청](raw/2026-11-18-wiki-request.md)
-- 확인한 버전: 비공개 테스트 사이트 **v1.13.24**, 공개 GitHub Pages **v1.13.12**. [저장과 배포](wiki/save-release.md)
+- 확인한 버전: 비공개 테스트 사이트 **v1.13.24**, 공개 GitHub Pages **v1.13.24**. [저장과 배포](wiki/save-release.md)
 
 ## 여기서 시작하세요
 

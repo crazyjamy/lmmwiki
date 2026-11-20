@@ -4,6 +4,10 @@
 - 최종 수정일: 2026-11-20
 - 출처: [자료 목록](sources.md), [위키 구성 요청](../raw/2026-11-18-wiki-request.md)
 
+## 2026-11-20 · 공개 GitHub Pages v1.13.24 배포
+
+- [공개 저장소 버전](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json)과 [Pages 배포](https://github.com/crazyjamy/dustgame/actions/runs/44656398886)를 확인했습니다. [운영 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json)에서도 v1.13.24를 확인했습니다.
+
 ## 2026-11-20 · v1.13.24까지 배포 및 UI 점검 기록
 
 - 비공개 사이트 버전 81~87의 배포 성공과 앱 버전 v1.13.18~24를 확인했습니다.

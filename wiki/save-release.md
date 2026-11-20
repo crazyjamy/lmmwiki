@@ -10,8 +10,8 @@
 | 채널 | 2026-11-20 확인 결과 | 근거 |
 | --- | --- | --- |
 | 비공개 테스트 사이트 | **v1.13.24** · 배포 성공 · 10:35 KST | 사이트 배포 기록 87번과 해당 소스의 버전 상수 |
-| 공개 게임 저장소 `main` | **v1.13.12** | [저장소 VERSION.json](https://github.com/crazyjamy/dustgame/blob/558d2ad37bd7fefbac694e690d037898eded65d7/VERSION.json) |
-| 공개 GitHub Pages | **v1.13.12** | [서비스 VERSION.json](https://crazyjamy.github.io/dustgame/VERSION.json) |
+| 공개 게임 저장소 `main` | **v1.13.24** | [저장소 VERSION.json](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json) |
+| 공개 GitHub Pages | **v1.13.24** · 배포 성공 · 10:50 KST | [서비스 VERSION.json](https://crazyjamy.github.io/dustgame/VERSION.json), [배포 실행](https://github.com/crazyjamy/dustgame/actions/runs/44656398886) |
 | GitHub Pages 업로드용 패키지 | **v1.13.24** ZIP 생성 및 압축 검사 통과 | [패키지 VERSION.json](../raw/v1.13.24/VERSION.json) |
 
 [전체 배포 이력](release-history.md)에서 배포 시각과 변경 사항을 볼 수 있습니다.

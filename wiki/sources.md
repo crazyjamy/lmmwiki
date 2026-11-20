@@ -26,6 +26,7 @@
 | S15 | 비공개 사이트 배포 기록 81~87 및 각 소스 버전 | 2026-11-20 조회 | 2026-11-20 | 배포 성공 7건을 확인. 최신 소스 커밋은 `19494e89bedb1ba58d35f19cbab05a38ac1e9d28` |
 | S16 | [아이콘 가이드](../raw/v1.13.24/ICON-GUIDE.md), [패키지 버전 파일](../raw/v1.13.24/VERSION.json) | 2026-11-20 | 2026-11-20 | 가이드와 버전 파일을 원본 그대로 보관. 소스 자동 테스트 123개와 Chrome 모바일 너비 점검 확인 |
 | S17 | [공개 저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/558d2ad37bd7fefbac694e690d037898eded65d7/VERSION.json), [라이브 Pages 버전](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-20 조회 | 2026-11-20 | 업데이트 전 두 채널은 v1.13.12 |
+| S18 | [공개 저장소 버전](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json), [Pages 배포](https://github.com/crazyjamy/dustgame/actions/runs/44656398886), [운영 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-20 조회 | 2026-11-20 | 공개 main 및 Pages v1.13.24 확인 |
 
 S1은 기존 파일 등록일이 2026-11-17로 전달됐지만, 문서 자체의 작성 날짜는 없어 ‘미상’으로 기록합니다.
 S2도 파일 등록일과 실제 코드 작성·배포 날짜를 동일시하지 않습니다.
