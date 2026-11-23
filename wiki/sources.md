@@ -1,7 +1,7 @@
 # 자료 목록과 출처
 
-- 기준 날짜: 2026-11-20
-- 최종 수정일: 2026-11-20
+- 기준 날짜: 2026-11-23
+- 최종 수정일: 2026-11-23
 - 출처: 아래 원본 자료. 문서에 날짜가 없으면 보관일과 작성일을 구분합니다.
 
 | ID | 자료 | 자료 작성일 | 보관일 | 성격과 확인 범위 |
@@ -27,6 +27,7 @@
 | S16 | [아이콘 가이드](../raw/v1.13.24/ICON-GUIDE.md), [패키지 버전 파일](../raw/v1.13.24/VERSION.json) | 2026-11-20 | 2026-11-20 | 가이드와 버전 파일을 원본 그대로 보관. 소스 자동 테스트 123개와 Chrome 모바일 너비 점검 확인 |
 | S17 | [공개 저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/558d2ad37bd7fefbac694e690d037898eded65d7/VERSION.json), [라이브 Pages 버전](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-20 조회 | 2026-11-20 | 업데이트 전 두 채널은 v1.13.12 |
 | S18 | [공개 저장소 버전](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json), [Pages 배포](https://github.com/crazyjamy/dustgame/actions/runs/44656398886), [운영 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-20 조회 | 2026-11-20 | 공개 main 및 Pages v1.13.24 확인 |
+| S19 | [v1.13.27 패키지 버전](../raw/v1.13.27/VERSION.json), 비공개 사이트 88~90번 배포 기록 및 해당 소스 | 2026-11-23 조회 | 2026-11-23 | v1.13.25~27 비공개 배포 성공, 자동 테스트 125개 통과 및 ZIP 검사 확인. 2026-11-23 공개 `main` 재조회 결과 v1.13.24 |
 
 S1은 기존 파일 등록일이 2026-11-17로 전달됐지만, 문서 자체의 작성 날짜는 없어 ‘미상’으로 기록합니다.
 S2도 파일 등록일과 실제 코드 작성·배포 날짜를 동일시하지 않습니다.

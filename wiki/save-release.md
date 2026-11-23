@@ -1,18 +1,18 @@
 # 저장과 배포
 
-- 기준 날짜: 2026-11-20 · v1.13.24 소스 및 채널별 배포 확인
-- 최종 수정일: 2026-11-20
+- 기준 날짜: 2026-11-23 · v1.13.27 소스 및 채널별 배포 확인
+- 최종 수정일: 2026-11-23
 - 출처: [버전 파일](../raw/v1.4.1/source/VERSION.json), [배포 안내](../raw/v1.4.1/source/DEPLOY.md), [화면·저장 처리](../raw/v1.4.1/source/dust.mjs), [기록 내보내기·불러오기](../raw/v1.4.1/source/save-files.mjs), [플레이어 설정](../raw/v1.4.1/source/player-settings.mjs)
-- 상태: 2026-11-20 비공개 사이트 배포 이력 확인. 저장 키와 내보내기 스키마는 v1.13.12 코드에서도 확인했습니다.
+- 상태: 2026-11-23 비공개 사이트 배포 이력 확인. 저장 키와 내보내기 스키마는 v1.13.12 코드에서도 확인했습니다.
 
 ## 최신 배포 상태
 
-| 채널 | 2026-11-20 확인 결과 | 근거 |
+| 채널 | 확인 결과 | 근거 |
 | --- | --- | --- |
-| 비공개 테스트 사이트 | **v1.13.24** · 배포 성공 · 10:35 KST | 사이트 배포 기록 87번과 해당 소스의 버전 상수 |
-| 공개 게임 저장소 `main` | **v1.13.24** | [저장소 VERSION.json](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json) |
-| 공개 GitHub Pages | **v1.13.24** · 배포 성공 · 10:50 KST | [서비스 VERSION.json](https://crazyjamy.github.io/dustgame/VERSION.json), [배포 실행](https://github.com/crazyjamy/dustgame/actions/runs/44656398886) |
-| GitHub Pages 업로드용 패키지 | **v1.13.24** ZIP 생성 및 압축 검사 통과 | [패키지 VERSION.json](../raw/v1.13.24/VERSION.json) |
+| 비공개 테스트 사이트 | **v1.13.27** · 2026-11-23 09:46 KST 배포 성공 | 사이트 배포 기록 90번과 해당 소스의 버전 상수 |
+| 공개 게임 저장소 `main` | **v1.13.24** · 2026-11-23 조회 | [저장소 VERSION.json](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json) |
+| 공개 GitHub Pages | **v1.13.24** · 2026-11-20 10:50 KST 배포 성공 | [서비스 VERSION.json](https://crazyjamy.github.io/dustgame/VERSION.json), [배포 실행](https://github.com/crazyjamy/dustgame/actions/runs/44656398886) |
+| GitHub Pages 업로드용 패키지 | **v1.13.27** ZIP 생성 및 압축 검사 통과 | [패키지 VERSION.json](../raw/v1.13.27/VERSION.json) |
 
 [전체 배포 이력](release-history.md)에서 배포 시각과 변경 사항을 볼 수 있습니다.
 
