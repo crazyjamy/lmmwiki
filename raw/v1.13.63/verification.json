@@ -1,0 +1,30 @@
+{
+  "checkedDate": "2026-11-23",
+  "privateSite": {
+    "number": 125,
+    "status": "succeeded",
+    "updatedAt": "2026-11-23T09:27:06.256862+00:00",
+    "sourceCommit": "0f23dbc5205ce2bd969123530feafa7a0cd61de5"
+  },
+  "publicGit": {
+    "version": "1.13.35",
+    "blob": "cc6ca5557668be797203a632044a47b078ed7e9c"
+  },
+  "publicPagesRun": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "84bd55c0073daffb391f5d7918fddc45fd483f4c",
+    "url": "https://github.com/crazyjamy/dustgame/actions/runs/45116440356",
+    "sourceVersion": "1.13.35",
+    "liveResponseVerified": false
+  },
+  "automatedTests": {
+    "passed": 156,
+    "failed": 0
+  },
+  "zipIntegrity": "passed",
+  "firstGreeting": "브라우저에서 확인",
+  "roomSeatSwap": "자동 테스트와 코드 연결 점검",
+  "playerStudy": "미실시"
+}
