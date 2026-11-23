@@ -1,0 +1,13 @@
+{
+  "filename": "dustgame-v1.13.35-github.zip",
+  "sha256": "a7c4933624c94bacb1fec01c5da61f9c81f8e5c6488630c503cb95d2d5bbd0f4",
+  "size_bytes": 246233,
+  "files": 60,
+  "version": {
+    "version": "1.13.35",
+    "build": "1.13.35-9a3a12ca",
+    "sourceCommit": "9a3a12caf9f0d542b6b9a26b5089ed2a179d356d",
+    "basePath": "/dustgame/"
+  },
+  "packaging": "런타임 파일은 배포 커밋에서 수집하고 캐시 버전을 붙였으며, 동봉 README·DEPLOY·릴리스 노트·커밋 문구는 이번 전달용으로 정리했습니다."
+}

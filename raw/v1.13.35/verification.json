@@ -1,0 +1,28 @@
+{
+  "recorded_date": "2026-11-23",
+  "timezone": "Asia/Seoul",
+  "app_version": "1.13.35",
+  "runtime_source_commit": "9a3a12caf9f0d542b6b9a26b5089ed2a179d356d",
+  "private_site": {
+    "url": "https://little-dragon-nest-hyerin.coursemos-3149.chatgpt.site",
+    "deployment_id": "appgdep_6b03c85ece2881919d30140a7b90dcca",
+    "version_id": "appgprj_6afbb18a0c8881919c0d329ce3edd40e~appgver_4ecf8bed4d5881919a201bb4985a4605",
+    "status": "succeeded",
+    "updated_at": "2026-11-23T05:00:26.971458+00:00"
+  },
+  "tests": {
+    "command": "node --test --test-reporter=dot tests/*.test.mjs",
+    "passed": 155,
+    "failed": 0
+  },
+  "browser_qa": "Chrome PC·390px 모바일 미리보기. 동일 앱의 독립 검증용 저장 키 사용. 비공개 라이브 URL은 로그인 화면을 확인했고 배포 성공은 Sites 결과로 확인.",
+  "github_game_repository": {
+    "version_observed": "1.13.27",
+    "content_blob_sha": "dcbf3fdec582e9d10199e203e41bbf2ae956c434",
+    "game_upload_in_this_task": false
+  },
+  "unverified": [
+    "iPhone Safari 실기기",
+    "이번 ZIP의 GitHub Pages 배포"
+  ]
+}

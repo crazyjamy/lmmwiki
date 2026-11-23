@@ -28,6 +28,9 @@
 | S17 | [공개 저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/558d2ad37bd7fefbac694e690d037898eded65d7/VERSION.json), [라이브 Pages 버전](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-20 조회 | 2026-11-20 | 업데이트 전 두 채널은 v1.13.12 |
 | S18 | [공개 저장소 버전](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json), [Pages 배포](https://github.com/crazyjamy/dustgame/actions/runs/44656398886), [운영 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) | 2026-11-20 조회 | 2026-11-20 | 공개 main 및 Pages v1.13.24 확인 |
 | S19 | [v1.13.27 패키지 버전](../raw/v1.13.27/VERSION.json), 비공개 사이트 88~90번 배포 기록 및 해당 소스 | 2026-11-23 조회 | 2026-11-23 | v1.13.25~27 비공개 배포 성공, 자동 테스트 125개 통과 및 ZIP 검사 확인. 2026-11-23 공개 `main` 재조회 결과 v1.13.24 |
+| S20 | [사용자 요청 발췌](../raw/v1.13.35/user-request-excerpts.md) | 2026-11-23 | 2026-11-23 | 이번 대화의 명시적 이름 변경·이야기·기록·산출물 요청과 사용자 제공 프로젝트 목표. 전체 대화 원문과 구분 |
+| S21 | [v1.13.35 릴리스 노트](../raw/v1.13.35/RELEASE-NOTES.md), [버전 파일](../raw/v1.13.35/VERSION.json), [패키지 명세](../raw/v1.13.35/package-manifest.json) | 2026-11-23 | 2026-11-23 | 전달용 ZIP의 버전·체크섬과 변경 내용. ZIP·전체 게임 소스는 공개 위키에 추가하지 않으며 사용자에게 별도 다운로드 제공 |
+| S22 | [검증·배포 결과 전사](../raw/v1.13.35/verification.json) | 2026-11-23 | 2026-11-23 | 도구 결과를 필드별로 전사한 검증 기록. 자동 테스트 155개, Chrome 미리보기와 비공개 배포 성공. 게임 저장소 버전 파일 v1.13.27. iPhone Safari 실기기·이번 ZIP의 Pages 배포는 미확인 |
 
 S1은 기존 파일 등록일이 2026-11-17로 전달됐지만, 문서 자체의 작성 날짜는 없어 ‘미상’으로 기록합니다.
 S2도 파일 등록일과 실제 코드 작성·배포 날짜를 동일시하지 않습니다.
@@ -36,11 +39,12 @@ S2도 파일 등록일과 실제 코드 작성·배포 날짜를 동일시하지
 
 | 자료 | SHA-256 |
 | --- | --- |
+| S21 전달용 v1.13.35 ZIP (위키 미포함) | `a7c4933624c94bacb1fec01c5da61f9c81f8e5c6488630c503cb95d2d5bbd0f4` |
 | S1 README | `cbc3775912923d350fb22be2fd603d411b3ff5ade18acb6cd98c5a4f2ee5c320` |
 | S14 v1.13.17 배포용 ZIP | `58b2c2d0e6787aff4326108e18a92592db69064f718827ef447f9b368b1fbb72` |
 | S2 ZIP | `8aa9caf10af2bf99ce3337518ddee0ec4fc9890297a08b91b6ff6ae1f079a6b8` |
 
-ZIP과 기존 README를 그대로 보관했습니다. raw/v1.4.1/source/는 S2의 압축 해제본이며 별도 구현 수정은 하지 않았습니다.
+기존 S1·S2의 ZIP과 README를 그대로 보관했습니다. S21의 새 ZIP은 체크섬을 기록하고 사용자에게 다운로드로 제공하며, 전체 게임 소스와 ZIP을 이 공개 위키에 추가하지 않습니다. raw/v1.4.1/source/는 S2의 압축 해제본이며 별도 구현 수정은 하지 않았습니다.
 대화 발췌는 출처와 발췌 범위를 표시한 신규 자료로, 전체 대화 원문을 대신하지 않습니다.
 
 ## 상태 표기
@@ -57,3 +61,4 @@ ZIP과 기존 README를 그대로 보관했습니다. raw/v1.4.1/source/는 S2�
 문서에서 현재 배포본은 표기된 채널과 버전을 기준으로 해석합니다. v1.4.1 항목은 초기 스냅샷에 해당합니다.
 
 관련 문서: [목차](index.md), [확인이 필요한 사항](open-questions.md), [변경 기록](log.md)
+

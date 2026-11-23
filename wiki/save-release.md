@@ -1,6 +1,6 @@
 # 저장과 배포
 
-- 기준 날짜: 2026-11-23 · v1.13.27 소스 및 채널별 배포 확인
+- 기준 날짜: 2026-11-23 · v1.13.35 패키지·비공개 배포 및 게임 저장소 버전 확인
 - 최종 수정일: 2026-11-23
 - 출처: [버전 파일](../raw/v1.4.1/source/VERSION.json), [배포 안내](../raw/v1.4.1/source/DEPLOY.md), [화면·저장 처리](../raw/v1.4.1/source/dust.mjs), [기록 내보내기·불러오기](../raw/v1.4.1/source/save-files.mjs), [플레이어 설정](../raw/v1.4.1/source/player-settings.mjs)
 - 상태: 2026-11-23 비공개 사이트 배포 이력 확인. 저장 키와 내보내기 스키마는 v1.13.12 코드에서도 확인했습니다.
@@ -9,10 +9,11 @@
 
 | 채널 | 확인 결과 | 근거 |
 | --- | --- | --- |
-| 비공개 테스트 사이트 | **v1.13.27** · 2026-11-23 09:46 KST 배포 성공 | 사이트 배포 기록 90번과 해당 소스의 버전 상수 |
-| 공개 게임 저장소 `main` | **v1.13.24** · 2026-11-23 조회 | [저장소 VERSION.json](https://github.com/crazyjamy/dustgame/blob/7c80480e3f8519a4b72e81032a6d96644fd96686/VERSION.json) |
-| 공개 GitHub Pages | **v1.13.24** · 2026-11-20 10:50 KST 배포 성공 | [서비스 VERSION.json](https://crazyjamy.github.io/dustgame/VERSION.json), [배포 실행](https://github.com/crazyjamy/dustgame/actions/runs/44656398886) |
-| GitHub Pages 업로드용 패키지 | **v1.13.27** ZIP 생성 및 압축 검사 통과 | [패키지 VERSION.json](../raw/v1.13.27/VERSION.json) |
+| 비공개 테스트 사이트 | **v1.13.35** · 2026-11-23 14:00 KST 배포 성공 | [배포 결과 전사](../raw/v1.13.35/verification.json), 런타임 커밋 `9a3a12caf9f0d542b6b9a26b5089ed2a179d356d` |
+| 공개 게임 저장소 `main` | `VERSION.json` 표기 **v1.13.27** · 이번 작업에서 재조회 | [버전 파일](https://github.com/crazyjamy/dustgame/blob/main/VERSION.json), 조회 blob SHA는 검증 기록에 보관 |
+| 공개 GitHub Pages | 마지막 확인은 **v1.13.24** · 2026-11-20. 이번 작업에서 라이브 재확인하지 않음 | 이전 [배포 실행](https://github.com/crazyjamy/dustgame/actions/runs/44656398886). 저장소 버전과 라이브 버전을 동일시하지 않음 |
+| GitHub 업로드용 패키지 | **v1.13.35** ZIP 생성, 압축·참조 검사 통과 | [패키지 명세](../raw/v1.13.35/package-manifest.json). ZIP은 사용자에게 별도 다운로드로 제공하며 이 위키에는 포함하지 않음 |
+
 
 [전체 배포 이력](release-history.md)에서 배포 시각과 변경 사항을 볼 수 있습니다.
 
@@ -41,7 +42,9 @@ sourceCommit은 ZIP의 버전 파일에 적힌 값이며 원격 게임 저장소
 - 불러오기 전 요약 확인, 불러오기·초기화 전 최근 기록 한 개의 복구 보관을 안내합니다.
 - 서버 계정 동기화 구현은 이번 확인 범위에서 발견하지 못했습니다. 도입 계획은 미확인입니다.
 
-정상 저장, 용량 초과, 잘못된 JSON, 이전 버전 기록 복구가 브라우저에서 실제로 어떻게 보이는지는 별도 검증이 필요합니다.
+v1.13.35에서 자동 테스트 155개가 통과했습니다. 이전 저장 유지, 후일담·개체별 기록, 합치기와 읽음 상태의 보존을 검증했습니다. Chrome PC·390px 미리보기에서 기록 넘기기와 개인 기록 분리, 팝업과 단서 카드 및 새 이름을 확인했습니다. iPhone Safari 실기기와 실제 저장 용량 초과 화면 등 전체 환경 검증을 완료한 것은 아닙니다.
+
+저장 키와 스키마는 유지합니다. 새 후일담과 개체별 기록 필드를 기존 데이터에 추가하며, 같은 주소의 자동 저장은 이어갑니다. 테스트 사이트와 GitHub Pages는 서로 다른 출처이므로 JSON 내보내기·불러오기로 이동해야 합니다. 이번 ZIP 생성은 GitHub 게임 저장소 업로드나 Pages 배포를 뜻하지 않습니다.
 
 ## 배포 안내의 범위
 
@@ -50,3 +53,4 @@ sourceCommit은 ZIP의 버전 파일에 적힌 값이며 원격 게임 저장소
 이 위키의 GitHub 업로드 상태는 실행 결과 보고와 실제 원격 커밋으로 확인합니다.
 
 관련 문서: [목차](index.md), [자료 목록](sources.md), [확인이 필요한 사항](open-questions.md), [변경 기록](log.md)
+
