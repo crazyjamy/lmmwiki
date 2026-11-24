@@ -15,7 +15,7 @@
 <main><h1 id="재화와-모험">재화와 모험</h1>
 <ul>
 <li>기준 날짜: 2026-11-18 · 확인한 코드 v1.4.1</li>
-<li>최종 수정일: 2026-11-23</li>
+<li>최종 수정일: 2026-11-24</li>
 <li>출처: <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/economy.mjs">재화
 코드</a>, <a
@@ -32,30 +32,100 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/earlier-plan/README.md"
 <li>상태: 버전별 구현은 코드에서 확인했습니다. 배포 상태는 <a
 href="save-release.html">저장과 배포</a>를 참고하세요.</li>
 </ul>
+<h2 id="한눈에-보기">한눈에 보기</h2>
+<ul>
+<li><strong>골드</strong>는 별이 생산하고 설치물 강화에 씁니다.
+v1.13.27부터 Lv.1 솔라 기준 20초마다 1골드입니다.</li>
+<li><strong>반짝이</strong>는 쓰다듬기, 하루 바닥 반짝이, 모험 보상
+등으로 얻습니다.</li>
+<li>루미에게 별을 <strong>한 번에 1~3마리</strong> 시간제로 파견할 수
+있습니다. (v1.11.0~)</li>
+<li>직접 걷는 탐험은 지금 <strong>외곽 관측소</strong>, v1.4.1에서는
+<strong>책상 아래</strong>라고 불렀습니다.</li>
+</ul>
 <h2 id="현재-배포본--우주-테마-모험">현재 배포본 · 우주 테마 모험</h2>
-<p>v1.8.7 이후 루미의 시간제 파견은 <strong>위성 온실</strong>,
-<strong>태양풍 항로</strong>, <strong>달 뒤편 성운</strong>으로
-표시합니다. 직접 걷는 탐험의 표시 이름은 <strong>외곽
-관측소</strong>입니다. 아래 v1.4.1 자료에서는 이 탐험을 <strong>책상
-아래</strong>로 표기합니다. <a href="release-history.html">배포
-이력</a>, <a href="sources.html">자료 목록</a></p>
-<p>v1.11.0부터 루미에게 별을 드래그하거나 탐험 수첩에서 골라 한 번에 한
-마리에서 세 마리까지 파견할 수 있습니다. 인원과 별 레벨에 따라 보상이
-늘어납니다. 외곽 관측소는 홈의 <strong>탐사 구역</strong>에서
-들어갑니다. <a
-href="https://github.com/crazyjamy/dustgame/commit/b940e28fc44a8c5bda2b2c8c17a007111b053a50">v1.11.0
-공개 커밋</a></p>
-<p>v1.13.53에서 탐험과 직접 탐사의 정수 보상과 채집 바구니 보너스를
-조정했습니다. v1.13.55의 은하계 수령 연출은 획득 숫자를 누른 자리에
-표시하고, 골드와 반짝이 아이콘을 상단 잔액 쪽으로 이동시킵니다. <a
-href="release-history.html">배포 이력</a></p>
+<p><strong>이름 변경 (v1.8.7~)</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>구분</th>
+<th>현재 이름</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>루미의 시간제 파견</td>
+<td><strong>위성 온실</strong>, <strong>태양풍 항로</strong>, <strong>달
+뒤편 성운</strong></td>
+</tr>
+<tr class="even">
+<td>직접 걷는 탐험</td>
+<td><strong>외곽 관측소</strong> (v1.4.1의 <strong>책상
+아래</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p><a href="release-history.html">배포 이력</a>, <a
+href="sources.html">자료 목록</a></p>
+<p><strong>버전별 변경</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>버전</th>
+<th>변경 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v1.11.0</td>
+<td>루미에게 별을 드래그하거나 탐험 수첩에서 골라 한 번에 1~3마리 파견.
+인원과 별 레벨에 따라 보상 증가. 외곽 관측소는 홈의 <strong>탐사
+구역</strong>에서 입장 (<a
+href="https://github.com/crazyjamy/dustgame/commit/b940e28fc44a8c5bda2b2c8c17a007111b053a50">공개
+커밋</a>)</td>
+</tr>
+<tr class="even">
+<td>v1.13.53</td>
+<td>탐험과 직접 탐사의 정수 보상, 채집 바구니 보너스 조정</td>
+</tr>
+<tr class="odd">
+<td>v1.13.55</td>
+<td>은하계 수령 연출: 획득 숫자는 누른 자리에 표시하고, 골드·반짝이
+아이콘은 상단 잔액 쪽으로 이동</td>
+</tr>
+</tbody>
+</table>
 <h2 id="재화의-역할">재화의 역할</h2>
-<p>v1.13.27에서 별 골드 생산 계산의 나눗수를 3에서 6으로 조정했습니다.
-시작 은하계의 Lv.1 솔라 기준으로 20초마다 2 → 1골드, 30분 최대 180 →
-90골드입니다. 지갑에 받은 골드는 유지되며, 아직 수령하지 않은 생산분에는
-새 생산량이 적용됩니다. 골드는 설치물 강화에 사용합니다. <a
-href="sources.html">자료 S19</a></p>
-<p>아래 표는 v1.4.1에서 확인한 규칙입니다.</p>
+<h3 id="골드-생산량-조정--v11327">골드 생산량 조정 · v1.13.27</h3>
+<p>별 골드 생산 계산의 나눗수를 3에서 6으로 조정했습니다.</p>
+<table>
+<thead>
+<tr class="header">
+<th>시작 은하계 Lv.1 솔라 기준</th>
+<th style="text-align: right;">조정 전</th>
+<th style="text-align: right;">조정 후</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20초마다</td>
+<td style="text-align: right;">2골드</td>
+<td style="text-align: right;">1골드</td>
+</tr>
+<tr class="even">
+<td>30분 최대</td>
+<td style="text-align: right;">180골드</td>
+<td style="text-align: right;">90골드</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>지갑에 받은 골드는 그대로 유지됩니다.</li>
+<li>아직 수령하지 않은 생산분에는 새 생산량이 적용됩니다.</li>
+<li>골드는 설치물 강화에 사용합니다.</li>
+</ul>
+<p><a href="sources.html">자료 S19</a></p>
+<h3 id="재화별-획득과-사용--v141">재화별 획득과 사용 · v1.4.1</h3>
 <table>
 <thead>
 <tr class="header">
@@ -77,15 +147,18 @@ href="sources.html">자료 S19</a></p>
 </tr>
 </tbody>
 </table>
-<p>골드는 최대 30분 상당의 완성된 생산 회분을 누적하는 코드가 있습니다.
-보관·모험 중에는 생산을 쉽니다. 모아는 반짝이 120개로 구매하고 골드를
-일괄 수령하는 기능입니다. 완전 자동 수령 여부로 확대 해석하지
-않습니다.</p>
-<p>S1 기획은 골드로 방·재료를 구매하는 구조를 설명하지만, v1.4.1의
-buyMaterial·upgradeRoom·buyFairy는 반짝이를 차감합니다. 양쪽 근거를
-유지하며 승인된 기획 변경 여부는 <a href="open-questions.html">확인이
-필요한 사항</a>에 남깁니다.</p>
-<h2 id="먼지가-흘리는-하루-반짝이">먼지가 흘리는 하루 반짝이</h2>
+<ul>
+<li>골드는 최대 30분 상당의 완성된 생산 회분을 누적하는 코드가 있습니다.
+보관·모험 중에는 생산을 쉽니다.</li>
+<li>모아는 반짝이 120개로 구매하고 골드를 일괄 수령하는 기능입니다. 완전
+자동 수령 여부로 확대 해석하지 않습니다.</li>
+</ul>
+<p><strong>기획과 코드의 차이:</strong> S1 기획은 골드로 방·재료를
+구매하는 구조를 설명하지만, v1.4.1의 buyMaterial·upgradeRoom·buyFairy는
+반짝이를 차감합니다. 양쪽 근거를 유지하며, 승인된 기획 변경 여부는 <a
+href="open-questions.html">확인이 필요한 사항</a>에 남깁니다.</p>
+<h2 id="먼지가-흘리는-하루-반짝이--v141">먼지가 흘리는 하루 반짝이 ·
+v1.4.1</h2>
 <table>
 <thead>
 <tr class="header">
@@ -138,12 +211,15 @@ buyMaterial·upgradeRoom·buyFairy는 반짝이를 차감합니다. 양쪽 근�
 </tr>
 </tbody>
 </table>
-<p>마지막 두 항목은 <a
+<ul>
+<li>마지막 두 항목은 <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/dust.mjs">화면
-처리 코드</a>의 dailySparkle 처리와 함께 확인했습니다. 반짝이는 게임
-실행 중 방 렌더링·업데이트에서 생성됩니다. 앱을 닫은 상태에서 별도의
-서버가 생성하는 기능으로 기록하지 않습니다.</p>
-<h2 id="시간제-모험과-직접-탐험">시간제 모험과 직접 탐험</h2>
+처리 코드</a>의 dailySparkle 처리와 함께 확인했습니다.</li>
+<li>반짝이는 게임 실행 중 방 렌더링·업데이트에서 생성됩니다. 앱을 닫은
+상태에서 별도의 서버가 생성하는 기능으로 기록하지 않습니다.</li>
+</ul>
+<h2 id="시간제-모험과-직접-탐험--v141">시간제 모험과 직접 탐험 ·
+v1.4.1</h2>
 <table>
 <thead>
 <tr class="header">
@@ -180,15 +256,17 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/dust.mjs"
 </tr>
 </tbody>
 </table>
-<p>시간제 모험은 바람 종의 효과로 시간을 줄일 수 있습니다. 기존 저장
-데이터에서 이미 열린 경로는 유지할 수 있습니다. 직접 탐험의 ‘책상
-아래’와 시간제 경로 ‘책장 아래 숲’은 서로 다른 기능입니다.</p>
-<p>직접 탐험은 솜뭉치·풀잎·이슬방울을 찾고 숨은 길을 여는 구조이며, 중단
-후 이어가기 데이터가 있습니다. 이 경험이 충분히 재미있는지는 코드만으로
-판단하지 않습니다.</p>
+<ul>
+<li>시간제 모험은 바람 종의 효과로 시간을 줄일 수 있습니다.</li>
+<li>기존 저장 데이터에서 이미 열린 경로는 유지할 수 있습니다.</li>
+<li>직접 탐험의 ‘책상 아래’와 시간제 경로 ‘책장 아래 숲’은 서로 다른
+기능입니다.</li>
+<li>직접 탐험은 솜뭉치·풀잎·이슬방울을 찾고 숨은 길을 여는 구조이며,
+중단 후 이어가기 데이터가 있습니다.</li>
+<li>이 경험이 충분히 재미있는지는 코드만으로 판단하지 않습니다.</li>
+</ul>
 <p>관련 문서: <a href="../index.html">목차</a>, <a
-href="room-furniture.html">방과 가구</a>, <a
-href="dust-growth.html">먼지 수집과 성장</a>, <a
-href="save-release.html">저장과 배포</a></p>
+href="room-furniture.html">방과 가구</a>, <a href="dust-growth.html">별
+수집과 성장</a>, <a href="save-release.html">저장과 배포</a></p>
 </main>
 </body></html>

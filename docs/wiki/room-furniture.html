@@ -15,7 +15,7 @@
 <main><h1 id="방과-가구">방과 가구</h1>
 <ul>
 <li>기준 날짜: 2026-11-18 · 확인한 코드 v1.4.1</li>
-<li>최종 수정일: 2026-11-23</li>
+<li>최종 수정일: 2026-11-24</li>
 <li>출처: <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/rooms.mjs">방
 코드</a>, <a
@@ -30,42 +30,137 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/2026-11-18-context-exce
 <li>상태: v1.4.1 구현은 코드 확인. v1.9.4 배포본에서 확장 구현을
 확인했습니다. 아래 10종 표는 v1.4.1 이력입니다.</li>
 </ul>
+<h2 id="한눈에-보기">한눈에 보기</h2>
+<ul>
+<li>지금은 설치물 <strong>20종</strong>을 <strong>별빛 임무</strong>
+보상으로 받고, 골드로 강화합니다. (v1.13.25~) 최대 레벨은 v1.5.0부터
+<strong>Lv.10</strong>입니다.</li>
+<li>은하계(이전의 방)는 <strong>100레벨</strong>입니다. v1.4.1에서는 방
+레벨 × 2마리까지 둘 수 있었습니다.</li>
+<li>좋아하는 설치물 곁에 둔 별에게는 <strong>자리 후일담</strong>이
+생깁니다. (v1.13.33~)</li>
+<li>초기 v1.4.1에서는 가구가 10종, 최대 Lv.5였고 골드로
+구매했습니다.</li>
+</ul>
 <h2 id="현재-배포본--설치물과-자유-배치">현재 배포본 · 설치물과 자유
 배치</h2>
-<p>v1.13.25부터 설치물 20종은 <strong>별빛 임무</strong>의 보상입니다.
-첫 별의 이야기를 읽으면 행성 고리를 받습니다. 이후 별 발견·모험·은하계
-성장 등 각 설치물의 조건을 확인할 수 있습니다. 받은 설치물은 작은
-상점에서 배치하고 골드로 강화합니다. <a href="sources.html">자료
-S19</a></p>
-<p>v1.13.12에서 별과 장비는 행성 지평선 위쪽에도 배치할 수 있습니다.
-배치한 별과 장비 및 그 위치에 생성된 반짝이는 새로고침 뒤에도 지평선
-위에 남는지 소스 테스트에서 확인했습니다. <a
+<table>
+<thead>
+<tr class="header">
+<th>버전</th>
+<th>변경 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v1.13.12</td>
+<td>별과 장비를 행성 지평선 위쪽에도 배치. 배치한 별·장비와 그 위치의
+반짝이가 새로고침 뒤에도 남는지 소스 테스트에서 확인</td>
+</tr>
+<tr class="even">
+<td>v1.13.22</td>
+<td>성장 지도를 <strong>별빛 임무 → 은하계 진행도</strong>로 이동</td>
+</tr>
+<tr class="odd">
+<td>v1.13.24</td>
+<td>상단의 사용 중인 은하계 자리에 탐험 중인 별이 돌아올 자리도
+포함</td>
+</tr>
+<tr class="even">
+<td>v1.13.25</td>
+<td>설치물 20종을 <strong>별빛 임무</strong>의 보상으로 전환</td>
+</tr>
+</tbody>
+</table>
+<p><strong>설치물 얻는 방법 (v1.13.25~)</strong></p>
+<ol type="1">
+<li>첫 별의 이야기를 읽으면 <strong>행성 고리</strong>를 받습니다.</li>
+<li>이후 별 발견·모험·은하계 성장 등 설치물마다 정해진 조건을 별빛
+임무에서 확인합니다.</li>
+<li>받은 설치물은 작은 상점에서 배치하고 골드로 강화합니다.</li>
+</ol>
+<p>근거: <a href="sources.html">자료 S19</a>, <a
 href="release-history.html">배포 이력</a></p>
-<p>v1.13.22부터 성장 지도는 <strong>별빛 임무 → 은하계 진행도</strong>에
-있습니다. v1.13.24부터 상단의 사용 중인 은하계 자리에는 탐험 중인 별이
-돌아올 자리도 포함합니다. <a href="release-history.html">배포
-이력</a></p>
 <h3 id="별과-설치물에-남는-기억--v11333-이후">별과 설치물에 남는 기억 ·
 v1.13.33 이후</h3>
-<p>첫 본편을 읽은 별은 좋아하는 설치물 Lv.1 곁에서도 자리 후일담을
-발견합니다. 기존 Lv.3 설치물 기억과 별개이며 둘 다 ‘함께 쓴 이야기’에서
-읽을 수 있습니다. 후일담을 읽은 뒤 해당 자리의 대사가 달라집니다. 본편
-해금이나 설치물 강화의 필수 조건은 아닙니다. <a
-href="dust-growth.html">별의 이야기와 기록</a>, <a
+<ul>
+<li>첫 본편을 읽은 별은 좋아하는 설치물 <strong>Lv.1</strong> 곁에서도
+자리 후일담을 발견합니다.</li>
+<li>기존 Lv.3 설치물 기억과 별개이며, 둘 다 ‘함께 쓴 이야기’에서 읽을 수
+있습니다.</li>
+<li>후일담을 읽은 뒤에는 해당 자리의 대사가 달라집니다.</li>
+<li>본편 해금이나 설치물 강화의 필수 조건은 아닙니다.</li>
+</ul>
+<p><a href="dust-growth.html">별의 이야기와 기록</a>, <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/RELEASE-NOTES.md">변경
 내용</a></p>
 <h3 id="가구-20종과-최대-lv10의-이전-규칙">가구 20종과 최대 Lv.10의 이전
 규칙</h3>
-<p>v1.5.0에서 구매 가구를 20종, 최대 Lv.10으로 확장했습니다. v1.9.4
-코드의 가구 목록과 레벨 상한에서도 같은 규모를 확인했습니다. 가구
-구매·강화는 골드를 쓰며, 배치한 가구에 효과가 적용됩니다.</p>
-<p>은하계 전환 이후에는 러그가 <strong>행성 고리</strong>, 작은 화분이
-<strong>미세중력 온실</strong>, 달빛 조명이 <strong>항법 비콘</strong>,
-구름 쿠션이 <strong>달 착륙 포드</strong>로 표시됩니다. 강화 비용은
-Lv.2부터 차례대로 40 / 80 / 140 / 220 / 320 / 450 / 600 / 800 / 1,050
-골드입니다. 근거는 <a href="sources.html">자료 목록 S5~S6</a>과 <a
-href="release-history.html">배포 이력</a>에 있습니다.</p>
-<h2 id="방-성장">방 성장</h2>
+<p>v1.5.0에서 구매 가구를 <strong>20종, 최대 Lv.10</strong>으로
+확장했습니다. v1.9.4 코드의 가구 목록과 레벨 상한에서도 같은 규모를
+확인했습니다. 가구 구매·강화는 골드를 쓰며, 배치한 가구에 효과가
+적용됩니다.</p>
+<p><strong>은하계 전환 이후 바뀐 이름</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>이전 이름</th>
+<th>은하계 이름</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>러그</td>
+<td>행성 고리</td>
+</tr>
+<tr class="even">
+<td>작은 화분</td>
+<td>미세중력 온실</td>
+</tr>
+<tr class="odd">
+<td>달빛 조명</td>
+<td>항법 비콘</td>
+</tr>
+<tr class="even">
+<td>구름 쿠션</td>
+<td>달 착륙 포드</td>
+</tr>
+</tbody>
+</table>
+<p><strong>강화 비용 (골드)</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>목표 레벨</th>
+<th style="text-align: right;">Lv.2</th>
+<th style="text-align: right;">Lv.3</th>
+<th style="text-align: right;">Lv.4</th>
+<th style="text-align: right;">Lv.5</th>
+<th style="text-align: right;">Lv.6</th>
+<th style="text-align: right;">Lv.7</th>
+<th style="text-align: right;">Lv.8</th>
+<th style="text-align: right;">Lv.9</th>
+<th style="text-align: right;">Lv.10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>비용</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: right;">450</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">1,050</td>
+</tr>
+</tbody>
+</table>
+<p>근거: <a href="sources.html">자료 목록 S5~S6</a>, <a
+href="release-history.html">배포 이력</a></p>
+<h2 id="방-성장--v141">방 성장 · v1.4.1</h2>
 <table>
 <thead>
 <tr class="header">
@@ -111,9 +206,10 @@ href="release-history.html">배포 이력</a>에 있습니다.</p>
 <p>이전 저장 데이터에서는 기존 방 보너스·보관함 용량·열린 모험 경로를
 보존하는 로직이 있습니다. 새 기록과 이전 기록의 표시가 완전히 같다고
 단정하지 않습니다.</p>
-<h2 id="가구-10종--최대-5단계">가구 10종 · 최대 5단계</h2>
+<h2 id="가구-10종--최대-5단계--v141">가구 10종 · 최대 5단계 ·
+v1.4.1</h2>
 <p>구매·업그레이드는 골드를 사용합니다. 아래는 <strong>배치한
-가구</strong>의 효과입니다. L은 해당 가구 레벨(1~5)입니다.</p>
+가구</strong>의 효과이며, L은 해당 가구 레벨(1~5)입니다.</p>
 <table>
 <thead>
 <tr class="header">
@@ -175,25 +271,34 @@ href="release-history.html">배포 이력</a>에 있습니다.</p>
 </tr>
 </tbody>
 </table>
-<p>효과 적용 근거: 가구 코드의 activeLevel, lampFactor, cushionBonus, <a
+<ul>
+<li>업그레이드 비용은 Lv.1→2부터 차례로 40 / 80 / 140 /
+220골드입니다.</li>
+<li>보유 레벨의 허용 범위와 업그레이드 상한은 코드에서 1~5로
+제한합니다.</li>
+<li>가구 효과가 <strong>하루 바닥 반짝이 수량을 늘리는 로직</strong>은
+v1.4.1의 daily-sparkles.mjs에서 확인되지 않습니다.</li>
+</ul>
+<p><strong>효과 적용 근거</strong></p>
+<ul>
+<li>가구 코드: activeLevel, lampFactor, cushionBonus</li>
+<li><a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/dust-engine.mjs">성장
-코드</a>의 pet·mergeDust·readStory, 재화 코드의 goldAmount·collectGold,
-<a
+코드</a>: pet, mergeDust, readStory</li>
+<li>재화 코드: goldAmount, collectGold</li>
+<li><a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/adventures.mjs">모험
-코드</a>의 startAdventure·claimAdventure, <a
+코드</a>: startAdventure, claimAdventure</li>
+<li><a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/desk-exploration.mjs">탐험
-코드</a>의 finishDesk.</p>
-<p>업그레이드 비용은 Lv.1→2부터 차례로 40 / 80 / 140 / 220골드입니다.
-보유 레벨의 허용 범위와 업그레이드 상한은 코드에서 1~5로 제한합니다.
-가구 효과가 <strong>하루 바닥 반짝이 수량을 늘리는 로직</strong>은
-v1.4.1의 daily-sparkles.mjs에서 확인되지 않습니다.</p>
+코드</a>: finishDesk</li>
+</ul>
 <h2 id="확장-요청의-처리-이력">확장 요청의 처리 이력</h2>
 <p>초기 위키에 남겼던 가구 수·레벨 상한 확대와 반짝이 효과 추가 요청은
-후속 배포에서 구현을 확인했습니다.</p>
-<p>관련 문서를 갱신합니다. 새 가구 이름·가격·레벨별 효과는
-미확인입니다.</p>
+후속 배포에서 구현을 확인했습니다. 새 가구 이름·가격·레벨별 효과는
+<strong>미확인</strong>입니다.</p>
 <p>관련 문서: <a href="../index.html">목차</a>, <a
-href="dust-growth.html">먼지 수집과 성장</a>, <a
+href="dust-growth.html">별 수집과 성장</a>, <a
 href="currency-adventure.html">재화와 모험</a>, <a
 href="open-questions.html">확인이 필요한 사항</a></p>
 </main>

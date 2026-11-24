@@ -2,10 +2,10 @@
 
 별을 수집하고 돌보는 게임의 기획, 코드에서 확인한 기능, 변경 요청과 확인할 사항을 정리합니다.
 
-- 기준 날짜: 2026-11-23
+- 기준 날짜: 2026-11-24
 - 최종 수정일: 2026-11-24
 - 출처: [자료 목록](wiki/sources.md), [위키 구성 요청](raw/2026-11-18-wiki-request.md)
-- 확인한 버전은 비공개 테스트 사이트 **v1.13.63**, 공개 게임 저장소와 최근 성공한 Pages 배포의 소스 **v1.13.35**입니다. [저장과 배포](wiki/save-release.md)
+- 확인한 버전은 비공개 테스트 사이트와 공개 GitHub Pages **v1.13.75**입니다. [저장과 배포](wiki/save-release.md)
 
 ## 여기서 시작하세요
 
@@ -21,7 +21,7 @@
 
 ## 웹에서 읽기
 
-Pages 배포가 켜지면 웹 위키를 [GitHub Pages](https://crazyjamy.github.io/lmmwiki/)에서 열 수 있습니다. Pages의 배포 원본은 `main` 브랜치의 `/docs`입니다. 다운로드한 저장소에서 `docs/index.html`을 직접 열어도 문서와 이야기 개정본을 읽을 수 있습니다.
+웹 위키는 [GitHub Pages](https://crazyjamy.github.io/lmmwiki/)에서 열 수 있습니다. Pages의 배포 원본은 `main` 브랜치의 `/docs`입니다. 다운로드한 저장소에서 `docs/index.html`을 직접 열어도 문서와 이야기 개정본을 읽을 수 있습니다.
 
 Markdown을 수정한 뒤 Pandoc이 설치된 환경에서 `python3 scripts/build-wiki.py`를 실행하면 `docs/`의 HTML이 갱신됩니다.
 

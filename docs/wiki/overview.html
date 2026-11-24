@@ -14,68 +14,114 @@
 </nav></header>
 <main><h1 id="게임-개요">게임 개요</h1>
 <ul>
-<li>기준 날짜: 2026-11-23 · 최신 구현 v1.13.35 / 초기 코드 v1.4.1</li>
-<li>최종 수정일: 2026-11-23</li>
+<li>기준 날짜: 2026-11-24 · 최신 구현 v1.13.75 / 초기 코드 v1.4.1</li>
+<li>최종 수정일: 2026-11-24</li>
 <li>출처: <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/earlier-plan/README.md">S1
 기존 기획</a>, <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/README.md">S2-R
 버전 설명</a>, <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/2026-11-18-wiki-request.md">S3
-위키 구성 요청</a></li>
+위키 구성 요청</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.63/verification.json">S23
+v1.13.63 검증 기록</a></li>
 <li>상태: 주제 선택은 확정. 게임 규칙은 제공된 코드 기준이며 기획
 승인·실제 플레이 검증과 구분합니다.</li>
 </ul>
-<h2 id="최신-기준--v11335">최신 기준 · v1.13.35</h2>
-<p><strong>확정:</strong> 게임 이름은 <strong>별이 머무는
-곳</strong>입니다. 영어 부제 없이 한글 한 줄로 표시합니다. 사용자 요청은
-<a href="sources.html">S20</a>, 구현은 <a
+<h2 id="한눈에-보기">한눈에 보기</h2>
+<ul>
+<li><strong>별이 머무는 곳</strong>은 별을 만나고, 같은 종류끼리 합치고,
+이야기와 설치물로 은하계를 키우는 수집·육성 게임입니다.</li>
+<li>비공개 테스트 사이트와 공개 GitHub Pages는
+<strong>v1.13.75</strong>입니다. <a href="save-release.html">저장과
+배포</a></li>
+<li>확정된 방향은 수집·돌봄·공간·이야기가 이어지는 <strong>편안한
+육성·탐험 게임</strong>입니다. 장기 엔딩과 세부 우선순위는 아직 정하지
+않았습니다.</li>
+</ul>
+<h2 id="v11335에서-정한-이름과-구성">v1.13.35에서 정한 이름과 구성</h2>
+<p><strong>확정 · 이름:</strong> 게임 이름은 <strong>별이 머무는
+곳</strong>입니다. 영어 부제 없이 한글 한 줄로 표시합니다.</p>
+<ul>
+<li>사용자 요청: <a href="sources.html">S20</a></li>
+<li>구현: <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/package-manifest.json">S21
-패키지 명세</a>, 확인 범위는 <a
+패키지 명세</a></li>
+<li>확인 범위: <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/verification.json">S22
-검증 기록</a>에 있습니다.</p>
-<p><strong>구현·검증:</strong> 50종의 고유한 질문과 다섯 성장 이야기,
-접힌 루미의 관측 노트, 플레이 행동에 이어지는 후일담, 별 상세의 ‘함께 쓴
-이야기’를 제공합니다. 같은 종류라면 레벨이 달라도 합칠 수 있고, 높은
-쪽보다 한 레벨 성장합니다. 본편은 기존 Lv.2~6 해금을 유지하며 추가
-발견을 필수 조건으로 두지 않습니다.</p>
-<p><strong>화면:</strong> 하단 플로팅 메뉴를 고정하고 콘텐츠 탭은
-밑줄형, 하위 필터는 작은 선택 버튼으로 구분합니다. 첫 읽기 쉬머는
-문장별로 흐릅니다. 선택 카드에는 상황과 다음 단서 하나를 표시하며, 수집
-단서는 필요·보유 재료와 준비 상태를 분리해 보여줍니다.</p>
-<p>현재 확인한 비공개 배포는 <strong>v1.13.35</strong>입니다. 게임
-저장소 <code>main</code>의 <code>VERSION.json</code>은
-<strong>v1.13.27</strong>이며, 이번 작업에서는 게임 저장소 업로드를
-수행하지 않았습니다. <a href="save-release.html">저장과 배포</a></p>
+검증 기록</a></li>
+</ul>
+<p><strong>구현·검증 · 이야기와 성장</strong></p>
+<ul>
+<li>50종마다 고유한 질문과 다섯 성장 이야기가 있습니다.</li>
+<li>천문 설명은 접힌 ‘루미의 관측 노트’에 담습니다.</li>
+<li>플레이 행동에 이어지는 후일담과, 별 상세의 ‘함께 쓴 이야기’를
+제공합니다.</li>
+<li>같은 종류라면 레벨이 달라도 합칠 수 있고, 높은 쪽보다 한 레벨
+성장합니다.</li>
+<li>본편은 기존 Lv.2~6 해금을 유지하며, 추가 발견을 필수 조건으로 두지
+않습니다.</li>
+</ul>
+<p><strong>화면</strong></p>
+<ul>
+<li>하단 플로팅 메뉴를 고정합니다.</li>
+<li>콘텐츠 탭은 밑줄형, 하위 필터는 작은 선택 버튼으로 구분합니다.</li>
+<li>첫 읽기 쉬머는 문장별로 흐릅니다.</li>
+<li>선택 카드에는 상황과 다음 단서 하나를 표시합니다.</li>
+<li>수집 단서는 필요·보유 재료와 준비 상태를 나눠 보여줍니다.</li>
+</ul>
+<p>v1.13.36~63의 변경은 <a href="release-history.html">배포 이력</a>에
+있습니다.</p>
 <h2 id="이전-v11324-구성-기록">이전 v1.13.24 구성 기록</h2>
 <p>v1.8.0부터 방은 <strong>은하계</strong>, 수집하는 친구는
-<strong>별</strong>로 표현합니다. 핵심 흐름은 친구를 만나고, 같은
-종류·레벨끼리 합치고, 이야기와 가구로 공간을 키우는 수집·육성입니다.</p>
-<p>v1.9.4에서 확인한 구성은 별 50종, 별 성장 이야기 250편, 은하계
-100레벨, 구매 가구 20종과 최대 Lv.10, 시간제 파견 3개 경로와 직접 걷는
-<strong>외곽 관측소</strong>입니다. v1.11.0부터 루미가 최대 세 마리의
-별을 시간제로 파견하고, v1.13.12에서는 별 탄생 버튼이 홈 중앙 아래에
-배치돼 있습니다. <a
-href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.17/COLOR-TOKENS.md">디자인
-가이드</a>에서 PC 팝업 너비, 첫 읽기 쉬머, 스위치·선택 메뉴,
-스크롤·알림·도움말 기준을 볼 수 있습니다. 구현과 배포 범위는 <a
-href="release-history.html">배포 이력</a>과 <a href="sources.html">자료
-목록</a>을 참고하세요.</p>
-<p>별빛 임무에서 지금 할 일, 오늘의 부탁, 다음 수집 단서, 작은 쉼터의
-기억과 은하계 성장 지도를 확인할 수 있습니다. 홈에서는 오른쪽 아래 요정
-버튼으로 엽니다. 모은 별 화면의 필터는 도감 종수를, 필터 아래는 보유 및
-포근한 별의 마릿수를 표시합니다. <a
+<strong>별</strong>로 표현합니다.</p>
+<table>
+<thead>
+<tr class="header">
+<th>버전</th>
+<th>확인한 구성</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v1.9.4</td>
+<td>별 50종, 별 성장 이야기 250편, 은하계 100레벨, 구매 가구 20종·최대
+Lv.10, 시간제 파견 3개 경로, 직접 걷는 <strong>외곽 관측소</strong></td>
+</tr>
+<tr class="even">
+<td>v1.11.0</td>
+<td>루미가 최대 세 마리의 별을 시간제로 파견</td>
+</tr>
+<tr class="odd">
+<td>v1.13.12</td>
+<td>별 탄생 버튼을 홈 중앙 아래에 배치</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>별빛 임무:</strong> 지금 할 일, 오늘의 부탁, 다음 수집 단서,
+작은 쉼터의 기억과 은하계 성장 지도를 확인합니다. 홈 오른쪽 아래 요정
+버튼으로 엽니다.</li>
+<li><strong>모은 별 화면:</strong> 필터는 도감 종수를, 필터 아래는 보유
+및 포근한 별의 마릿수를 표시합니다. <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.24/ICON-GUIDE.md">아이콘
-가이드</a></p>
+가이드</a></li>
+<li><strong>디자인 가이드:</strong> PC 팝업 너비, 첫 읽기 쉬머,
+스위치·선택 메뉴, 스크롤·알림·도움말 기준을 담았습니다. <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.17/COLOR-TOKENS.md">디자인
+가이드</a></li>
+</ul>
+<p>구현과 배포 범위는 <a href="release-history.html">배포 이력</a>과 <a
+href="sources.html">자료 목록</a>을 참고하세요.</p>
 <h2 id="초기-v141-자료에서-설명한-게임">초기 v1.4.1 자료에서 설명한
 게임</h2>
 <p>작은 먼지를 만나고, 같은 친구를 합쳐 성장시키며, 이야기와 가구로 방을
-채워가는 수집·육성 웹 게임입니다. 이는 S2-R의 게임 설명을 정리한
+채워가는 수집·육성 웹 게임입니다. S2-R의 게임 설명을 정리한
 내용입니다.</p>
 <p><strong>위키 주제:</strong> 사용자가 「작고소중한 먼지키우기」를 첫
 위키 주제로 지정했습니다. 문서에서는 ZIP 내부 제목을 따라 「작고 소중한
 먼지 키우기」로 표기합니다.</p>
-<h2 id="기본-플레이-흐름">기본 플레이 흐름</h2>
+<h3 id="기본-플레이-흐름">기본 플레이 흐름</h3>
 <table>
 <thead>
 <tr class="header">
@@ -124,7 +170,7 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/desk-expl
 </tr>
 </tbody>
 </table>
-<h2 id="제공된-버전에서-확인한-규모">제공된 버전에서 확인한 규모</h2>
+<h3 id="제공된-버전에서-확인한-규모">제공된 버전에서 확인한 규모</h3>
 <table>
 <thead>
 <tr class="header">
@@ -167,12 +213,13 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/desk-expl
 연결했습니다.</p>
 <h2 id="게임-목표">게임 목표</h2>
 <p><strong>확정된 방향:</strong> 수집하고 돌보며 나만의 공간과 이야기를
-만들어가는 편안한 육성·탐험 게임을 지향합니다. 사용자가 제공한 <a
+만들어가는 편안한 육성·탐험 게임을 지향합니다. 근거는 사용자가 제공한 <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/user-request-excerpts.md">프로젝트
-목표 원문</a>을 근거로 합니다. 장기 엔딩과 세부 반복 플레이 우선순위는
-별도 결정이 필요합니다.</p>
+목표 원문</a>입니다.</p>
+<p><strong>결정 필요:</strong> 장기 엔딩과 세부 반복 플레이의
+우선순위.</p>
 <p>관련 문서: <a href="../index.html">목차</a>, <a
-href="dust-growth.html">먼지 수집과 성장</a>, <a
+href="dust-growth.html">별 수집과 성장</a>, <a
 href="room-furniture.html">방과 가구</a>, <a
 href="currency-adventure.html">재화와 모험</a></p>
 </main>
