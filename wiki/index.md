@@ -1,14 +1,14 @@
 # 전체 목차
 
-- 기준 날짜: 2026-11-24 · v1.13.75
+- 기준 날짜: 2026-11-24 · v1.13.81
 - 최종 수정일: 2026-11-24
 - 출처: [자료 목록](sources.md), [위키 구성 요청](../raw/2026-11-18-wiki-request.md)
 
 ## 한눈에 보기
 
 - 게임 이름은 **별이 머무는 곳**입니다. 위키는 초기 이름인 「작고 소중한 먼지 키우기」로 시작했습니다.
-- 비공개 테스트 사이트의 최신 확인 버전은 **v1.13.75**입니다.
-- 공개 게임 저장소와 GitHub Pages는 **v1.13.75**입니다.
+- 비공개 테스트 사이트의 최신 확인 버전은 **v1.13.81**입니다.
+- 공개 게임 저장소와 GitHub Pages는 **v1.13.81**입니다.
 - 처음이라면 [게임 개요](overview.md) → [별 수집과 성장](dust-growth.md) → [확인이 필요한 사항](open-questions.md) 순서로 읽으세요.
 
 ## 주제별 문서
@@ -20,7 +20,7 @@
 | [캐릭터 이야기 개정본](../raw/2026-11-24-story-review/star-stories-revised.html) | 별 50종의 첫인사, 성장 이야기, 후일담 원문 · 게임 반영 |
 | [방과 가구](room-furniture.md) | 방 100레벨, 수용 한도, 설치물 20종의 퀘스트 획득·10단계 강화, 이전 구성 |
 | [재화와 모험](currency-adventure.md) | 골드, 반짝이, 하루 반짝이, 시간제 모험과 직접 탐험 |
-| [배포 이력](release-history.md) | v1.13.28~75 변경과 초기 90건 배포 이력 |
+| [배포 이력](release-history.md) | v1.13.28~81 변경과 초기 90건 배포 이력 |
 | [디자인 가이드](design-guide.md) | 정보 표면, 별 상세 카드, 이야기 빛 효과와 골드 표시 |
 | [저장과 배포](save-release.md) | 브라우저 저장, 기록 이동, 버전과 배포 확인 범위 |
 | [확인이 필요한 사항](open-questions.md) | 기획과 코드 차이, 확인한 변경과 미확인 항목 |
@@ -36,10 +36,10 @@
 
 | 채널 | 확인한 버전 | 근거 |
 | --- | --- | --- |
-| 비공개 테스트 사이트 | **v1.13.75** · 2026-11-24 배포 성공 | [S25 버전 파일](../raw/v1.13.75/VERSION.json) |
-| 공개 게임 저장소 `main` | **v1.13.75** | [저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/main/VERSION.json) |
-| 공개 GitHub Pages | **v1.13.75** | [라이브 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) |
-| GitHub 업로드용 패키지 | **v1.13.75** · 압축과 참조 경로 검사 통과 | [S25 버전 파일](../raw/v1.13.75/VERSION.json) |
+| 비공개 테스트 사이트 | **v1.13.81** · 2026-11-24 배포 성공 | [S26 버전 파일](../raw/v1.13.81/VERSION.json) |
+| 공개 게임 저장소 `main` | **v1.13.81** | [저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/main/VERSION.json) |
+| 공개 GitHub Pages | **v1.13.81** | [라이브 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) |
+| GitHub 업로드용 패키지 | **v1.13.81** · 압축과 참조 경로 검사 통과 | [S26 버전 파일](../raw/v1.13.81/VERSION.json) |
 
 채널별 상세는 [저장과 배포](save-release.md)를 참고하세요.
 
