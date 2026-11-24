@@ -14,13 +14,14 @@
   --radius: .625rem;
   background: var(--background);
   color: var(--foreground);
-  font: 15px/1.75 system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font: 16px/1.8 system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  -webkit-text-size-adjust: 100%;
 }
 
 * { box-sizing: border-box; }
 body { margin: 0; }
 .site-header { border-bottom: 1px solid var(--border); }
-.site-nav, main { max-width: 850px; margin-inline: auto; }
+.site-nav, main { max-width: 800px; margin-inline: auto; }
 .site-nav { display: flex; flex-wrap: wrap; gap: .25rem .5rem; padding: .5rem 1rem; }
 .site-nav a {
   display: inline-flex;
@@ -37,29 +38,100 @@ body { margin: 0; }
   color: var(--accent-foreground);
 }
 main {
-  padding: clamp(1rem, 5vw, 2.5rem);
+  padding: clamp(1rem, 5vw, 2.5rem) clamp(1rem, 5vw, 2.5rem) 4rem;
   overflow-wrap: anywhere;
+  word-break: keep-all;
 }
-h1, h2, h3, h4 { line-height: 1.35; word-break: keep-all; }
-h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); letter-spacing: -.04em; margin: 0 0 1rem; }
-h2 { font-size: 1.35rem; margin: 1.6em 0 .5em; letter-spacing: -.025em; }
-h3 { font-size: 1.1rem; }
-h4 { font-size: 1rem; }
+h1, h2, h3, h4 { line-height: 1.35; word-break: keep-all; color: var(--foreground); }
+h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); letter-spacing: -.04em; margin: 0 0 1.25rem; }
+h2 {
+  font-size: 1.4rem;
+  letter-spacing: -.025em;
+  margin: 3rem 0 .9rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+h3 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+h4 { font-size: 1rem; margin: 1.5rem 0 .5rem; }
+p { margin: 0 0 1em; }
+ul, ol { padding-left: 1.4rem; margin: 0 0 1.1em; }
+li { margin: .35em 0; }
+li::marker { color: var(--muted-foreground); }
+strong { color: var(--accent-foreground); font-weight: 700; }
 a { color: var(--link); text-underline-offset: .2em; }
 a:hover { color: var(--accent-foreground); }
 a:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+/* 문서 첫머리의 기준 날짜·출처 목록 */
+main > h1 + ul {
+  list-style: none;
+  padding: .85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+main > h1 + ul li { margin: .2em 0; }
+
+/* 한눈에 보기 요약 */
+main > h2#한눈에-보기 {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  color: var(--link);
+}
+main > h2#한눈에-보기 + ul {
+  padding: 1rem 1rem 1rem 2.2rem;
+  border-left: 3px solid var(--ring);
+  border-radius: var(--radius);
+  background: var(--muted);
+}
+
+blockquote {
+  margin: 1.2rem 0;
+  padding: .75rem 1rem;
+  border-left: 3px solid var(--ring);
+  border-radius: var(--radius);
+  background: var(--muted);
+  color: var(--card-foreground);
+}
+blockquote > :last-child { margin-bottom: 0; }
+
 table {
   border-collapse: collapse;
   display: block;
   max-width: 100%;
   overflow-x: auto;
-  font-size: .94rem;
+  margin: 0 0 1.4em;
+  font-size: .93rem;
+  line-height: 1.65;
 }
-th, td { border: 1px solid var(--border); text-align: left; padding: .5rem .7rem; }
-td { background: var(--card); color: var(--card-foreground); }
+th, td { border: 1px solid var(--border); text-align: left; vertical-align: top; padding: .55rem .8rem; }
+th { white-space: nowrap; }
+td { background: var(--card); color: var(--card-foreground); min-width: 6em; }
+tbody tr:nth-child(even) td { background: #1f1f23; }
 th, pre { background: var(--muted); color: var(--accent-foreground); }
 pre { overflow-x: auto; padding: 1rem; border-radius: var(--radius); }
-code { font-size: .9em; }
+code {
+  font-size: .88em;
+  padding: .1em .35em;
+  border-radius: .35rem;
+  background: var(--muted);
+}
+pre code { padding: 0; background: none; }
+
+/* 문서 끝의 관련 문서 줄 */
+main > p:last-child {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: .92rem;
+}
 
 .story-reader { max-width: 720px; }
 .story-reader > header { margin: 0 0 1.5rem; }
@@ -76,7 +148,7 @@ code { font-size: .9em; }
   scroll-margin-top: 1rem;
 }
 .story-reader article:target { border-color: var(--ring); }
-.story-reader h2 { color: var(--foreground); margin-top: 0; }
+.story-reader h2 { color: var(--foreground); margin-top: 0; padding-top: 0; border-top: 0; }
 .story-reader h3 { color: var(--foreground); margin: 1.5em 0 .35em; }
 .story-reader h4 { margin: 1.3em 0 .35em; }
 .story-reader p { margin: .45em 0 .7em; }
