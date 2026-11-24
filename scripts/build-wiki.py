@@ -3,7 +3,6 @@ import html
 import json
 import os
 from pathlib import Path
-import shutil
 import subprocess
 from urllib.parse import quote, urlsplit
 
@@ -58,9 +57,10 @@ def render(source):
     home = relative(OUTPUT / 'index.html')
     story = relative(OUTPUT / 'stories.html')
     css = relative(OUTPUT / 'wiki.css')
+    home_current = ' aria-current="page"' if destination == OUTPUT / 'index.html' else ''
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(f'''<!doctype html>
-<html lang="ko">
+<html lang="ko" class="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,8 +68,8 @@ def render(source):
 <link rel="stylesheet" href="{css}">
 </head>
 <body>
-<header><nav aria-label="위키 메뉴">
-<a href="{home}">먼지 위키</a>
+<header class="site-header"><nav class="site-nav" aria-label="위키 메뉴">
+<a href="{home}"{home_current}>먼지 위키</a>
 <a href="{story}">캐릭터 이야기</a>
 <a href="{REPO}">GitHub</a>
 </nav></header>
@@ -77,7 +77,24 @@ def render(source):
 </body></html>
 ''', encoding='utf-8')
 
+def render_story():
+    source = (ROOT / STORY).read_text(encoding='utf-8')
+    before, style_open, after = source.partition('<style>')
+    _, style_close, after = after.partition('</style>')
+    if not style_open or not style_close:
+        raise ValueError('Expected inline stylesheet in story source')
+    story = before + '<link rel="stylesheet" href="wiki.css">' + after
+    story = story.replace('<html lang="ko">', '<html lang="ko" class="dark">', 1)
+    story = story.replace('<body><main>', """<body>
+<header class="site-header"><nav class="site-nav" aria-label="위키 메뉴">
+<a href="index.html">먼지 위키</a>
+<a href="stories.html" aria-current="page">캐릭터 이야기</a>
+</nav></header>
+<main class="story-reader">""", 1)
+    (OUTPUT / 'stories.html').write_text(story, encoding='utf-8')
+
+
 for source in SOURCES:
     render(source.relative_to(ROOT))
-shutil.copyfile(ROOT / STORY, OUTPUT / 'stories.html')
+render_story()
 (OUTPUT / '.nojekyll').touch()
