@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>별이 머무는 곳 · LLM 위키 · 별이 머무는 곳</title>
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<header><nav aria-label="위키 메뉴">
+<a href="index.html">먼지 위키</a>
+<a href="stories.html">캐릭터 이야기</a>
+<a href="https://github.com/crazyjamy/lmmwiki">GitHub</a>
+</nav></header>
+<main><h1 id="별이-머무는-곳--llm-위키">별이 머무는 곳 · LLM 위키</h1>
+<p>별을 수집하고 돌보는 게임의 기획, 코드에서 확인한 기능, 변경 요청과
+확인할 사항을 정리합니다.</p>
+<ul>
+<li>기준 날짜: 2026-11-23</li>
+<li>최종 수정일: 2026-11-24</li>
+<li>출처: <a href="wiki/sources.html">자료 목록</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/2026-11-18-wiki-request.md">위키
+구성 요청</a></li>
+<li>확인한 버전은 비공개 테스트 사이트 <strong>v1.13.63</strong>, 공개
+게임 저장소와 최근 성공한 Pages 배포의 소스
+<strong>v1.13.35</strong>입니다. <a href="wiki/save-release.html">저장과
+배포</a></li>
+</ul>
+<h2 id="여기서-시작하세요">여기서 시작하세요</h2>
+<p><strong><a href="index.html">전체 목차</a></strong> → <a
+href="wiki/overview.html">게임 개요</a> → <a
+href="wiki/open-questions.html">확인이 필요한 사항</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>위치</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a
+href="https://github.com/crazyjamy/lmmwiki/tree/main/raw">raw/</a></td>
+<td>원본 자료와 ZIP을 그대로 푼 소스. 기존 원본은 수정·삭제하지
+않습니다.</td>
+</tr>
+<tr class="even">
+<td><a
+href="https://github.com/crazyjamy/lmmwiki/tree/main/wiki">wiki/</a></td>
+<td>주제별 정리 문서</td>
+</tr>
+<tr class="odd">
+<td><a href="index.html">wiki/index.md</a></td>
+<td>전체 문서 목차</td>
+</tr>
+<tr class="even">
+<td><a href="wiki/log.html">wiki/log.md</a></td>
+<td>자료 추가와 변경 기록</td>
+</tr>
+<tr class="odd">
+<td><a href="AGENTS.html">AGENTS.md</a></td>
+<td>AI가 이 위키를 관리하는 규칙</td>
+</tr>
+</tbody>
+</table>
+<h2 id="웹에서-읽기">웹에서 읽기</h2>
+<p>Pages 배포가 켜지면 웹 위키를 <a
+href="https://crazyjamy.github.io/lmmwiki/">GitHub Pages</a>에서 열 수
+있습니다. Pages의 배포 원본은 <code>main</code> 브랜치의
+<code>/docs</code>입니다. 다운로드한 저장소에서
+<code>docs/index.html</code>을 직접 열어도 문서와 이야기 개정본을 읽을
+수 있습니다.</p>
+<p>Markdown을 수정한 뒤 Pandoc이 설치된 환경에서
+<code>python3 scripts/build-wiki.py</code>를 실행하면
+<code>docs/</code>의 HTML이 갱신됩니다.</p>
+<h2 id="자료를-추가할-때">자료를 추가할 때</h2>
+<p>자료를 주고 **“먼지 위키에 반영하고 깃허브에도 올려줘”**라고
+요청합니다. AI는 관련 기존 문서를 먼저 찾고, 원본을 보존하면서
+문서·목차·변경 기록을 갱신합니다.</p>
+<p>질문이나 아이디어 상담만으로 문서를 바꾸지 않습니다. 대화 밖에서
+자동으로 저장소를 감시하거나 갱신하는 작업은 설정하지 않았습니다.</p>
+<h2 id="문서를-읽는-기준">문서를 읽는 기준</h2>
+<ul>
+<li><strong>확정:</strong> 사용자의 명시적인 결정·승인 근거가 있는
+내용</li>
+<li><strong>코드 확인:</strong> 제공된 버전에서 구현 근거를 찾은 내용.
+실제 플레이 검증과는 구분합니다.</li>
+<li><strong>변경 요청 / 검토 중:</strong> 요청이나 제안이 있으며
+적용·승인은 별도로 확인할 내용</li>
+<li><strong>미확인:</strong> 자료가 없거나 실제 동작·현재 배포 상태를
+확인하지 못한 내용</li>
+<li><strong>AI 해석:</strong> 자료를 연결해 정리한 설명이며 승인된
+기획으로 취급하지 않는 내용</li>
+</ul>
+<p>게임 코드 저장소는 <a
+href="https://github.com/crazyjamy/dustgame">crazyjamy/dustgame</a>, 이
+위키 저장소는 <a
+href="https://github.com/crazyjamy/lmmwiki">crazyjamy/lmmwiki</a>입니다.</p>
+</main>
+</body></html>

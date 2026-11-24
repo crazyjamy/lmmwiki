@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>저장과 배포 · 별이 머무는 곳</title>
+<link rel="stylesheet" href="../wiki.css">
+</head>
+<body>
+<header><nav aria-label="위키 메뉴">
+<a href="../index.html">먼지 위키</a>
+<a href="../stories.html">캐릭터 이야기</a>
+<a href="https://github.com/crazyjamy/lmmwiki">GitHub</a>
+</nav></header>
+<main><h1 id="저장과-배포">저장과 배포</h1>
+<ul>
+<li>기준 날짜: 2026-11-23 · v1.13.63 패키지·비공개 배포 및 게임 저장소
+버전 확인</li>
+<li>최종 수정일: 2026-11-23</li>
+<li>출처: <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/VERSION.json">버전
+파일</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/DEPLOY.md">배포
+안내</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/dust.mjs">화면·저장
+처리</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/save-files.mjs">기록
+내보내기·불러오기</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/player-settings.mjs">플레이어
+설정</a></li>
+<li>상태: 2026-11-23 비공개 사이트 배포 이력 확인. 저장 키와 내보내기
+스키마는 v1.13.12 코드에서도 확인했습니다.</li>
+</ul>
+<h2 id="최신-배포-상태">최신 배포 상태</h2>
+<table>
+<thead>
+<tr class="header">
+<th>채널</th>
+<th>확인 결과</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>비공개 테스트 사이트</td>
+<td><strong>v1.13.63</strong> · 2026-11-23 18:27 KST 배포 성공</td>
+<td><a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.63/verification.json">검증
+기록</a>, 소스
+<code>0f23dbc5205ce2bd969123530feafa7a0cd61de5</code></td>
+</tr>
+<tr class="even">
+<td>공개 게임 저장소 <code>main</code></td>
+<td><strong>v1.13.35</strong> · 2026-11-23 조회</td>
+<td><a
+href="https://github.com/crazyjamy/dustgame/blob/main/VERSION.json">버전
+파일</a></td>
+</tr>
+<tr class="odd">
+<td>공개 GitHub Pages</td>
+<td>최근 성공한 배포 실행의 소스는 <strong>v1.13.35</strong> · 라이브
+응답은 이번 조회에서 미확인</td>
+<td><a
+href="https://github.com/crazyjamy/dustgame/actions/runs/45116440356">배포
+실행</a>, <a
+href="https://github.com/crazyjamy/dustgame/blob/84bd55c0073daffb391f5d7918fddc45fd483f4c/VERSION.json">해당
+커밋의 버전 파일</a></td>
+</tr>
+<tr class="even">
+<td>GitHub 업로드용 패키지</td>
+<td><strong>v1.13.63</strong> ZIP 생성, 압축과 참조 경로 검사 통과</td>
+<td><a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.63/package-manifest.json">패키지
+명세</a>. ZIP은 사용자에게 별도 전달</td>
+</tr>
+</tbody>
+</table>
+<p><a href="release-history.html">전체 배포 이력</a>에서 배포 시각과
+변경 사항을 볼 수 있습니다.</p>
+<h2 id="이전에-확보한-v141-파일">이전에 확보한 v1.4.1 파일</h2>
+<table>
+<thead>
+<tr class="header">
+<th>항목</th>
+<th>제공 파일에 적힌 값</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>version</td>
+<td>1.4.1</td>
+</tr>
+<tr class="even">
+<td>build</td>
+<td>1.4.1-1d15f0c9</td>
+</tr>
+<tr class="odd">
+<td>sourceCommit</td>
+<td>1d15f0c9da5057dbb3087e81420521fdcfca33c8</td>
+</tr>
+<tr class="even">
+<td>basePath</td>
+<td>/dustgame/</td>
+</tr>
+<tr class="odd">
+<td>게임 저장소</td>
+<td><a
+href="https://github.com/crazyjamy/dustgame">https://github.com/crazyjamy/dustgame</a></td>
+</tr>
+<tr class="even">
+<td>안내에 적힌 게임 주소</td>
+<td><a
+href="https://crazyjamy.github.io/dustgame/">https://crazyjamy.github.io/dustgame/</a></td>
+</tr>
+<tr class="odd">
+<td>위키 저장소</td>
+<td><a
+href="https://github.com/crazyjamy/lmmwiki">https://github.com/crazyjamy/lmmwiki</a></td>
+</tr>
+</tbody>
+</table>
+<p>sourceCommit은 ZIP의 버전 파일에 적힌 값이며 원격 게임 저장소와
+대조하지 않았습니다. 공개 GitHub Pages의 확인 결과는 위의 최신 배포
+상태를 참고하세요.</p>
+<h2 id="기록-저장">기록 저장</h2>
+<ul>
+<li>게임 상태는 브라우저 localStorage의 tiny-dust-club-v1 키로
+저장합니다.</li>
+<li>다른 기기·브라우저로의 기록 이동은 JSON 내보내기·불러오기 기능으로
+안내합니다.</li>
+<li>내보내기 형식은 tiny-dust-save, schemaVersion 3입니다.</li>
+<li>불러오기는 해당 형식의 스키마 2·3과 기존 상태 JSON을 처리하는 코드가
+있습니다.</li>
+<li>불러오기 파일은 UTF-8 기준 5MB 이하로 제한합니다.</li>
+<li>불러오기 전 요약 확인, 불러오기·초기화 전 최근 기록 한 개의 복구
+보관을 안내합니다.</li>
+<li>서버 계정 동기화 구현은 이번 확인 범위에서 발견하지 못했습니다. 도입
+계획은 미확인입니다.</li>
+</ul>
+<p>v1.13.35에서 자동 테스트 155개가 통과했습니다. 이전 저장 유지,
+후일담·개체별 기록, 합치기와 읽음 상태의 보존을 검증했습니다. Chrome
+PC·390px 미리보기에서 기록 넘기기와 개인 기록 분리, 팝업과 단서 카드 및
+새 이름을 확인했습니다. iPhone Safari 실기기와 실제 저장 용량 초과 화면
+등 전체 환경 검증을 완료한 것은 아닙니다.</p>
+<p>저장 키와 스키마는 유지합니다. 새 후일담과 개체별 기록 필드를 기존
+데이터에 추가하며, 같은 주소의 자동 저장은 이어갑니다. 테스트 사이트와
+GitHub Pages는 서로 다른 출처이므로 JSON 내보내기·불러오기로 이동해야
+합니다. 이번 ZIP 생성은 GitHub 게임 저장소 업로드나 Pages 배포를 뜻하지
+않습니다.</p>
+<h2 id="배포-안내의-범위">배포 안내의 범위</h2>
+<p>제공된 DEPLOY.md는 정적 파일을 게임 저장소에 업로드하여 GitHub
+Pages로 배포하는 방법을 설명합니다. 이 문서는 배포 이력을 기록합니다. 이
+위키의 GitHub 업로드 상태는 실행 결과 보고와 실제 원격 커밋으로
+확인합니다.</p>
+<p>관련 문서: <a href="../index.html">목차</a>, <a
+href="sources.html">자료 목록</a>, <a href="open-questions.html">확인이
+필요한 사항</a>, <a href="log.html">변경 기록</a></p>
+</main>
+</body></html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>별 수집과 성장 · 별이 머무는 곳</title>
+<link rel="stylesheet" href="../wiki.css">
+</head>
+<body>
+<header><nav aria-label="위키 메뉴">
+<a href="../index.html">먼지 위키</a>
+<a href="../stories.html">캐릭터 이야기</a>
+<a href="https://github.com/crazyjamy/lmmwiki">GitHub</a>
+</nav></header>
+<main><h1 id="별-수집과-성장">별 수집과 성장</h1>
+<ul>
+<li>기준 날짜: 2026-11-23 · 최신 구현 v1.13.63 / 초기 코드 v1.4.1</li>
+<li>최종 수정일: 2026-11-24</li>
+<li>출처: <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/earlier-plan/README.md">S1
+기존 기획</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/README.md">S2-R
+버전 설명</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/dust-data.mjs">먼지
+데이터</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/dust-engine.mjs">성장
+코드</a></li>
+<li>상태: 코드 확인. 실제 플레이 검증·최종 기획 승인은 별도입니다.</li>
+</ul>
+<h2 id="캐릭터-이야기-개정본--검토-중">캐릭터 이야기 개정본 · 검토
+중</h2>
+<p>2026-11-24 개정본은 별 50종의 첫인사 50개, 성장 이야기 250편, 후일담
+200편을 담았습니다. 대사를 일상적인 말로 다듬고 인물의 행동으로 장면을
+보여줍니다. 친구 후일담은 별마다 한 가지 만남을 예시로 수록했습니다.
+게임 반영 및 배포 여부는 미확인입니다. <a href="../stories.html">이야기
+개정본 HTML</a></p>
+<h2 id="현재-배포본--별-수집과-이야기">현재 배포본 · 별 수집과
+이야기</h2>
+<p>v1.13.63부터 첫날의 솔라와 처음 만나는 별이 성격을 담은 인사를
+건넵니다. 본편은 같은 종류의 별을 합쳐 해금합니다. 첫 이야기를 준비하는
+중 자리가 가득 차면, 화면에서 잠시 보관할 별을 선택할 수 있습니다.
+보관함에 같은 종류가 있으면 자리 교체 후 합치기로, 새 별이 필요하면 조합
+재료 화면으로 이어집니다. <a href="release-history.html">배포
+이력</a></p>
+<p>v1.13.26부터 같은 종류의 두 별은 레벨이 달라도 합칠 수 있습니다.
+결과는 높은 쪽보다 한 단계 높으며 성장 상한은 Lv.6입니다. 예를 들어 같은
+종류의 Lv.1과 Lv.3을 합치면 Lv.4가 됩니다. <a href="sources.html">자료
+S19</a></p>
+<p>v1.8.4에서 별 50종에 우주 테마 기본 이름을 붙였습니다. v1.8.9부터
+50종마다 다섯 편의 성장 이야기를 제공하며, 이야기에서 관측 주제와 참고
+자료를 볼 수 있습니다. v1.9.2의 새 별 버튼은 은하계가 비었을 때
+빛납니다. v1.9.3에서 실루엣을 21가지로 다양화하고 일부 별에 점·띠·물결
+무늬를 추가했습니다. 미발견 별은 윤곽만 표시합니다.</p>
+<p>v1.13.20에서 별의 취향 패널과 좋아하는 설치물 관련 동작을 별
+상세보기로 옮겼습니다. v1.13.24에서 도감 필터의 종수와 보유·포근한 별의
+마릿수를 구분했습니다. <a href="release-history.html">배포 이력</a></p>
+<p>아래는 초기 v1.4.1 규칙을 확인한 기록입니다. 변경 사항은 <a
+href="release-history.html">배포 이력</a>, 근거는 <a
+href="sources.html">자료 목록</a>을 참고하세요.</p>
+<h2 id="함께-쓴-이야기와-추가-발견--v11335">함께 쓴 이야기와 추가 발견 ·
+v1.13.35</h2>
+<ul>
+<li><strong>성장 이야기:</strong> 모든 별이 질문 하나를 가지고 첫 만남 →
+작은 바람 → 시도 → 친구와의 발견 → 달라진 일상으로 이어집니다. 본문은
+행동과 대화, 천문 설명은 접힌 ‘루미의 관측 노트’로 분리합니다.</li>
+<li><strong>한곳에서 읽기:</strong> 별 상세와 선택 카드의 ‘함께 쓴
+이야기’에서 성장 이야기·여행 후일담과 엽서·설치물 추억·친구 기록을
+이전·다음 기록으로 이어 읽습니다.</li>
+<li><strong>개체 구분:</strong> 성장·추억·친구 기록은 선택한 UID를
+기준으로 모읍니다. 같은 종류가 여러 마리면 기록을 볼 별을 선택합니다.
+기존 엽서는 종별 공동 기록이므로 개체의 여행으로 오인하지 않도록
+표시합니다.</li>
+<li><strong>선택 카드:</strong> 현재 상황과 다음 단서 하나를 제안합니다.
+단서 수행은 본편 해금 조건이 아니며, 기록함 열기만으로 미읽은 본편을
+읽음 처리하지 않습니다.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>플레이 행동</th>
+<th>추가 장면의 조건</th>
+<th>은하계에 남는 변화</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>좋아하는 설치물 곁에 놓기</td>
+<td>첫 본편을 읽은 뒤 가까이 배치. 설치물 Lv.1도 가능</td>
+<td>후일담을 읽은 뒤 해당 자리에서 새 대사</td>
+</tr>
+<tr class="even">
+<td>지정 항로에서 귀환</td>
+<td>첫 본편을 읽은 뒤 별마다 정한 항로에서 귀환. 반복 엽서인 귀환도
+가능</td>
+<td>후일담을 읽은 뒤 여행 표식과 대사</td>
+</tr>
+<tr class="odd">
+<td>다른 별과 가까이 지내기</td>
+<td>첫 본편을 읽은 뒤 다른 종류의 별과 가까이 배치</td>
+<td>두 별의 서로 다른 방식이 드러나는 대화, 읽은 뒤 해당 친구 곁의
+대사</td>
+</tr>
+<tr class="even">
+<td>다섯 본편 완독</td>
+<td>레벨만 높은 상태와 구분하여 다섯 편을 모두 읽음</td>
+<td>완결 후일담, 편안한 표정과 완결 대사</td>
+</tr>
+</tbody>
+</table>
+<p>기존 설치물 Lv.3의 ‘오래 함께한 자리’ 기억도 보존하고 함께
+표시합니다. 새 후일담은 재화 보상을 추가하지 않습니다.
+저장·합치기·보관·내보내기 후에도 발견과 읽음 상태를 유지하고, 반복
+발견·재읽기로 기록이나 재화를 중복 지급하지 않습니다.</p>
+<p>근거: <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/RELEASE-NOTES.md">v1.13.35
+릴리스 노트</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/package-manifest.json">버전·패키지
+명세</a>, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/verification.json">검증
+결과 전사</a>. 코드 확인과 Chrome 미리보기 검증이며 iPhone Safari 실기기
+검증은 별도입니다. 전체 게임 소스는 사용자에게 전달하는 ZIP에 있고 이
+공개 위키에는 추가하지 않습니다.</p>
+<h2 id="수집과-탄생--초기-v141-기록">수집과 탄생 · 초기 v1.4.1 기록</h2>
+<table>
+<thead>
+<tr class="header">
+<th>항목</th>
+<th>확인한 규칙</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>종류</td>
+<td>DUSTS 데이터 50종</td>
+</tr>
+<tr class="even">
+<td>무료 탄생</td>
+<td>조합 재료를 모두 비우면 랜덤 탄생</td>
+</tr>
+<tr class="odd">
+<td>지정 조합</td>
+<td>그룹·희귀도·정수의 3종 재료 선택 필요</td>
+</tr>
+<tr class="even">
+<td>일부만 선택</td>
+<td>세 종류를 모두 고르거나 모두 비우도록 안내</td>
+</tr>
+<tr class="odd">
+<td>공간 부족</td>
+<td>방과 보관함이 모두 가득 차면 탄생 시작 불가</td>
+</tr>
+<tr class="even">
+<td>탄생 시 배치</td>
+<td>방이 가득 차면 보관함으로 이동</td>
+</tr>
+</tbody>
+</table>
+<p>근거: 성장 코드의 checkMix, mix, finishMix. 발견한 조합과 도감은 <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/collection-book.mjs">수집
+코드</a>에서 관리합니다.</p>
+<h2 id="합치기와-이야기">합치기와 이야기</h2>
+<ul>
+<li>방에 있는 <strong>같은 종류·같은 레벨</strong> 두 마리를 합칩니다.
+보관·모험 중인 먼지는 제외됩니다.</li>
+<li>두 마리가 한 마리가 되고 레벨이 1 올라갑니다. 최대 Lv.6입니다.</li>
+<li>기준으로 선택한 먼지의 식별자·별명·자리를 유지합니다.</li>
+<li>Lv.2~6에서 이야기가 한 편씩 열립니다. 이미 읽은 이야기는 다시 볼 수
+있습니다.</li>
+<li>합치기 자체에는 골드·반짝이 비용이 없습니다. 배치한 러그에 따른
+반짝이 보상이 있습니다.</li>
+</ul>
+<p>근거: 성장 코드의 mergeCandidates, mergeDust, level, unlockedStories,
+readStory.</p>
+<h2 id="쓰다듬기">쓰다듬기</h2>
+<p>쓰다듬기는 반짝이를 모으는 행동입니다. v1.4.1의 pet 함수는 경험치를
+올리지 않습니다.</p>
+<p>기본 성공 보상은 반짝이 1개이며, 배치한 화분 레벨만큼 추가합니다.
+기본 성공 간격은 1,100ms이고, 배치한 찻잔 레벨마다 50ms 감소합니다.</p>
+<h2 id="보관">보관</h2>
+<p>보관과 꺼내기에서 먼지를 새로 생성하지 않고 같은 먼지 데이터를
+유지합니다. 골드 생산은 보관 중 멈추며, 꺼낼 때 방 수용 한도를
+확인합니다. 공간 계산에서 모험 중인 친구의 자리도 포함합니다.</p>
+<p>근거: 성장 코드의 storeDust, takeOutDust, <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/rooms.mjs">방
+코드</a>의 homeCount.</p>
+<h2 id="과거-기획과-다른-내용">과거 기획과 다른 내용</h2>
+<table>
+<thead>
+<tr class="header">
+<th>항목</th>
+<th>S1 기존 기획</th>
+<th>S2 v1.4.1 코드</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>성장 설명</td>
+<td>쓰다듬어 성장시키는 흐름을 소개</td>
+<td>쓰다듬기는 반짝이, 레벨 상승은 합치기</td>
+</tr>
+<tr class="even">
+<td>규모 표기</td>
+<td>먼지 50종을 목표로 제시</td>
+<td>DUSTS 50종 존재</td>
+</tr>
+</tbody>
+</table>
+<p>현재 승인된 기획을 무엇으로 삼을지는 미확인입니다. 코드에서 확인되는
+버전별 사실을 보존하며, S1을 수정하거나 승인된 과거 결정을 임의로
+폐기하지 않습니다.</p>
+<p>관련 문서: <a href="../index.html">목차</a>, <a
+href="room-furniture.html">방과 가구</a>, <a
+href="currency-adventure.html">재화와 모험</a>, <a
+href="open-questions.html">확인이 필요한 사항</a></p>
+</main>
+</body></html>
