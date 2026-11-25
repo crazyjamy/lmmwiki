@@ -15,7 +15,7 @@
 <main><h1 id="재화와-모험">재화와 모험</h1>
 <ul>
 <li>기준 날짜: 2026-11-18 · 확인한 코드 v1.4.1</li>
-<li>최종 수정일: 2026-11-24</li>
+<li>최종 수정일: 2026-11-25</li>
 <li>출처: <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/economy.mjs">재화
 코드</a>, <a
@@ -32,18 +32,66 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/earlier-plan/README.md"
 <li>상태: 버전별 구현은 코드에서 확인했습니다. 배포 상태는 <a
 href="save-release.html">저장과 배포</a>를 참고하세요.</li>
 </ul>
+<h2 id="2026-11-25--랜덤-탐험과-제작-가구">2026-11-25 · 랜덤 탐험과 제작
+가구</h2>
+<p>루미의 수첩에서 선택한 별 한 마리가 떠납니다. 레벨과 정수 조건을
+충족하는 목적지를 추린 뒤 별 하나와 임무 하나를 뽑습니다. 목적지마다
+임무가 두 개이고, 같은 목적지에서는 미완료 임무의 추첨 가중치가 완료
+임무의 두 배입니다. 귀환 시 보상을 한 번 수령합니다.</p>
+<table>
+<thead>
+<tr class="header">
+<th>목적지</th>
+<th>출발 조건</th>
+<th>시간</th>
+<th>기본 보상</th>
+<th>도안이 열리는 첫 완료 임무</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>풀잎별</td>
+<td>Lv.1 이상</td>
+<td>20초</td>
+<td>5골드와 나뭇가지 1개</td>
+<td>떨어진 나뭇가지 모으기</td>
+</tr>
+<tr class="even">
+<td>물방울별</td>
+<td>Lv.3 이상 · 이슬 정수</td>
+<td>45초</td>
+<td>8골드와 빛조개 1개</td>
+<td>연못에서 빛나는 조개 찾기</td>
+</tr>
+<tr class="odd">
+<td>달빛별</td>
+<td>Lv.5 이상</td>
+<td>90초</td>
+<td>10골드와 달빛석 1개</td>
+<td>달빛에 반짝이는 돌 찾기</td>
+</tr>
+</tbody>
+</table>
+<p>도안 단서는 미발견 도안만, 남은 발견은 미완료 임무만 표시합니다. 직접
+탐사는 수첩의 별도 탭에서 이어갑니다.</p>
+<p>근거 · <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/build-1974fe9c/VERSION.json">빌드
+기록</a> · <a
+href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/build-1974fe9c/ICON-GUIDE.md">아이콘
+가이드</a></p>
 <h2 id="한눈에-보기">한눈에 보기</h2>
 <ul>
 <li><strong>골드</strong>는 별이 생산하고 설치물 강화에 씁니다.
 v1.13.27부터 Lv.1 솔라 기준 20초마다 1골드입니다.</li>
 <li><strong>반짝이</strong>는 쓰다듬기, 하루 바닥 반짝이, 모험 보상
 등으로 얻습니다.</li>
-<li>루미에게 별을 <strong>한 번에 1~3마리</strong> 시간제로 파견할 수
-있습니다. (v1.11.0~)</li>
+<li>기존 시간제 파견은 최대 3마리를 보냈습니다. 현재 랜덤 탐험은 한
+마리씩 출발합니다.</li>
 <li>직접 걷는 탐험은 지금 <strong>외곽 관측소</strong>, v1.4.1에서는
 <strong>책상 아래</strong>라고 불렀습니다.</li>
 </ul>
-<h2 id="현재-배포본--우주-테마-모험">현재 배포본 · 우주 테마 모험</h2>
+<h2 id="이전-파견-방식--우주-테마-모험">이전 파견 방식 · 우주 테마
+모험</h2>
 <p><strong>이름 변경 (v1.8.7~)</strong></p>
 <table>
 <thead>
