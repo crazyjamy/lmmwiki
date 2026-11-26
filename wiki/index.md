@@ -4,6 +4,8 @@
 - 최종 수정일: 2026-11-26
 - 출처: [자료 목록](sources.md), [위키 구성 요청](../raw/2026-11-18-wiki-request.md)
 
+게임 변경 작업은 [개발 변경의 테스트·공개 절차](save-release.md#development-workflow)를 따른다.
+
 ## 주제별 문서
 
 - [게임 개요](overview.md)
