@@ -92,3 +92,8 @@ S27 · 2026-11-25 게임 빌드 1.13.81-1974fe9c. 빌드 식별자와 아이콘 
 ## 2026-11-26 · 루미·나리·모아
 
 [테스트 게임](https://little-dragon-nest-hyerin.coursemos-3149.chatgpt.site/) 소스 `cfa66303`의 `dist/dust.mjs`, `dist/field-book.mjs`, `dist/economy.mjs`를 확인했습니다. 세 요정의 화면 명칭, 행성 고리 부탁, 관측 이야기, 모아 구매와 일괄 수령 조건의 근거입니다. [정체성 정리](overview.md#루미나리모아의-정체성)
+
+## 디자인 가이드 출처
+
+- 2026-11-26 확인 · [Dustgame 공개 `main` 커밋 `1c4270d`](https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35), [버전 파일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/VERSION.json). 디자인 가이드의 토큰과 상태 예시의 근거입니다.
+- 2026-11-26 제공 · Next Samsung+ 디자인 위키 HTML. 분류와 목차의 구조를 참고했습니다.

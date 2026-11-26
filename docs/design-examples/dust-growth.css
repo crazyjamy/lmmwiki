@@ -1,0 +1,308 @@
+/* 2) 방 레벨 성장 표현 */
+.room-growth{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;border-radius:inherit}
+.rg-floor{position:absolute;left:0;right:0;bottom:0;height:calc(18% + var(--step)*1.2%);background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--tier-accent) calc(14% + var(--step)*3%),transparent))}
+.rg-light{position:absolute;left:-10%;top:-10%;width:60%;height:70%;background:radial-gradient(ellipse at 20% 15%,color-mix(in srgb,#fff6c2 calc(var(--step)*6%),transparent),transparent 70%)}
+.rg-prop{position:absolute;font-style:normal;font-size:calc(var(--text-label) + var(--i)*1px);color:var(--tier-accent);opacity:.75;animation:rg-twinkle 4s ease-in-out calc(var(--i)*-.6s) infinite}
+.rg-window{position:absolute;left:6%;top:5%;width:22%;aspect-ratio:1/1.1;border:3px solid color-mix(in srgb,var(--tier-accent) 75%,#7a7a60);border-radius:46% 46% 8px 8px;background:linear-gradient(180deg,#fff9d8aa,#cfe6f2aa);display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;overflow:hidden;box-shadow:0 0 28px #fff6bd88}
+.rg-window b{background:#ffffff66;border-radius:3px;display:none}
+.rg-window b:nth-child(-n+4){display:block}
+.rg-window[style*="--panes:1"] b:nth-child(n+2){display:none}
+.rg-window[style*="--panes:2"] b:nth-child(n+3){display:none}
+.rg-window[style*="--panes:3"] b:nth-child(n+4){display:none}
+.rg-attic{position:absolute;left:30%;right:30%;top:0;height:7%;border-radius:0 0 40% 40%;background:linear-gradient(180deg,color-mix(in srgb,var(--tier-accent) 70%,#fff),transparent)}
+.rg-garden{position:absolute;left:4%;bottom:4%;color:#97b87c;font-size:var(--text-body-large);letter-spacing:6px;opacity:.7}
+.dust-room[data-tier="4"],.dust-room[data-tier="5"],.dust-room[data-tier="6"],.dust-room[data-tier="7"],.dust-room[data-tier="8"],.dust-room[data-tier="9"],.dust-room[data-tier="10"]{background-image:radial-gradient(color-mix(in srgb,var(--tier-accent) 55%,transparent) 1px,transparent 1px);background-size:26px 26px}
+.dust-room[data-tier="10"]{box-shadow:inset 0 0 60px #f4e2a055}
+@keyframes rg-twinkle{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:.9;transform:scale(1.1)}}
+@media(prefers-reduced-motion:reduce){.rg-prop{animation:none}}
+html.reduce-motion .rg-prop{animation:none}
+
+/* 3) 하단 바를 화면 맨 아래쪽으로 내려요 (모바일). */
+@media(max-width:700px){
+ html {
+   --mobile-nav-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+   --mobile-nav-clearance: calc(56px + var(--mobile-nav-bottom) + 16px);
+   scroll-padding-bottom: var(--mobile-nav-clearance);
+ }
+ .app-shell { padding-bottom: var(--mobile-nav-clearance); }
+ .app-shell > .navigation { bottom: var(--mobile-nav-bottom); }
+}
+
+/* Keep the heading and close button outside the scrolling dialog content. */
+#modal {
+  grid-template-rows: minmax(0, 1fr);
+  padding: max(12px, env(safe-area-inset-top, 0px))
+    max(12px, env(safe-area-inset-right, 0px))
+    max(12px, env(safe-area-inset-bottom, 0px))
+    max(12px, env(safe-area-inset-left, 0px));
+}
+#modal .modal-card {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: auto;
+  scrollbar-width: thin;
+  scroll-padding-block-start: 100px;
+  scroll-padding-block-end: 20px;
+}
+#modal .modal-card:focus-visible { outline: 2px solid var(--color-focus); }
+body.modal-open .app-shell > .navigation {
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal-heading {
+  position: relative;
+  flex: 0 0 auto;
+  inset-block-start: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 18px;
+  text-align: start;
+}
+.modal-heading h2 {
+  margin: 3px 0 0;
+  font-size: clamp(var(--text-title-small), 4vw, var(--text-title-large));
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.modal-heading .close {
+  position: static;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  line-height: 1;
+}
+.modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  padding: 16px 18px 22px;
+}
+.modal-body > .dust-art { margin-top: 0; }
+@media (min-width: 701px) {
+  #modal .modal-card {
+    max-width: var(--dialog-desktop-width);
+  }
+  .modal-heading, .modal-body { padding-inline: 24px; }
+}
+
+.room-open,
+.room-open body {
+  overflow: hidden;
+}
+.room-open .app-shell {
+  --room-nav-height: 56px;
+  --room-nav-bottom: var(--mobile-nav-bottom, calc(8px + env(safe-area-inset-bottom, 0px)));
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100svh;
+  height: 100dvh;
+  max-width: none;
+  padding: env(safe-area-inset-top, 0px) 0 0;
+}
+.room-open .app-shell > .topbar {
+  width: calc(min(100%, 1280px) - var(--shell-gutter) * 2);
+  justify-self: center;
+}
+.room-open .app-shell > .navigation {
+  grid-area: 2 / 1;
+  align-self: end;
+  position: relative;
+  inset: auto;
+  margin: 0 auto var(--room-nav-bottom);
+  height: var(--room-nav-height);
+  width: min(570px, calc(100% - 24px));
+}
+.room-open .app-shell > footer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.room-open #main {
+  grid-area: 2 / 1;
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+}
+.room-open #main > .dust-room {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: auto;
+  margin: 0;
+  border-inline: 0;
+  border-radius: 0;
+}
+.room-playfield {
+  --room-guide-art-size: 71px;
+  --quest-guide-height: calc(var(--room-guide-art-size) + 18px);
+  --quest-guide-inset: 18px;
+  position: absolute;
+  inset: 0 0 calc(var(--room-nav-height) + var(--room-nav-bottom) + 3px);
+}
+.pull-refresh-feedback {
+  position: absolute;
+  z-index: 70;
+  top: 70px;
+  left: 50%;
+  translate: -50% 0;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 999px;
+  background: var(--color-surface-inset);
+  color: var(--color-text-secondary);
+  font-size: var(--text-label);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.quest-guide {
+  position: absolute;
+  z-index: 25;
+  inset-inline-end: var(--quest-guide-inset);
+  inset-block-end: var(--quest-guide-inset);
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: calc(var(--room-guide-art-size) + 4px);
+  height: var(--quest-guide-height);
+  padding: 2px;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 0;
+  font-size: var(--text-meta);
+  line-height: 1.25;
+}
+.dust-room .room-fairy {
+  bottom: max(10%, calc(var(--quest-guide-height) + var(--quest-guide-inset) + 8px));
+}
+.dust-room :is(.quest-guide > svg, .adventure-keeper .keeper-character > .material-icon) {
+  width: var(--room-guide-art-size);
+  height: var(--room-guide-art-size);
+}
+.quest-guide-dialog #goalPanel { margin: 14px 0 0; text-align: left; }
+#dustPopup .care-dock {
+  position: absolute;
+  z-index: 35;
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  bottom: 58px;
+  width: min(420px, calc(100% - 24px));
+  max-height: calc(100% - 82px);
+  margin: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 5px 22px #53604826;
+}
+#dustPopup .compact-name h2 { overflow-wrap: anywhere; }
+@media (min-width: 701px) {
+  #dustPopup .care-dock { width: min(var(--dialog-desktop-width), calc(100% - 32px)); }
+  #dustPopup .compact-top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 16px;
+  }
+  #dustPopup .compact-merge { gap: 8px; }
+  .quest-guide-dialog .journey-content {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, .78fr);
+  }
+}
+@media (max-width: 700px) {
+  .room-open .dust-room,
+  .room-open .topbar { touch-action: pinch-zoom; }
+  .room-playfield {
+    --room-guide-art-size: 52px;
+    --quest-guide-height: calc(var(--room-guide-art-size) + 4px);
+    --quest-guide-inset: 10px;
+  }
+  .dust-room .room-fairy {
+    bottom: max(15%, calc(var(--quest-guide-height) + var(--quest-guide-inset) + 8px));
+  }
+  .quest-guide > span { display: none; }
+}
+.brand-dust {
+  background: url('./favicon.svg?v=1.13.81-3f2b718b') center / contain no-repeat;
+  font-size: 0 !important;
+}
+.room-open #main > .dust-room {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+.galaxy-orbits {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.galaxy-orbits::before,
+.galaxy-orbits::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 63%;
+  width: min(76vw, 960px);
+  height: 28%;
+  border: 1px solid #adb9c526;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-13deg);
+}
+.galaxy-orbits::after {
+  width: min(92vw, 1140px);
+  height: 36%;
+  border-style: dashed;
+  opacity: .7;
+}
+.room-open .dust-room :is(.rg-floor, .rg-window, .rg-attic, .rg-garden) { display: none; }
+.room-open .room-growth {
+  mask-image: linear-gradient(to bottom, transparent, black 18%);
+}
+.room-open .dust-room .rg-light {
+  background: radial-gradient(ellipse at 26% 25%, color-mix(in srgb, var(--tier-accent) 24%, transparent), transparent 67%);
+}
+.dust-room .galaxy-portal {
+  color: var(--color-text-secondary);
+  opacity: .7;
+}
+.galaxy-portal svg {
+  fill: #aab5c029;
+  stroke: currentColor;
+  stroke-width: 1.1;
+}
+.dust-room .galaxy-portal span { color: var(--color-text-secondary); }
+.dust-room .room-dust .dust-name { color: var(--color-text-secondary); text-shadow: 0 1px 4px #0a0c10; }
+.dust-room .room-dust .dust-body > path:first-child { filter: drop-shadow(0 0 5px #d2dbe466); }
+.dust-room .room-speck { color: #c9d1d9; }
+.dust-room .empty-room-message { color: var(--color-text-secondary); }
+.dust-room :is(.room-plaque, .adventure-keeper, .room-memory-entry) {
+  background: var(--color-surface-inset);
+  border-color: var(--color-border-subtle);
+  color: var(--color-text-secondary);
+}
+.dust-room :is(.room-plaque, .adventure-keeper, .room-memory-entry) :is(b, small, .plaque-house, .plaque-level, .plaque-arrow) {
+  color: var(--color-text-secondary);
+}
+.dust-room #adventureDoorStatus { background: var(--color-surface-inset); color: var(--color-text-secondary); }
+.dust-room .room-placement > small { color: var(--color-text-secondary); }
+.dust-room .birth-glow > small { background: var(--color-surface-inset); border-color: var(--color-border-subtle); color: var(--color-text-secondary); }
+@media (max-width: 700px) {
+  .dust-room .adventure-keeper { background: transparent; }
+}

@@ -40,6 +40,8 @@ def render(source):
                         address[0] = relative(OUTPUT / 'stories.html')
                     elif ROOT / target in SOURCES:
                         address[0] = relative(output_path(target))
+                    elif (ROOT / target).is_relative_to(OUTPUT) and (ROOT / target).is_file():
+                        address[0] = relative(ROOT / target)
                     else:
                         kind = 'tree' if (ROOT / target).is_dir() else 'blob'
                         address[0] = f'{REPO}/{kind}/main/{quote(target.as_posix())}'

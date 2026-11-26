@@ -4,6 +4,10 @@
 - 최종 수정일: 2026-11-26
 - 출처: [자료 목록](sources.md), [위키 구성 요청](../raw/2026-11-18-wiki-request.md)
 
+## 2026-11-26 · 게임 디자인 시스템과 상태별 예시
+
+공개 Dustgame `main`의 [`1c4270d`](https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35)를 기준으로 [디자인 가이드](design-guide.md)에 토큰, 컴포넌트 상태, 재사용 패턴, 원화와 화면별 코드 링크를 정리했습니다. [상태별 시각 예시](../docs/design-examples/index.html)는 해당 커밋의 스타일과 원화를 사용합니다. Next Samsung+ HTML은 목차 구조의 참고 자료입니다.
+
 ## 2026-11-26 · 88개 별자리 월간 이야기
 
 혜린님의 요청으로 88개 별자리의 월간 원고 440편과 관측 노트 440개, 완성 엽서 88장을 [별자리 월간 이야기](monthly-constellations.md)에 수록했습니다. 테스트 달력에서는 랜덤 탐험 귀환으로 별빛을 모으며, 전체 원고는 미리보기로 확인할 수 있습니다.
