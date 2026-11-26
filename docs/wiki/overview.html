@@ -8,14 +8,15 @@
 </head>
 <body>
 <header class="site-header"><nav class="site-nav" aria-label="위키 메뉴">
-<a href="../index.html">먼지 위키</a>
+<a href="../index.html" class="wiki-brand">별이 머무는 곳</a>
+<a href="design-guide.html">디자인 가이드</a>
 <a href="../stories.html">캐릭터 이야기</a>
 <a href="https://github.com/crazyjamy/lmmwiki">GitHub</a>
 </nav></header>
 <main><h1 id="게임-개요">게임 개요</h1>
 <ul>
 <li>기준 날짜: 2026-11-24 · 최신 구현 v1.13.81 / 초기 코드 v1.4.1</li>
-<li>최종 수정일: 2026-11-24</li>
+<li>최종 수정일: 2026-11-26</li>
 <li>출처: <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/earlier-plan/README.md">S1
 기존 기획</a>, <a
@@ -39,6 +40,62 @@ v1.13.63 검증 기록</a></li>
 육성·탐험 게임</strong>입니다. 장기 엔딩과 세부 우선순위는 아직 정하지
 않았습니다.</li>
 </ul>
+<h2 id="루미나리모아의-정체성">루미·나리·모아의 정체성</h2>
+<h3 id="게임에서-확인한-역할">게임에서 확인한 역할</h3>
+<table>
+<thead>
+<tr>
+<th>캐릭터</th>
+<th>플레이어가 찾는 순간</th>
+<th>이야기에서 드러나는 모습</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>루미 · 모험 관리인</strong></td>
+<td>별을 탐험에 보내거나 돌아온 별을 맞을 때 탐험 수첩을 연다. 수첩에는
+도안 단서와 별자리 달력도 있다.</td>
+<td>루미는 항로 끝을 점선으로 남겨 돌아온 별이 자기 엽서를 끼울 자리를
+마련한다. ‘루미의 관측 노트’에는 별이 만난 풍경과 연결되는 천문 이야기를
+담는다. 엽서의 보낸 이는 탐험한 별이다.</td>
+</tr>
+<tr>
+<td><strong>나리 · 별빛 임무지기</strong></td>
+<td>다음에 무엇을 할지 궁금할 때 찾는다. ‘오늘 할 일’에서 별들의 부탁을
+살피고, ‘수집과 성장’에서 수집 단서와 설치물 보상을 확인한다.</td>
+<td>첫 설치물 이야기에서 나리는 별들이 함께 앉아 사진을 볼 수 있도록
+행성 고리를 펴 달라고 부탁한다. 해야 할 일에 누구를 위한 일인지 이유를
+붙여주는 장면이다. 오늘의 부탁을 건네는 주인공은 각 별이다.</td>
+</tr>
+<tr>
+<td><strong>모아 · 골드 모으는 요정</strong></td>
+<td>작은 상점에서 반짝이 120개로 데려온다. 이후 은하계나 상점에서 모아를
+누르면 별들이 모아 둔 골드를 한 번에 받는다.</td>
+<td>‘늦게 도착한 인사’에서 모아는 서로 다른 때 도착한 빛을 모아 한 장의
+편지에 담는다. 은하계 여기저기에 쌓인 것을 한데 모아 건네는 게임 속
+행동과 이어진다.</td>
+</tr>
+</tbody>
+</table>
+<p>탐험의 세부 조건은 <a href="currency-adventure.html">재화와 모험</a>,
+나리의 화면 구성은 <a href="design-guide.html">디자인 가이드</a>, 설치물
+보상은 <a href="room-furniture.html">방과 가구</a>를 따른다.</p>
+<h3 id="말투와-성격-제안--검토-중">말투와 성격 제안 · 검토 중</h3>
+<p>아래 대사는 기존 장면을 바탕으로 새로 쓴 문구 예시다. 기준 장면은
+같은 별이 탐험에서 돌아온 날이다.</p>
+<ul>
+<li><strong>루미</strong>는 별이 보고 온 것을 궁금해한다. 엽서가 실제로
+도착했을 때 “솔라가 위성 온실에서 엽서를 보냈어. 어떤 풍경이었는지 같이
+볼까?”</li>
+<li><strong>나리</strong>는 지금 할 수 있는 작은 일 하나와 그 이유를
+짚어준다. 행성 고리를 받을 수 있을 때 “솔라가 돌아왔네. 같이 앉아서
+사진을 볼 수 있게 고리를 펴 줄래?”</li>
+<li><strong>모아</strong>는 모아 둔 것을 건네며 짧게 말을 맺는다. 받을
+골드가 있을 때 “별들이 모아 둔 골드야. 한 번에 받아 갈래?”</li>
+</ul>
+<p>근거는 2026-11-26 테스트 소스 <code>cfa66303</code>의 탐험 수첩·별빛
+임무·모아 상점 화면과 관측 이야기 원문이다. <a href="sources.html">자료
+목록</a></p>
 <h2 id="v11335에서-정한-이름과-구성">v1.13.35에서 정한 이름과 구성</h2>
 <p><strong>확정 · 이름:</strong> 게임 이름은 <strong>별이 머무는
 곳</strong>입니다. 영어 부제 없이 한글 한 줄로 표시합니다.</p>
@@ -77,22 +134,22 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.35/verification.j
 <strong>별</strong>로 표현합니다.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>버전</th>
 <th>확인한 구성</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>v1.9.4</td>
 <td>별 50종, 별 성장 이야기 250편, 은하계 100레벨, 구매 가구 20종·최대
 Lv.10, 시간제 파견 3개 경로, 직접 걷는 <strong>외곽 관측소</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td>v1.11.0</td>
 <td>루미가 최대 세 마리의 별을 시간제로 파견</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>v1.13.12</td>
 <td>별 탄생 버튼을 홈 중앙 아래에 배치</td>
 </tr>
@@ -124,26 +181,26 @@ href="sources.html">자료 목록</a>을 참고하세요.</p>
 <h3 id="기본-플레이-흐름">기본 플레이 흐름</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>행동</th>
 <th>이어지는 경험</th>
 <th>근거</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>작은 빛으로 먼지 탄생</td>
 <td>랜덤 또는 재료 조합으로 친구 수집</td>
 <td>S2-R, <a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/dust-engine.mjs">성장
 코드</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>같은 종류·같은 레벨의 먼지 합치기</td>
 <td>레벨 상승과 이야기 해금</td>
 <td>성장 코드</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>쓰다듬기·골드 수령·하루 반짝이 줍기</td>
 <td>재화 획득</td>
 <td><a
@@ -154,12 +211,12 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/economy.m
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/daily-sparkles.mjs">하루
 반짝이 코드</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>재료 구매·방 확장·가구 배치</td>
 <td>다음 수집과 방 성장</td>
 <td>재화 코드</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>시간제 모험 또는 책상 아래 직접 탐험</td>
 <td>재료·수집 기록 획득</td>
 <td><a
@@ -173,37 +230,37 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.4.1/source/desk-expl
 <h3 id="제공된-버전에서-확인한-규모">제공된 버전에서 확인한 규모</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>항목</th>
 <th>v1.4.1 코드 확인</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>먼지 종류</td>
 <td>50종</td>
 </tr>
-<tr class="even">
+<tr>
 <td>먼지 레벨</td>
 <td>Lv.1~6, Lv.2~6에서 이야기 해금</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>방</td>
 <td>100레벨, 수용 한도 2~200마리</td>
 </tr>
-<tr class="even">
+<tr>
 <td>구매 가구</td>
 <td>10종, 최대 Lv.5</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>시간제 모험</td>
 <td>3개 경로</td>
 </tr>
-<tr class="even">
+<tr>
 <td>직접 걷는 탐험</td>
 <td>책상 아래</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>기록 보관</td>
 <td>브라우저 저장, JSON 내보내기·불러오기</td>
 </tr>

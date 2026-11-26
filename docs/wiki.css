@@ -1,51 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+@import url('./design-examples/color-tokens.css');
+
 :root.dark {
-  color-scheme: dark;
-  --background: #09090b;
-  --foreground: #f4f4f5;
-  --card: #18181b;
-  --card-foreground: #e4e4e7;
-  --muted: #27272a;
-  --muted-foreground: #b4b4bd;
-  --accent: #34343a;
-  --accent-foreground: #fafafa;
-  --border: #3f3f46;
-  --ring: #c4b5fd;
-  --link: #d3c4ff;
-  --radius: .625rem;
-  background: var(--background);
+  --background: var(--color-surface-page);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-glass-card);
+  --card-foreground: var(--color-text-primary);
+  --muted: var(--color-surface-raised);
+  --muted-foreground: var(--color-text-secondary);
+  --accent: var(--color-glass-active);
+  --accent-foreground: var(--color-text-primary);
+  --border: var(--color-glass-edge);
+  --ring: var(--color-focus);
+  --link: var(--color-brand-primary);
+  --radius: var(--radius-card);
+  --content-width: 880px;
   color: var(--foreground);
-  font: 16px/1.8 system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font: var(--text-body-large)/1.8 "DM Sans", "Noto Sans KR", system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   -webkit-text-size-adjust: 100%;
+  background:
+    url('./design-examples/assets/galaxy-stars.svg') center 12% / auto 800px repeat,
+    radial-gradient(ellipse at 77% 27%, var(--color-glass-orbit-graphite), transparent 57%),
+    radial-gradient(ellipse at 13% 54%, var(--color-glass-orbit-slate), transparent 64%),
+    radial-gradient(ellipse at 94% 78%, var(--color-glass-orbit-silver), transparent 56%),
+    var(--background);
+  background-attachment: fixed;
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; }
-.site-header { border-bottom: 1px solid var(--border); }
-.site-nav, main { max-width: 800px; margin-inline: auto; }
-.site-nav { display: flex; flex-wrap: wrap; gap: .25rem .5rem; padding: .5rem 1rem; }
+body { margin: 0; padding: clamp(.75rem, 3vw, 1.75rem) clamp(.75rem, 3vw, 1.5rem) 4rem; }
+.site-header, main { max-width: var(--content-width); margin-inline: auto; }
+.site-header {
+  margin-bottom: clamp(.8rem, 3vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-popup);
+  background: var(--glass-panel-sheen), var(--color-glass-overlay);
+  box-shadow: var(--glass-floating-shadow);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  backdrop-filter: var(--glass-backdrop);
+}
+.site-nav { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem; padding: .5rem; }
 .site-nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  padding-inline: .75rem;
-  border-radius: var(--radius);
+  min-height: var(--size-reading-target);
+  padding-inline: clamp(.55rem, 2vw, .85rem);
+  border: 1px solid transparent;
+  border-radius: var(--radius-button);
   color: var(--muted-foreground);
   text-decoration: none;
+  font-size: var(--text-label);
   font-weight: 600;
 }
+.site-nav .wiki-brand {
+  gap: .6rem;
+  margin-inline-end: auto;
+  color: var(--foreground);
+  font-size: var(--text-body);
+  font-weight: 700;
+}
+.wiki-brand::before {
+  content: '';
+  width: .8rem;
+  height: .8rem;
+  flex: none;
+  background: var(--color-currency-sparkle);
+  clip-path: polygon(50% 0, 64% 36%, 100% 50%, 64% 64%, 50% 100%, 36% 64%, 0 50%, 36% 36%);
+}
 .site-nav a[aria-current="page"], .site-nav a:hover {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  border-color: var(--border);
+  background: var(--glass-selection);
+  color: var(--foreground);
 }
 main {
-  padding: clamp(1rem, 5vw, 2.5rem) clamp(1rem, 5vw, 2.5rem) 4rem;
+  padding: clamp(1.1rem, 4.5vw, 2.75rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-popup);
+  background: var(--glass-panel-sheen), var(--color-glass-overlay);
+  box-shadow: var(--glass-floating-shadow);
   overflow-wrap: anywhere;
   word-break: keep-all;
 }
+.wiki-home {
+  background:
+    radial-gradient(ellipse 360px 200px at 100% 0, #8dbdff15, transparent),
+    var(--glass-panel-sheen), var(--color-glass-overlay);
+}
+.wiki-home > h2#주제별-문서 { margin-top: 2rem; padding-top: 0; border: 0; }
+.wiki-home > h2#주제별-문서 + ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr));
+  gap: .8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wiki-home > h2#주제별-문서 + ul li {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: .85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--glass-panel-sheen), var(--card);
+  box-shadow: var(--glass-card-shadow);
+}
+.wiki-home > h2#주제별-문서 + ul li:is(:hover, :focus-within) {
+  border-color: var(--color-brand-primary);
+  background-color: var(--accent);
+}
+.wiki-home > h2#주제별-문서 + ul a { font-weight: 700; }
+.wiki-home > h2#주제별-문서 + ul a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.wiki-home > h2#주제별-문서 + ul p { margin: 0; }
+.wiki-home > h2#주제별-문서 + ul p + p {
+  margin-top: .35rem;
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--muted-foreground);
+}
 h1, h2, h3, h4 { line-height: 1.35; word-break: keep-all; color: var(--foreground); }
-h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); letter-spacing: -.04em; margin: 0 0 1.25rem; }
+h1 { font-size: clamp(var(--text-heading), 5vw, var(--text-display)); letter-spacing: -.04em; margin: 0 0 1.25rem; }
 h2 {
-  font-size: 1.4rem;
+  font-size: var(--text-title-large);
   letter-spacing: -.025em;
   margin: 3rem 0 .9rem;
   padding-top: 1.5rem;
@@ -60,7 +141,7 @@ li::marker { color: var(--muted-foreground); }
 strong { color: var(--accent-foreground); font-weight: 700; }
 a { color: var(--link); text-underline-offset: .2em; }
 a:hover { color: var(--accent-foreground); }
-a:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+:is(a, summary):focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
 hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
 /* 문서 첫머리의 기준 날짜·출처 목록 */
@@ -69,7 +150,7 @@ main > h1 + ul {
   padding: .85rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--card);
+  background: var(--glass-panel-sheen), var(--card);
   color: var(--muted-foreground);
   font-size: .9rem;
   line-height: 1.7;
@@ -102,7 +183,10 @@ blockquote {
 blockquote > :last-child { margin-bottom: 0; }
 
 table {
-  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-spacing: 0;
+  scrollbar-color: var(--color-scroll-thumb) transparent;
   display: block;
   max-width: 100%;
   overflow-x: auto;
@@ -110,11 +194,13 @@ table {
   font-size: .93rem;
   line-height: 1.65;
 }
-th, td { border: 1px solid var(--border); text-align: left; vertical-align: top; padding: .55rem .8rem; }
+th, td { border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; padding: .55rem .8rem; }
+tr > :not(:last-child) { border-inline-end: 1px solid var(--border); }
+tbody tr:last-child td { border-bottom: 0; }
 th { white-space: nowrap; }
-td { background: var(--card); color: var(--card-foreground); min-width: 6em; }
-tbody tr:nth-child(even) td { background: #1f1f23; }
-th, pre { background: var(--muted); color: var(--accent-foreground); }
+td { background: var(--glass-panel-sheen), var(--card); color: var(--card-foreground); min-width: 6em; }
+tbody tr:nth-child(even) td { background: var(--color-surface-raised); }
+th, pre { background: var(--color-surface-tag); color: var(--accent-foreground); }
 pre { overflow-x: auto; padding: 1rem; border-radius: var(--radius); }
 code {
   font-size: .88em;
@@ -133,22 +219,22 @@ main > p:last-child {
   font-size: .92rem;
 }
 
-.story-reader { max-width: 720px; }
+.story-reader { max-width: 760px; }
 .story-reader > header { margin: 0 0 1.5rem; }
 .story-reader header p { margin: .35em 0; }
 .story-reader .subtitle { color: var(--link); font-weight: 600; }
 .story-reader .small { color: var(--muted-foreground); font-size: .9rem; }
-.story-reader nav, .story-reader article {
+.story-reader nav, .story-reader article, main > section[id^="sky-"] {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--card);
+  background: var(--glass-panel-sheen), var(--card);
   color: var(--card-foreground);
   padding: clamp(1rem, 5vw, 2rem);
   margin-bottom: 1rem;
   scroll-margin-top: 1rem;
 }
-.story-reader article:target { border-color: var(--ring); }
-.story-reader h2 { color: var(--foreground); margin-top: 0; padding-top: 0; border-top: 0; }
+.story-reader article:target, main > section[id^="sky-"]:target { border-color: var(--ring); }
+.story-reader h2, main > section[id^="sky-"] > h2 { color: var(--foreground); margin-top: 0; padding-top: 0; border-top: 0; }
 .story-reader h3 { color: var(--foreground); margin: 1.5em 0 .35em; }
 .story-reader h4 { margin: 1.3em 0 .35em; }
 .story-reader p { margin: .45em 0 .7em; }
@@ -181,3 +267,29 @@ main > p:last-child {
 }
 .story-reader aside strong { display: block; color: var(--foreground); }
 .story-reader .back { margin-top: 1.6em; font-size: .9rem; }
+
+details {
+  margin: .6rem 0 1rem;
+  padding: 0 .85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-field);
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+summary {
+  min-height: var(--size-reading-target);
+  padding-block: .45rem;
+  color: var(--link);
+  cursor: pointer;
+}
+details[open] { border-color: var(--color-border-control); }
+
+@media (max-width: 35rem) {
+  .site-nav .wiki-brand { flex-basis: 100%; }
+  main { border-radius: var(--radius-card); }
+  th, td { padding: .5rem .65rem; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root.dark { --card: var(--color-surface-panel); }
+  .site-header, main, .wiki-home { background: var(--color-surface-panel); backdrop-filter: none; }
+}

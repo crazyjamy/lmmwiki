@@ -4,6 +4,10 @@
 - 최종 수정일: 2026-11-26
 - 출처: [자료 목록](sources.md), [위키 구성 요청](../raw/2026-11-18-wiki-request.md)
 
+## 2026-11-26 · 웹 위키 공통 디자인
+
+[상태별 시각 예시](../docs/design-examples/index.html)의 은하계 배경과 글래스 토큰을 웹 위키의 [목차](index.md), 일반 문서, [캐릭터 이야기](../raw/2026-11-24-story-review/star-stories-revised.html), [별자리 월간 이야기](monthly-constellations.md)에 적용했습니다. 목차는 주제별 카드를, 읽기 화면은 관측 노트와 이야기 카드에 공통 표면을 사용합니다.
+
 ## 2026-11-26 · 게임 디자인 시스템과 상태별 예시
 
 공개 Dustgame `main`의 [`1c4270d`](https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35)를 기준으로 [디자인 가이드](design-guide.md)에 토큰, 컴포넌트 상태, 재사용 패턴, 원화와 화면별 코드 링크를 정리했습니다. [상태별 시각 예시](../docs/design-examples/index.html)는 해당 커밋의 스타일과 원화를 사용합니다. Next Samsung+ HTML은 목차 구조의 참고 자료입니다.

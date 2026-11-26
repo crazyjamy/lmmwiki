@@ -2,6 +2,7 @@
 import html
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 from urllib.parse import quote, urlsplit
@@ -17,14 +18,33 @@ def output_path(source):
         return OUTPUT / 'index.html'
     return (OUTPUT / source).with_suffix('.html')
 
+def relative_url(destination, target):
+    return Path(os.path.relpath(target, destination.parent)).as_posix()
+
+
+def page_header(destination):
+    links = [
+        (OUTPUT / 'index.html', '별이 머무는 곳', ' class="wiki-brand"'),
+        (OUTPUT / 'wiki/design-guide.html', '디자인 가이드', ''),
+        (OUTPUT / 'stories.html', '캐릭터 이야기', ''),
+    ]
+    navigation = []
+    for target, label, css_class in links:
+        href = relative_url(destination, target)
+        current = ' aria-current="page"' if destination == target else ''
+        navigation.append(f'<a href="{href}"{css_class}{current}>{label}</a>')
+    navigation.append(f'<a href="{REPO}">GitHub</a>')
+    return (
+        '<header class="site-header"><nav class="site-nav" aria-label="위키 메뉴">\n'
+        + '\n'.join(navigation) + '\n</nav></header>'
+    )
+
+
 def render(source):
     document = json.loads(subprocess.check_output(
         ['pandoc', '-f', 'gfm', '-t', 'json', str(ROOT / source)]
     ))
     destination = output_path(source)
-
-    def relative(target):
-        return Path(os.path.relpath(target, destination.parent)).as_posix()
 
     def rewrite(node):
         if isinstance(node, list):
@@ -37,11 +57,11 @@ def render(source):
                 if not url.scheme and not url.netloc and url.path:
                     target = (ROOT / source.parent / url.path).resolve().relative_to(ROOT)
                     if target == STORY:
-                        address[0] = relative(OUTPUT / 'stories.html')
+                        address[0] = relative_url(destination, OUTPUT / 'stories.html')
                     elif ROOT / target in SOURCES:
-                        address[0] = relative(output_path(target))
+                        address[0] = relative_url(destination, output_path(target))
                     elif (ROOT / target).is_relative_to(OUTPUT) and (ROOT / target).is_file():
-                        address[0] = relative(ROOT / target)
+                        address[0] = relative_url(destination, ROOT / target)
                     else:
                         kind = 'tree' if (ROOT / target).is_dir() else 'blob'
                         address[0] = f'{REPO}/{kind}/main/{quote(target.as_posix())}'
@@ -55,11 +75,15 @@ def render(source):
         ['pandoc', '-f', 'json', '-t', 'html5'],
         input=json.dumps(document, ensure_ascii=False), text=True
     )
+    if source == Path('wiki/monthly-constellations.md'):
+        intro, *entries = re.split(r'<p><a id="(sky-[a-z]{3})"></a></p>\n', content)
+        content = intro + ''.join(
+            f'<section id="{anchor}">\n{entry}</section>\n'
+            for anchor, entry in zip(entries[::2], entries[1::2])
+        )
     title = html.escape((ROOT / source).read_text().splitlines()[0].removeprefix('# '))
-    home = relative(OUTPUT / 'index.html')
-    story = relative(OUTPUT / 'stories.html')
-    css = relative(OUTPUT / 'wiki.css')
-    home_current = ' aria-current="page"' if destination == OUTPUT / 'index.html' else ''
+    css = relative_url(destination, OUTPUT / 'wiki.css')
+    main_class = ' class="wiki-home"' if destination == OUTPUT / 'index.html' else ''
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(f'''<!doctype html>
 <html lang="ko" class="dark">
@@ -70,12 +94,8 @@ def render(source):
 <link rel="stylesheet" href="{css}">
 </head>
 <body>
-<header class="site-header"><nav class="site-nav" aria-label="위키 메뉴">
-<a href="{home}"{home_current}>먼지 위키</a>
-<a href="{story}">캐릭터 이야기</a>
-<a href="{REPO}">GitHub</a>
-</nav></header>
-<main>{content}</main>
+{page_header(destination)}
+<main{main_class}>{content}</main>
 </body></html>
 ''', encoding='utf-8')
 
@@ -87,12 +107,8 @@ def render_story():
         raise ValueError('Expected inline stylesheet in story source')
     story = before + '<link rel="stylesheet" href="wiki.css">' + after
     story = story.replace('<html lang="ko">', '<html lang="ko" class="dark">', 1)
-    story = story.replace('<body><main>', """<body>
-<header class="site-header"><nav class="site-nav" aria-label="위키 메뉴">
-<a href="index.html">먼지 위키</a>
-<a href="stories.html" aria-current="page">캐릭터 이야기</a>
-</nav></header>
-<main class="story-reader">""", 1)
+    header = page_header(OUTPUT / 'stories.html')
+    story = story.replace('<body><main>', f'<body>\n{header}\n<main class="story-reader">', 1)
     (OUTPUT / 'stories.html').write_text(story, encoding='utf-8')
 
 
