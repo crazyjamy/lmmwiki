@@ -98,3 +98,7 @@ S27 · 2026-11-25 게임 빌드 1.13.81-1974fe9c. 빌드 식별자와 아이콘 
 - 2026-11-26 확인 · [Dustgame 공개 `main` 커밋 `1c4270d`](https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35), [버전 파일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/VERSION.json). 디자인 가이드의 토큰과 상태 예시의 근거입니다.
 - 2026-11-26 제공 · Next Samsung+ 디자인 위키 HTML. 분류와 목차의 구조를 참고했습니다.
 - 2026-11-26 적용 · [상태별 시각 예시](../docs/design-examples/index.html)의 색상 토큰, 별 배경과 글래스 표면을 웹 위키 공통 디자인에 적용했습니다.
+
+## 2026-11-26 · 일반 테스트와 DEV 장면
+
+혜린님의 DEV 장면 개발·테스트 사이트 반영 요청과 테스트 소스 `339ab8fc`. 자동 테스트 171개 통과. 테스트 사이트 배포 성공. [검증 범위](save-release.md#dev-scenes)

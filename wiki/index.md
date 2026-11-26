@@ -36,7 +36,7 @@
 
 - [저장과 배포](save-release.md)
 
-  브라우저 저장, 기록 이동, 버전과 배포 확인 범위
+  브라우저 저장, 기록 이동, 버전과 배포 확인 범위 · [일반 테스트와 DEV 장면의 진입 방법, 저장 범위](save-release.md#dev-scenes)
 
 - [확인이 필요한 사항](open-questions.md)
 
