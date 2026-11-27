@@ -54,7 +54,7 @@
 | UI 아이콘 | `uiIcon()` 또는 `data-ui-icon`으로 24×24 원본을 사용. 16px 보조, 20px 일반, 24px 내비게이션 아이콘. 아이콘 전용 버튼은 접근 가능한 이름을 제공합니다. [UI 아이콘 원본](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/ui-icons.mjs) |
 | 별 캐릭터 | `dustArt()`와 `dustPortrait()`로 도감·은하계·탐험에 같은 캐릭터를 표시. 형태와 단계는 `starAppearance()`, 파스텔·희귀 별 빛은 `starLight()`를 사용. [렌더링](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L54-L82) · [별 원화와 색](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/star-art.mjs#L73-L99) |
 | 루미·나리·모아 | 탐험 수첩·별빛 임무·골드 수령이라는 각 역할에 맞춰 기존 원화 사용. [요정 역할과 말투 원문](https://github.com/crazyjamy/lmmwiki/blob/afc8124decba4db3a60634073f752db4638aeaaf/wiki/overview.md#루미나리모아의-정체성) · [아이콘 원본](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/icons.mjs) |
-| 가구와 재료 | 52×52. 테스트판 227의 가구는 아래 은회색 원화 기준을 따릅니다. 재료는 `#716281` 1.6. 나무 스툴·조개 조명·달빛 선반을 상점·수첩·보관함·은하계에서 같은 원화로 표시. [그림과 성장 점](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/icons.mjs#L44-L52) · [탐험 목적지와 재료](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/star-trips.mjs#L11-L17) |
+| 가구와 재료 | 52×52. 가구와 재료는 [작은 상점의 가구와 재료](#작은-상점의-가구와-재료) 기준을 따릅니다. 나무 스툴·조개 조명·달빛 선반을 상점·수첩·보관함·은하계에서 같은 원화로 표시. [그림과 성장 점](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/icons.mjs#L44-L52) · [탐험 목적지와 재료](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/star-trips.mjs#L11-L17) |
 | 재화와 엽서 | 골드·반짝이 의미를 색과 아이콘으로 함께 표시. 엽서는 `postcardPaper()`로 발신 별·장소·본문·날짜를 같은 틀에 표시. [재화 아이콘](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/ui-icons.mjs) · [엽서 마크업](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L918-L924) |
 
 ## 가구 원화와 언어 선택 · 테스트판 227
@@ -67,11 +67,25 @@
 | 선 | 외곽은 은회색 `#C3CDD4`, 나뭇결·조개 주름처럼 안쪽의 작은 선은 `#ADB9C3`를 씁니다. |
 | 면과 빛 | 겹쳐진 면은 그림자 `#35404B`, 중간 면 `#53606B`, 밝은 면 `#73818B`로 나눕니다. 조명의 빛은 작은 밝은 면 안에 담고, 가구 주위로 번지는 후광은 생략합니다. |
 | 성장과 선호 | 레벨 1에서 10으로 오를 때 기본 외곽선은 1.35에서 1.85까지 굵어집니다. 선택한 별이 좋아하는 설치물은 외곽선을 `#E1E7EB`로 밝힙니다. |
-| 화면 간 일관성 | 은하계 배치, 상점, 보관함, 도안과 가구 이야기에서 같은 실루엣과 색을 씁니다. 제작 재료 그림에는 재료 고유 색을 사용합니다. |
+| 화면 간 일관성 | 은하계 배치, 상점, 보관함, 도안과 가구 이야기에서 같은 실루엣과 색을 씁니다. 테스트판 228부터 제작 재료에도 [상점의 은회색 원화 기준](#작은-상점의-가구와-재료)을 적용합니다. |
 
 [나무 스툴·조개 조명·달빛 선반 시각 예시](../docs/design-examples/index.html#furniture-art)
 
 설정의 ‘언어 · Language’는 왼쪽, 현재 값과 펼침 화살표는 오른쪽에 한 줄로 놓습니다. 선택 영역은 기본 글자 크기에서 120×44px이며, 평상시 배경은 투명하고 키보드 포커스는 윤곽선으로 표시합니다.
+
+## 작은 상점의 가구와 재료
+
+2026-11-27 · 테스트판 228. 별이 먼저 눈에 들어오도록 상점의 가구와 재료에 같은 은회색 윤곽과 차분한 명암을 사용합니다.
+
+| 화면 | 원화 기준 |
+| --- | --- |
+| 은하계 꾸미기 | 설치물 20종에 같은 은회색 팔레트를 씁니다. 항법 비콘은 받침과 기둥, 삼각 등갓, 짧은 광선을 분리해 작은 크기에서도 알아볼 수 있게 그립니다. |
+| 조합 재료 | 그룹 3종, 희귀도 3종, 정수 6종은 각각 다른 외형을 가집니다. 풀잎은 잎맥, 이슬은 물방울, 잔불은 안쪽 불꽃으로 구분합니다. |
+| 탐험 재료와 제작 도안 | 나뭇가지는 갈라진 가지와 잎, 빛조개는 부챗살, 달빛석은 결정면을 강조합니다. 상점, 제작 도안, 루미의 단서에서 같은 재료 그림을 사용합니다. |
+
+재료는 52×52 기준으로 1.6 두께의 둥근 외곽선(`#C3CDD4`)을 씁니다. 내부는 어두운 면 `#35404B`, 중간 면 `#53606B`, 밝은 면 `#73818B` 중에서 골라 채웁니다. 가격과 보상의 골드·반짝이 표시는 기존 재화 색상을 사용합니다.
+
+[상점 가구와 제작 재료 시각 예시](../docs/design-examples/index.html#furniture-art)
 
 ## 재사용 패턴
 
