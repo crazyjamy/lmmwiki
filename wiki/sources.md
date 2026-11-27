@@ -99,6 +99,8 @@ S27 · 2026-11-25 게임 빌드 1.13.81-1974fe9c. 빌드 식별자와 아이콘 
 
 ## 디자인 가이드 출처
 
+- 2026-11-27 · 프로젝트 담당자의 화면 주석 2건. 언어 선택의 시각적 무게와 가구 전체의 채도·윤곽 기준을 조정했다. [테스트판 227](https://little-dragon-nest-hyerin.coursemos-3149.chatgpt.site/) 소스 `734c5e98`. [가구 원화와 언어 선택](design-guide.md#가구-원화와-언어-선택--테스트판-227)
+
 - 2026-11-26 프로젝트 담당자가 첫 번째 캡처인 별 선택 카드의 디자인을 기준으로 지정했습니다. 테스트 사이트 소스 `ade256fb`. [공개 게임 커밋](https://github.com/crazyjamy/dustgame/commit/b97408eff078c0323c56d015deee8badf2c74b2f).
 
 - 2026-11-26 확인 · [Dustgame 공개 `main` 커밋 `1c4270d`](https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35), [버전 파일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/VERSION.json). 디자인 가이드의 토큰과 상태 예시의 근거입니다.

@@ -14,8 +14,8 @@
 <a href="https://github.com/crazyjamy/lmmwiki">GitHub</a>
 </nav></header>
 <main class="wiki-home"><h1 id="전체-목차">전체 목차</h1>
-<p><a href="wiki/overview.html#고양이-개발자-제니">고양이 개발자 제니</a> · 제니예요. 창가 책상에서 별들이 머물 곳을 만들고 있어요.</p>
-<p>게임 변경 작업은 <a href="wiki/save-release.html#development-workflow">개발 변경의 테스트·공개 절차</a>를 따른다.</p>
+<p><a href="wiki/overview.html#고양이-개발자-제니">고양이 개발자
+제니</a> · 제니예요. 창가 책상에서 별들이 머물 곳을 만들고 있어요.</p>
 <ul>
 <li>기준 날짜: 2026-11-25 · v1.13.81</li>
 <li>최종 수정일: 2026-11-27</li>
@@ -23,6 +23,9 @@
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/2026-11-18-wiki-request.md">위키
 구성 요청</a></li>
 </ul>
+<p>게임 변경 작업은 <a
+href="wiki/save-release.html#development-workflow">개발 변경의
+테스트·공개 절차</a>를 따른다.</p>
 <h2 id="주제별-문서">주제별 문서</h2>
 <ul>
 <li><p><a href="wiki/overview.html">게임 개요</a></p>
@@ -32,7 +35,8 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/2026-11-18-wiki-request
 개체별 기록</p></li>
 <li><p><a href="stories.html">캐릭터 이야기 개정본</a></p>
 <p>별 50종의 첫인사, 성장 이야기, 후일담 원문 · 게임 반영</p></li>
-<li><p><a href="wiki/monthly-constellations.html">별자리 월간 이야기</a></p>
+<li><p><a href="wiki/monthly-constellations.html">별자리 월간
+이야기</a></p>
 <p>별자리 88개의 이야기, 루미의 관측 노트, 완성 엽서</p></li>
 <li><p><a href="wiki/room-furniture.html">방과 가구</a></p>
 <p>방 100레벨, 수용 한도, 설치물 20종의 퀘스트 획득·10단계 강화, 이전
@@ -42,9 +46,15 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/2026-11-18-wiki-request
 <li><p><a href="wiki/release-history.html">배포 이력</a></p>
 <p>v1.13.28~81 변경과 초기 90건 배포 이력</p></li>
 <li><p><a href="wiki/design-guide.html">디자인 가이드</a></p>
-<p>토큰, 상태별 시각 예시, 재사용 패턴, 화면과 코드 · <a href="wiki/design-guide.html#선택-카드와-별-상세의-이름-표시">선택 카드와 별 상세의 이름 표시</a></p></li>
+<p>토큰, 상태별 시각 예시, 재사용 패턴, 화면과 코드 · <a
+href="wiki/design-guide.html#가구-원화와-언어-선택--테스트판-227">가구
+원화와 언어 선택</a> · <a
+href="wiki/design-guide.html#선택-카드와-별-상세의-이름-표시">선택
+카드와 별 상세의 이름 표시</a></p></li>
 <li><p><a href="wiki/save-release.html">저장과 배포</a></p>
-<p>브라우저 저장, 기록 이동, 버전과 배포 확인 범위 · <a href="wiki/save-release.html#dev-scenes">일반 테스트와 DEV 장면의 진입 방법, 저장 범위</a></p></li>
+<p>브라우저 저장, 기록 이동, 버전과 배포 확인 범위 · <a
+href="wiki/save-release.html#dev-scenes">일반 테스트와 DEV 장면의 진입
+방법, 저장 범위</a></p></li>
 <li><p><a href="wiki/open-questions.html">확인이 필요한 사항</a></p>
 <p>기획과 코드 차이, 확인한 변경과 미확인 항목</p></li>
 </ul>
@@ -113,34 +123,34 @@ href="wiki/overview.html#루미나리모아의-정체성">루미·나리·모아
 <h2 id="2026-11-24-확인-범위">2026-11-24 확인 범위</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>채널</th>
 <th>확인한 버전</th>
 <th>근거</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>비공개 테스트 사이트</td>
 <td><strong>v1.13.81</strong> · 2026-11-24 배포 성공</td>
 <td><a
 href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.81/VERSION.json">S26
 버전 파일</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>공개 게임 저장소 <code>main</code></td>
 <td><strong>v1.13.81</strong></td>
 <td><a
 href="https://github.com/crazyjamy/dustgame/blob/main/VERSION.json">저장소
 버전 파일</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>공개 GitHub Pages</td>
 <td><strong>v1.13.81</strong></td>
 <td><a href="https://crazyjamy.github.io/dustgame/VERSION.json">라이브
 버전 파일</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>GitHub 업로드용 패키지</td>
 <td><strong>v1.13.81</strong> · 압축과 참조 경로 검사 통과</td>
 <td><a
