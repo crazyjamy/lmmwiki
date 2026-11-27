@@ -1,5 +1,15 @@
 # 저장과 배포
 
+<a id="public-background-lines"></a>
+
+## 2026-11-27 · 공개 은하계 배경의 장식 연결선 제거
+
+프로젝트 담당자의 최종 승인으로 공개 GitHub Pages에 빌드 **1.13.81-bd316faf**를 반영했다. 반복 배경의 장식 연결선 4개를 제거했다. 별빛 점과 광원은 유지하며, 오늘의 별자리는 연결선을 표시하고 누르면 루미의 별자리 달력이 열린다.
+
+공개 전후 Chrome의 모바일 너비 390px와 데스크톱 너비 1280px에서 첫 안내를 지나 은하계로 들어갔다. 반복 배경의 장식 연결선이 없고 별빛 점 183개가 유지되는지 확인했다. 오늘의 별자리를 눌러 달력을 연 뒤 닫고 새로고침해 별과 재화가 유지되는 것도 확인했다.
+
+[디자인 기준](design-guide.md#2026-11-26--은하계-배경의-별자리) · [공개 게임 커밋](https://github.com/crazyjamy/dustgame/commit/e98b003bfe7d2e5c58d6b3719433bca01d5dfd19) · [라이브 버전](https://crazyjamy.github.io/dustgame/VERSION.json)
+
 ## 2026-11-27 · 가구 이야기와 영어 설정 공개 배포
 
 프로젝트 담당자의 공개 반영 요청에 따라 테스트판 230의 변경을 공개 게임에 배포했다. 가구 이야기 목록과 본문을 분리하고, 설정의 한국어·영어 선택, 나리의 오늘의 부탁 탭, 가구·재료의 얇은 선화를 적용했다. 공개 주소에서 빌드 1.13.81-64ae6460, 기존 은하계와 생활 수첩, 설정의 두 언어 선택지를 확인했다. 배포본 자동 검사 178개 통과. [게임 커밋](https://github.com/crazyjamy/dustgame/commit/b1e6e445a61e2f8f83d7a78467b4c97ca0a48d2b)
@@ -73,8 +83,8 @@ GitHub Pages용 빌드 식별자는 **1.13.81-d7b619b5**입니다. 기존 엽서
 | 채널 | 확인 결과 | 근거 |
 | --- | --- | --- |
 | 비공개 테스트 사이트 | **v1.13.81** · 2026-11-24 배포 성공 | [S26 버전 파일](../raw/v1.13.81/VERSION.json) |
-| 공개 게임 저장소 `main` | **v1.13.81** | [저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/main/VERSION.json) |
-| 공개 GitHub Pages | **v1.13.81** | [라이브 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) |
+| 공개 게임 저장소 `main` | **1.13.81-bd316faf** · 2026-11-27 | [저장소 버전 파일](https://github.com/crazyjamy/dustgame/blob/main/VERSION.json) |
+| 공개 GitHub Pages | **1.13.81-bd316faf** · 2026-11-27 | [라이브 버전 파일](https://crazyjamy.github.io/dustgame/VERSION.json) |
 | GitHub 업로드용 패키지 | **v1.13.81** · 압축과 참조 경로 검사 통과 | [S26 버전 파일](../raw/v1.13.81/VERSION.json) |
 
 [전체 배포 이력](release-history.md)에서 배포 시각과 변경 사항을 볼 수 있습니다.

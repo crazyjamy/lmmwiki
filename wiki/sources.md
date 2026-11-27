@@ -1,5 +1,11 @@
 # 자료 목록과 출처
 
+## 2026-11-27 · 공개 은하계 반복 배경
+
+프로젝트 담당자의 최종 승인과 공개 저장소·GitHub Pages 조회를 근거로 빌드 **1.13.81-bd316faf**의 반영 범위를 확인했다. 반복 배경의 소스는 장식 연결선 4개를 제거한 근거이며, 브라우저에서 확인한 경로는 저장과 배포에 정리했다.
+
+[보관한 버전 파일](../raw/build-bd316faf/VERSION.json) · [반복 배경 SVG 소스](https://github.com/crazyjamy/dustgame/blob/bd316fafd4ae84c795132ca4522c1d631fefa9ea/assets/galaxy-stars.svg) · [라이브 버전](https://crazyjamy.github.io/dustgame/VERSION.json) · [검증 기록](save-release.md#public-background-lines)
+
 ## 제니의 캐릭터 설정
 
 2026-11-27 · 제니의 사진과 개발 위키 반영 요청을 바탕으로 공개 작성자명과 캐릭터 설정을 확정했다.

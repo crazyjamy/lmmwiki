@@ -3,11 +3,11 @@
 별을 수집하고 돌보는 게임의 기획, 코드에서 확인한 기능, 변경 요청과 확인할 사항을 정리합니다.
 
 - 기준 날짜: 2026-11-24
-- 최종 수정일: 2026-11-25
+- 최종 수정일: 2026-11-27
 - 출처: [자료 목록](wiki/sources.md), [위키 구성 요청](raw/2026-11-18-wiki-request.md)
 - 확인한 버전은 비공개 테스트 사이트와 공개 GitHub Pages **v1.13.81**입니다. [저장과 배포](wiki/save-release.md)
 
-최신 반영 빌드는 **1.13.81-1974fe9c**입니다. [랜덤 탐험](wiki/currency-adventure.md)과 [가구 제작](wiki/room-furniture.md)을 확인할 수 있습니다.
+최신 공개 웹 빌드는 **1.13.81-bd316faf**입니다. [장식 연결선 제거와 공개 검증](wiki/save-release.md#public-background-lines)을 확인할 수 있습니다.
 
 ## 여기서 시작하세요
 

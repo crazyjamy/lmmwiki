@@ -13,7 +13,25 @@
 <a href="../stories.html">캐릭터 이야기</a>
 <a href="https://github.com/crazyjamy/lmmwiki">GitHub</a>
 </nav></header>
-<main><h1 id="저장과-배포">저장과 배포</h1><h2>2026-11-27 · 가구 이야기와 영어 설정 공개 배포</h2><p>프로젝트 담당자의 공개 반영 요청에 따라 테스트판 230의 변경을 공개 게임에 배포했다. 가구 이야기 목록과 본문을 분리하고, 설정의 한국어·영어 선택, 나리의 오늘의 부탁 탭, 가구·재료의 얇은 선화를 적용했다. 공개 주소에서 빌드 1.13.81-64ae6460, 기존 은하계와 생활 수첩, 설정의 두 언어 선택지를 확인했다. 배포본 자동 검사 178개 통과. <a href="https://github.com/crazyjamy/dustgame/commit/b1e6e445a61e2f8f83d7a78467b4c97ca0a48d2b">게임 커밋</a></p>
+<main><h1 id="저장과-배포">저장과 배포</h1>
+<p><a id="public-background-lines"></a></p>
+<h2 id="2026-11-27--공개-은하계-배경의-장식-연결선-제거">2026-11-27 ·
+공개 은하계 배경의 장식 연결선 제거</h2>
+<p>프로젝트 담당자의 최종 승인으로 공개 GitHub Pages에 빌드
+<strong>1.13.81-bd316faf</strong>를 반영했다. 반복 배경의 장식 연결선
+4개를 제거했다. 별빛 점과 광원은 유지하며, 오늘의 별자리는 연결선을
+표시하고 누르면 루미의 별자리 달력이 열린다.</p>
+<p>공개 전후 Chrome의 모바일 너비 390px와 데스크톱 너비 1280px에서 첫
+안내를 지나 은하계로 들어갔다. 반복 배경의 장식 연결선이 없고 별빛 점
+183개가 유지되는지 확인했다. 오늘의 별자리를 눌러 달력을 연 뒤 닫고
+새로고침해 별과 재화가 유지되는 것도 확인했다.</p>
+<p><a href="design-guide.html#2026-11-26--은하계-배경의-별자리">디자인
+기준</a> · <a
+href="https://github.com/crazyjamy/dustgame/commit/e98b003bfe7d2e5c58d6b3719433bca01d5dfd19">공개
+게임 커밋</a> · <a
+href="https://crazyjamy.github.io/dustgame/VERSION.json">라이브
+버전</a></p>
+<h2>2026-11-27 · 가구 이야기와 영어 설정 공개 배포</h2><p>프로젝트 담당자의 공개 반영 요청에 따라 테스트판 230의 변경을 공개 게임에 배포했다. 가구 이야기 목록과 본문을 분리하고, 설정의 한국어·영어 선택, 나리의 오늘의 부탁 탭, 가구·재료의 얇은 선화를 적용했다. 공개 주소에서 빌드 1.13.81-64ae6460, 기존 은하계와 생활 수첩, 설정의 두 언어 선택지를 확인했다. 배포본 자동 검사 178개 통과. <a href="https://github.com/crazyjamy/dustgame/commit/b1e6e445a61e2f8f83d7a78467b4c97ca0a48d2b">게임 커밋</a></p>
 <h2 id="development-workflow">개발 변경의 테스트·공개 절차</h2><p>2026-11-26 프로젝트 담당자의 개발 위키 반영 요청으로 확정했다.</p><ol><li>작업 전 위키 목차와 변경 기록에서 최신 확정 정책을 찾는다. 지난 작업 이후 바뀐 정책과 영향을 받는 화면을 프로젝트 담당자에게 먼저 알린다.</li><li>변경은 비공개 테스트 사이트에 먼저 배포한다. 일반 테스트에서는 플레이어가 사용하는 진입 버튼부터 따라가 안내 문구, 튜토리얼, 해금과 보상을 확인한다.</li><li>원하는 별이 없거나 긴 대기·최초 수령 때문에 재현이 어려우면 DEV의 장면 선택과 다시 시작을 사용한다. 이야기 연출은 미리보기로, 해금은 합치기 직전부터 직접 조작해 검증한다. 필요한 장면이 없으면 해당 변경을 재현하는 장면을 추가한다.</li><li>저장·보상이 바뀌면 같은 탭을 새로고침해 진행과 수령 여부를 확인한다. DEV에서 보상을 받은 뒤 일반 테스트로 돌아가 기존 별과 재화가 유지되는지도 확인한다.</li><li>관련 위키와 변경 기록에 테스트 적용일, 소스 버전, 확인한 플레이 경로와 미확인 범위를 남긴다. 프로젝트 담당자의 명시적인 최종 승인 후 승인된 게임 변경만 공개 저장소와 GitHub Pages에 반영한다. DEV 장면은 테스트 사이트 전용으로 유지하고 공개 배포 결과를 별도로 기록한다.</li></ol>
 <ul>
 <li>기준 날짜: 2026-11-25 · v1.13.81</li>
@@ -93,14 +111,14 @@ href="https://github.com/crazyjamy/lmmwiki/blob/main/raw/v1.13.81/VERSION.json">
 </tr>
 <tr class="even">
 <td>공개 게임 저장소 <code>main</code></td>
-<td><strong>v1.13.81</strong></td>
+<td><strong>1.13.81-bd316faf</strong> · 2026-11-27</td>
 <td><a
 href="https://github.com/crazyjamy/dustgame/blob/main/VERSION.json">저장소
 버전 파일</a></td>
 </tr>
 <tr class="odd">
 <td>공개 GitHub Pages</td>
-<td><strong>v1.13.81</strong></td>
+<td><strong>1.13.81-bd316faf</strong> · 2026-11-27</td>
 <td><a href="https://crazyjamy.github.io/dustgame/VERSION.json">라이브
 버전 파일</a></td>
 </tr>
