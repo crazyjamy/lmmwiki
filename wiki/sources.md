@@ -99,6 +99,8 @@ S27 · 2026-11-25 게임 빌드 1.13.81-1974fe9c. 빌드 식별자와 아이콘 
 
 ## 디자인 가이드 출처
 
+- 2026-11-27 · 프로젝트 담당자의 행성 고리 및 가구 이야기 회차 주석. 별빛 창가의 밝기·선 두께, 숫자 왼쪽·제목 오른쪽 정렬의 근거. [테스트판 229](https://little-dragon-nest-hyerin.coursemos-3149.chatgpt.site/) 소스 `3e539c16`.
+
 - 2026-11-27 · 프로젝트 담당자가 작은 상점의 항법 비콘과 꾸미기 재료에 같은 원화 기준을 요청했다. [테스트판 228](https://little-dragon-nest-hyerin.coursemos-3149.chatgpt.site/) 소스 `d53c8ed3`. [상점 원화 기준](design-guide.md#작은-상점의-가구와-재료)
 
 - 2026-11-27 · 프로젝트 담당자의 화면 주석 2건. 언어 선택의 시각적 무게와 가구 전체의 채도·윤곽 기준을 조정했다. [테스트판 227](https://little-dragon-nest-hyerin.coursemos-3149.chatgpt.site/) 소스 `734c5e98`. [가구 원화와 언어 선택](design-guide.md#가구-원화와-언어-선택--테스트판-227)

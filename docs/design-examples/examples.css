@@ -88,3 +88,7 @@ dialog#modal:not([open]) { display: none; }
 .example-stars .dust-card { cursor: default; position: relative; width: 100%; }
 .example-stars .dust-card h3 { margin: 4px 0 0; }
 .example-stars .postcard-paper { margin: 0; }
+
+#furniture-art :is(.furniture-art, .supply-art) { opacity: .65; filter: none; }
+#furniture-art .furniture-art { stroke-width: .68px; }
+#furniture-art :is(.furniture-art, .supply-art) :is(path, circle, ellipse, rect) { vector-effect: non-scaling-stroke; }
