@@ -38,7 +38,7 @@
 
   v1.13.28~81 변경과 초기 90건 배포 이력
 
-- [디자인 가이드](design-guide.md) · [정보 카드와 테마 추천](design-guide.md#theme-clues)
+- [디자인 가이드](design-guide.md) · [정보 카드와 테마 추천](design-guide.md#theme-clues) · [상점 혜택 색상](design-guide.md#shop-benefits)
 
   [파랑·노랑과 보상·신규 표시](design-guide.md#action-and-reward-colors), 토큰, 상태별 시각 예시, 재사용 패턴, 화면과 코드 · [작은 상점의 가구와 재료](design-guide.md#작은-상점의-가구와-재료) · [별빛 창가를 기준으로 한 가구 선·명도와 언어 선택](design-guide.md#가구-원화와-언어-선택--테스트판-227) · [선택 카드와 별 상세의 이름 표시](design-guide.md#선택-카드와-별-상세의-이름-표시)
 
