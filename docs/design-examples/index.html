@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="dust.css">
 <link rel="stylesheet" href="dust-growth.css">
 <link rel="stylesheet" href="galaxy-theme.css">
-<link rel="stylesheet" href="examples.css?v=reward-status">
+<link rel="stylesheet" href="examples.css?v=hierarchy">
 </head>
 <body>
 <div class="galaxy-sky" aria-hidden="true"></div>
@@ -20,25 +20,30 @@
       <a href="https://github.com/crazyjamy/lmmwiki">GitHub</a>
     </nav>
     <h1>상태별 시각 예시</h1>
-    <p>공개 게임 커밋 <a href="https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35"><code>1c4270d</code></a>의 스타일과 원화로 구성했습니다. 수량과 진행 상황은 예시입니다.</p>
+    <p>공개 게임 커밋 <a href="https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35"><code>1c4270d</code></a>의 원화와 테스트판 256의 화면 위계 기준을 사용합니다. 수량과 진행 상황은 예시입니다.</p>
   </header>
   <main id="main">
-    <section class="sample">
-      <h2>색상과 글자</h2>
+    <section class="sample" id="hierarchy">
+      <h2>게임 화면의 글자와 색상</h2>
       <ul class="swatches">
-        <li><i style="--swatch:var(--color-brand-primary)"></i>강조 <code>#8DBDFF</code></li>
+        <li><i style="--swatch:var(--color-brand-primary)"></i>선택 <code>#8DBDFF</code></li>
         <li><i style="--swatch:var(--color-currency-gold)"></i>골드 <code>#F1D397</code></li>
         <li><i style="--swatch:var(--color-currency-sparkle)"></i>반짝이 <code>#8ECBFF</code></li>
         <li><i style="--swatch:var(--color-surface-page)"></i>화면 <code>#101216</code></li>
-        <li><i style="--swatch:var(--color-glass-card)"></i>카드 <code>#161A1FB0</code></li>
+        <li><i style="--swatch:#161a1f"></i>상점 카드 <code>#161A1F</code></li>
+        <li><i style="--swatch:#265aa3"></i>주요 행동 <code>#265AA3</code></li>
+        <li><i style="--swatch:#d6c4ff"></i>지속 혜택 <code>#D6C4FF</code></li>
         <li><i style="--swatch:var(--color-glass-overlay)"></i>팝업 <code>#161A1FED</code></li>
       </ul>
-      <div class="sample-row type-samples">
-        <span style="font-size:var(--text-heading)">화면 제목 28px</span>
-        <span style="font-size:var(--text-title)">카드 제목 20px</span>
-        <span style="font-size:var(--text-body)">본문 14px</span>
-        <span style="font-size:var(--text-meta);color:var(--color-text-secondary)">보조 정보 12px</span>
-      </div>
+      <dl class="type-samples">
+        <div><dt>화면 제목 · 20–24px</dt><dd class="sample-view">루미의 탐험 수첩</dd></div>
+        <div><dt>구역 제목 · 18px</dt><dd class="sample-section">월간 별자리 이야기</dd></div>
+        <div><dt>항목 제목 · 16px</dt><dd class="sample-item">거꾸로 앉은 왕비</dd></div>
+        <div><dt>이야기 · 16px</dt><dd class="sample-reading">종이를 돌리자 왕비의 의자가 기울었어요.</dd></div>
+        <div><dt>작업 안내 · 14px</dt><dd class="sample-hint">다음 탐험을 다녀오면 이야기가 한 편 더 열려요.</dd></div>
+        <div><dt>보조 정보 · 12px</dt><dd class="sample-meta">카시오페이아자리 · 2화</dd></div>
+      </dl>
+      <figure class="benefit-example"><figcaption>설치물 이름과 지속 혜택</figcaption><strong>달 착륙 포드</strong><span>골드 보상 +25%</span></figure>
     </section>
     <section class="sample">
       <h2>버튼</h2>

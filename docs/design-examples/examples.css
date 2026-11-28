@@ -110,3 +110,17 @@ dialog#modal:not([open]) { display: none; }
 }
 #action-reward .review-sample small { color: var(--color-reward); }
 #action-reward .review-sample span { color: var(--color-text-secondary); }
+
+/* Match the game’s hierarchy specimens to the shared size scale. */
+#hierarchy .type-samples { display: grid; gap: 10px; margin: 20px 0; }
+.type-samples > div { display: grid; grid-template-columns: minmax(8.5rem, 1fr) 2fr; gap: 12px; align-items: baseline; }
+.type-samples dt, .benefit-example figcaption, .sample-meta { font-size: var(--text-meta); color: var(--color-text-secondary); }
+.type-samples dd { margin: 0; line-height: 1.5; }
+.sample-view { font-size: clamp(var(--text-title), 1.12rem + .65vw, var(--text-title-large)); font-weight: 700; }
+.sample-section { font-size: var(--text-title-small); font-weight: 650; }
+.sample-item, .benefit-example strong { font-size: var(--text-body-large); font-weight: 650; }
+.sample-reading { font-size: var(--text-body-large); }
+.sample-hint { font-size: var(--text-body); }
+.benefit-example { display: grid; gap: 6px; margin: 20px 0 0; }
+.benefit-example span { width: fit-content; padding: 4px 9px; border-radius: 999px; color: #d6c4ff; background: #302a3f; font-size: var(--text-meta); }
+@media (max-width: 440px) { .type-samples > div { grid-template-columns: 1fr; gap: 2px; } }

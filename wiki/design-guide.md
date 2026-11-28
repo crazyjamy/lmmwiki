@@ -1,5 +1,85 @@
 # 디자인 가이드
 
+<a id="hierarchy"></a>
+
+## 화면의 읽는 순서
+
+2026-11-29 · 테스트판 256 기준. 플레이어가 먼저 대상을 알아보고, 현재 상태를 파악한 뒤, 다음 행동을 고를 수 있게 배치한다. 이야기를 읽는 화면에서는 본문이 가장 넓은 자리를 차지한다.
+
+| 역할 | 기준 크기 | 적용 예 |
+| --- | --- | --- |
+| 화면·팝업 제목 | 20–24px · `--type-view-title` | 루미의 탐험 수첩, 이야기 읽기 팝업의 회차명 |
+| 구역 제목·현재 목표 | 18px · `--type-section-title` | 자리를 비운 사이, 월간 별자리 이야기, 나리가 제안하는 목표 |
+| 개별 항목 제목 | 16px · `--type-item-title` | 설치물 이름, 기록 제목, 최근에 열린 회차명 |
+| 읽는 본문 | 16px · `--type-reading` | 별의 이야기와 생활 기록. 제목보다 가벼운 굵기와 넉넉한 줄 간격을 쓴다. |
+| 작업 안내 | 14px · `--text-body` | 필요한 재료, 다음 탐험에서 열리는 조건 |
+| 보조 정보 | 12px · `--type-metadata` | 관측 날짜, 도감 번호, 회차와 수량 |
+
+기준 크기는 브라우저 기본 글꼴 16px일 때의 값이다. 같은 역할에는 같은 크기를 쓴다. 화면 제목은 너비에 맞춰 변하고, 제목이 길면 다음 줄로 이어진다. 목록의 큰 제목과 작은 날짜는 화면에 보이는 순서와 읽기 순서를 맞춘다.
+
+| 화면 | 먼저 읽을 내용 | 다음 행동과 보조 정보 |
+| --- | --- | --- |
+| 은하계 | 선택한 별과 지금 상호작용할 대상 | 받을 수 있는 소식은 해당 요정 옆에 표시한다. 잔액과 수첩은 상단에서 확인한다. |
+| 나리 · 할 일과 별 단서 | 지금 할 목표 또는 다음에 만날 별 | 조건과 남은 수량 다음에 실행 버튼을 둔다. 다음 보상과 나리의 노트가 뒤따른다. |
+| 루미 · 탐험과 달력 | 출발할 별, 돌아온 별, 선택한 날짜에 따라 가능한 행동 | 월간 이야기의 최근 회차에는 읽기 버튼을 둔다. 회차 목록과 모은 이야기는 보조 동작이다. |
+| 도감·보관함·상점 | 비교할 별이나 설치물의 이름 | 지속 혜택을 이름 아래 한 번 표시한 뒤 획득·배치·강화 동작을 제공한다. 다음 강화 효과는 별도 단서로 구분한다. |
+| 생활 수첩·이야기 | 수첩은 받을 보상과 새 기록을 먼저, 읽기 팝업은 회차 제목과 본문을 먼저 보여 준다. | 기록의 날짜·분류는 제목 아래에, 관측 노트와 목록 복귀는 이야기 뒤에 둔다. |
+| 설정 | 바꾸려는 항목의 이름과 현재 값 | 설명은 해당 스위치나 선택 입력에 붙인다. 저장 관련 동작은 환경 설정과 구역을 나눈다. |
+
+한 작업에서 바로 할 행동은 하나를 가장 강하게 표시한다. 진행은 파랑, 지금 받을 보상과 새 소식은 노랑, 지속 혜택은 연보라다. 완료·잠금에는 상태 문구나 자물쇠를 함께 둔다. 섹션 간 여백은 한 항목 안의 제목과 설명 사이보다 넓게 잡고, 배경 면은 내용 묶음에 한 번 쓴다. 버튼의 포커스와 선택 표시는 유지한다.
+
+[화면 위계와 색상 예시](../docs/design-examples/index.html#hierarchy) · [기준 자료](sources.md) · [변경 기록](log.md)
+
+## 기초 토큰
+
+| 역할 | 현재 코드 값과 적용 |
+| --- | --- |
+| 강조와 재화 | `--color-brand-primary` `#8DBDFF` (선택 표시), `--color-glass-action` `#265AA3` (주요 버튼 표면), `--color-currency-gold` `#F1D397`, `--color-currency-sparkle` `#8ECBFF` |
+| 표면 | `--color-surface-page` `#101216`, `--color-surface-panel` `#161A1F`, `--color-surface-raised` `#1F242A`, `--color-surface-tag` `#252A30` |
+| 반투명 표면 | `--color-glass-card` `#161A1FB0` (카드), `--color-glass-overlay` `#161A1FED` (팝업), `--color-glass-reading` `#161A1FF5` (설정·토스트), `--color-glass-surface` `#1F242ABF` (하단 메뉴) |
+| 글자와 포커스 | `--color-text-primary` `#EEF5FB`, `--color-text-secondary` `#A4ABB4`, `--color-text-disabled` `#8B939D`, `--color-focus` `#A9D1FF` |
+| 글꼴과 크기 | DM Sans → Noto Sans KR → sans-serif. 기본 16px 환경에서 `--text-caption` / `--text-meta` 11 / 12px, `--text-label` 13px, `--text-body` / `--text-body-large` 14 / 16px, `--text-title-small` / `--text-title` / `--text-title-large` 18 / 20 / 24px, `--text-heading` / `--text-heading-large` 28 / 32px. 장식 문자와 기호는 40–68px |
+| 여백과 크기 | `--size-reading-target` 2.75rem (44px), `--dialog-desktop-width` 40rem. 여백은 컴포넌트별 선언을 참조합니다. 별 상세 안쪽 상하 10px·좌우 14px, 도안 헤더 간격 12px·아래 10px, 도안 재료 행 간격 6px |
+| 모서리 | `--radius-tab` 0px, `--radius-field` 10px, `--radius-button` 12px, `--radius-card` 16px, `--radius-popup` 24px, `--radius-pill` 999px |
+| 반사와 깊이 | `--glass-backdrop` 5px 블러, `--glass-panel-sheen` 카드 그라데이션, `--glass-edge-light` 가장자리 반사, `--glass-card-shadow` 안쪽 1px, `--glass-floating-shadow` 안쪽 반사와 바깥 0 12px 32px −16px 그림자 |
+
+근거 · [토큰 선언](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/color-tokens.css#L5-L122) · [기본 글꼴과 컨트롤](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.css#L1-L2) · [별 상세 여백](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2261) · [도안 여백](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2630-L2634)
+
+## 컴포넌트와 상태
+
+| 컴포넌트 | 표시와 상태 | 재사용할 코드 |
+| --- | --- | --- |
+| 주요·보조 버튼 | 진행은 파란 글래스, 즉시 보상 수령은 노랑, 보조 행동은 차콜 글래스. 호버·키보드 포커스에서 반사가 지나가고, 누르는 동안 짙은 파란 표면. 비활성은 차콜과 비활성 글자색. `aria-pressed`는 계속 유지되는 선택에 사용 | [`.button.primary` / `.button.secondary`](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1128-L1198), [비활성 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L204-L214) |
+| 밑줄 탭과 필터 | 도감·보관함은 `aria-selected`와 밑줄, 탐험 수첩은 `aria-pressed`와 파란 밑줄. 도감과 설치물 필터는 투명 표면에서 선택 테두리와 굵은 글자 | [상위 탭·필터 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2022-L2135), [탐험 탭 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2553-L2574) |
+| 별·가구·재료 카드 | 별은 발견·미발견 상태를 구분. 설치물은 그림·상태에 이어 이름, 지속 혜택, 가능한 행동 순으로 표시. 도안은 미발견, 재료 부족, 제작 가능으로 표시. 보유 가구는 배치 상태와 레벨을 표시 | [도감·보관함 카드](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L199-L245), [가구 카드](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L811), [재료·도안 카드](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L1301-L1331) |
+| 공용 팝업·별 상세 | 공용 팝업은 제목과 닫기 버튼을 고정하고 본문을 스크롤. Esc·바깥 클릭으로 닫으며 가능한 경우 이전 포커스를 복원. 은하계의 별 상세는 `#dustPopup .care-dock` | [팝업 열기·닫기](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L416-L424), [공용 표면 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1082-L1119), [별 상세](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2261) |
+| 토스트 | `notice` / `gold` / `sparkle` / `recipe` / `check`에 따라 아이콘과 색 변경. 자동 닫힘 2.5초, 호버·포커스 동안 유지, 닫기 버튼 제공 | [타이머와 포커스](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L83-L119), [표시 위치와 상태색](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1632-L1683) |
+| 배지와 진행률 | 효과 배지·보상 칩에는 짧은 상태나 보상 종류를 넣고, 이야기 순번은 텍스트로 표시. 탐험 중에는 진행 막대와 남은 시간, 귀환 후에는 보상 버튼. 은하계 성장 지도는 현재·목표 값과 막대를 함께 표시 | [배지 표면](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1208-L1215), [성장 진행률](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L657-L666), [탐험 진행·완료](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L1357-L1364) |
+| 스위치와 선택 입력 | 설정 스위치는 꺼짐·켜짐·포커스, 동행 별과 조합 재료는 Select. 목적지 한 곳 선택은 Radio Group으로 표현하고 잠긴 경로에 필요 레벨을 표시 | [설정 스위치 마크업](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L493-L498), [스위치 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1257-L1308), [폼 적용 기준](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/COLOR-TOKENS.md) |
+
+## 모션과 접근성
+
+| 모션 | 시간과 상태 |
+| --- | --- |
+| 버튼 반사 | `--motion-command-reflection` 480ms, 사용 가능한 주요 버튼과 이야기의 다음 버튼에 호버·포커스로 한 번 재생. 터치에서는 누르는 중 표면이 바뀝니다. |
+| 이야기·다음 단서 쉬머 | `--motion-story-shimmer` 2000ms × 표시 줄 수. 문장을 차례로 재생하고 글자는 제자리에 둡니다. 처음 읽는 이야기와 단서에 적용하며, 같은 내용의 재생 이력은 뷰에서 관리합니다. 이전 기록에서는 이 효과를 ‘스켈레톤 애니메이션’으로 표기했습니다. |
+| 골드·반짝이 수령 | 수령 가능 골드 아이콘은 3초 주기로 첫 22% 동안 1회전. 획득 숫자는 1.35초 동안 표시·페이드하며 아이콘은 조작한 지점에서 해당 재화 잔액으로 이동합니다. |
+| 별과 배경 | 은하계 배경 두 레이어는 120초와 84초로 이동. 탐험 중 별의 궤도는 해당 탐험 시간과 진행 시간에 맞춰 재생. 방 안 별의 이동과 포즈는 기본 CSS의 `dust-drift` 및 `.dust-lift`를 사용합니다. |
+
+시스템 동작 줄이기, 게임의 움직임 감소·간소화 효과 설정에서는 쉬머, 반사, 재화 이동을 줄이거나 정지 상태로 표시합니다. 강제 색상에서는 쉬머를 끕니다. 시스템 투명도 줄이기에서는 팝업과 토스트를 불투명하게 표시하고 버튼의 이동 반사를 생략합니다.
+
+근거 · [문장 순서와 줄 수](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/story-effects.mjs#L7-L85) · [쉬머 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L923-L954) · [재화 효과](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L586-L645) · [골드 회전](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L337-L345) · [별 배경](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1384-L1415) · [탐험 궤도](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2582-L2591)
+
+## 원화와 아이콘
+
+| 리소스 | 재사용 방법 |
+| --- | --- |
+| UI 아이콘 | `uiIcon()` 또는 `data-ui-icon`으로 24×24 원본을 사용. 16px 보조, 20px 일반, 24px 내비게이션 아이콘. 아이콘 전용 버튼은 접근 가능한 이름을 제공합니다. [UI 아이콘 원본](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/ui-icons.mjs) |
+| 별 캐릭터 | `dustArt()`와 `dustPortrait()`로 도감·은하계·탐험에 같은 캐릭터를 표시. 형태와 단계는 `starAppearance()`, 파스텔·희귀 별 빛은 `starLight()`를 사용. [렌더링](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L54-L82) · [별 원화와 색](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/star-art.mjs#L73-L99) |
+| 루미·나리·모아 | 탐험 수첩·별빛 임무·골드 수령이라는 각 역할에 맞춰 기존 원화 사용. [요정 역할과 말투 원문](https://github.com/crazyjamy/lmmwiki/blob/afc8124decba4db3a60634073f752db4638aeaaf/wiki/overview.md#루미나리모아의-정체성) · [아이콘 원본](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/icons.mjs) |
+| 가구와 재료 | 52×52. 가구와 재료는 [작은 상점의 가구와 재료](#작은-상점의-가구와-재료) 기준을 따릅니다. 나무 스툴·조개 조명·달빛 선반을 상점·수첩·보관함·은하계에서 같은 원화로 표시. [그림과 성장 점](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/icons.mjs#L44-L52) · [탐험 목적지와 재료](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/star-trips.mjs#L11-L17) |
+| 재화와 엽서 | 골드·반짝이 의미를 색과 아이콘으로 함께 표시. 엽서는 `postcardPaper()`로 발신 별·장소·본문·날짜를 같은 틀에 표시. [재화 아이콘](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/ui-icons.mjs) · [엽서 마크업](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L918-L924) |
+
 <a id="shop-benefits"></a>
 
 ## 작은 상점의 혜택과 카드 배경
@@ -69,79 +149,6 @@
 - 하단 ‘모은 별’에는 아이콘과 이름을 표시한다. 설치물의 10개 회차는 별의 ‘함께 쓴 이야기’와 같은 행을 쓴다. 열린 회차에는 책 아이콘과 제목, 잠긴 회차에는 자물쇠와 해금 레벨을 표시한다. 읽기에서 목록으로 돌아오면 해당 회차에 포커스가 돌아간다.
 - 나리의 은하계 성장 목표는 다음 레벨과 정원, 남은 반짝이, 보유량·필요량과 진행률, 행동 버튼, 이야기 보상 순으로 보여준다. 이야기 보상에는 해당 레벨과 성운 이름을 붙인다. Lv.2의 두 자리 확장과 Lv.10의 햇살 정수·열린 창 장식을 각각의 달성 시점에서 확인할 수 있다.
 
-## 2026-11-28 · 랜덤 탐험 귀환 결과 팝업
-
-귀환 결과는 공용 팝업을 사용한다. 탐험 수첩의 44px 초상 헤더에 동행 별과 장소를 왼쪽 정렬하고, 발견 문장 아래에 실제 획득량을 16px 아이콘이 있는 공용 보상 칩으로 표시한다. 새로 얻은 도안만 보조 문구로 표시한다. 별자리 이름과 별빛 진행률은 별도 카드에 모은다. 이야기 읽기는 주 버튼, 탐험 수첩 복귀는 보조 버튼이고 버튼 간격은 8px이다. 테스트판 247 기준.
-
-## 2026-11-27 · 탐험 카드 배경과 별 상세 단서
-
-랜덤 탐험과 직접 탐사 출발 카드는 도안 단서와 같은 카드 배경색을 사용한다. 별 상세의 설치물 배치·찾기는 너비를 채우는 보조 버튼으로 표시한다. 가까이 놓았을 때의 반응과 Lv.3 추억 조건은 ‘다음 단서’ 배지와 공용 단서 본문으로 묶는다. 별 도감에서 필터 아래의 중복 보유 요약은 숨긴다.
-
-## 2026-11-27 · 루미의 탐험 수첩과 상단 재화 간격
-
-랜덤 탐험과 직접 탐사는 같은 출발 카드로 구성한다. 상단에 별 초상 또는 탐사 아이콘과 제목을 두고, 설명과 필요한 선택 항목 아래에 너비를 채우는 출발 버튼을 둔다. 귀환 기록은 보조 동작으로 구분한다. 월간 별자리 회차는 날짜와 제목 사이의 점으로 구분하고, 회차를 열면 루미의 관측 노트가 펼쳐진다. 모바일 상단은 골드·반짝이와 수첩·설정에 같은 8px 버튼 간격을 적용한다.
-
-## 2026-11-27 · 나리의 별 단서 안내와 팝업
-
-나리의 탭은 할 일 · 부탁 · 설치물 · 성장 · 별 단서 순이다. 추천한 미발견 별의 그룹·희귀도·정수 재료가 모두 충분하면 할 일에서 별 단서 보기로 이동할 수 있다. 다섯 탭은 제목과 탭 위치를 공유하고 긴 내용은 본문 안에서 스크롤한다.
-
-- 기준 날짜: 2026-11-26 · Dustgame v1.13.81, 빌드 `1.13.81-3f2b718b`
-- 최종 수정일: 2026-11-28
-- 출처: [공개 게임 커밋 `1c4270d`](https://github.com/crazyjamy/dustgame/commit/1c4270da10a3fc41dfb3204d2d14a50c515b4c35), [버전 파일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/VERSION.json), [자료 목록](sources.md#디자인-가이드-출처)
-- 상태: 공개 저장소 코드 기준. 이전 테스트 화면 기록은 문서 하단에 있습니다.
-
-[상태별 시각 예시](../docs/design-examples/index.html)에서 색상 견본, 버튼, 탭, 도안 카드, 탐험 진행률, 팝업, 토스트, 이야기 빛을 비교할 수 있습니다. 버튼에 마우스를 올리거나 Tab으로 이동하고, 누르는 동안 나타나는 반응도 확인해 보세요.
-
-## 기초 토큰
-
-| 역할 | 현재 코드 값과 적용 |
-| --- | --- |
-| 강조와 재화 | `--color-brand-primary` `#8DBDFF` (선택 표시), `--color-glass-action` `#265AA3` (주요 버튼 표면), `--color-currency-gold` `#F1D397`, `--color-currency-sparkle` `#8ECBFF` |
-| 표면 | `--color-surface-page` `#101216`, `--color-surface-panel` `#161A1F`, `--color-surface-raised` `#1F242A`, `--color-surface-tag` `#252A30` |
-| 반투명 표면 | `--color-glass-card` `#161A1FB0` (카드), `--color-glass-overlay` `#161A1FED` (팝업), `--color-glass-reading` `#161A1FF5` (설정·토스트), `--color-glass-surface` `#1F242ABF` (하단 메뉴) |
-| 글자와 포커스 | `--color-text-primary` `#EEF5FB`, `--color-text-secondary` `#A4ABB4`, `--color-text-disabled` `#8B939D`, `--color-focus` `#A9D1FF` |
-| 글꼴과 크기 | DM Sans → Noto Sans KR → sans-serif. 기본 16px 환경에서 `--text-caption` / `--text-meta` 11 / 12px, `--text-label` 13px, `--text-body` / `--text-body-large` 14 / 16px, `--text-title-small` / `--text-title` / `--text-title-large` 18 / 20 / 24px, `--text-heading` / `--text-heading-large` 28 / 32px. 장식 문자와 기호는 40–68px |
-| 여백과 크기 | `--size-reading-target` 2.75rem (44px), `--dialog-desktop-width` 40rem. 여백은 컴포넌트별 선언을 참조합니다. 별 상세 안쪽 상하 10px·좌우 14px, 도안 헤더 간격 12px·아래 10px, 도안 재료 행 간격 6px |
-| 모서리 | `--radius-tab` 0px, `--radius-field` 10px, `--radius-button` 12px, `--radius-card` 16px, `--radius-popup` 24px, `--radius-pill` 999px |
-| 반사와 깊이 | `--glass-backdrop` 5px 블러, `--glass-panel-sheen` 카드 그라데이션, `--glass-edge-light` 가장자리 반사, `--glass-card-shadow` 안쪽 1px, `--glass-floating-shadow` 안쪽 반사와 바깥 0 12px 32px −16px 그림자 |
-
-근거 · [토큰 선언](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/color-tokens.css#L5-L122) · [기본 글꼴과 컨트롤](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.css#L1-L2) · [별 상세 여백](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2261) · [도안 여백](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2630-L2634)
-
-## 컴포넌트와 상태
-
-| 컴포넌트 | 표시와 상태 | 재사용할 코드 |
-| --- | --- | --- |
-| 주요·보조 버튼 | 진행은 파란 글래스, 즉시 보상 수령은 노랑, 보조 행동은 차콜 글래스. 호버·키보드 포커스에서 반사가 지나가고, 누르는 동안 짙은 파란 표면. 비활성은 차콜과 비활성 글자색. `aria-pressed`는 계속 유지되는 선택에 사용 | [`.button.primary` / `.button.secondary`](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1128-L1198), [비활성 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L204-L214) |
-| 밑줄 탭과 필터 | 도감·보관함은 `aria-selected`와 밑줄, 탐험 수첩은 `aria-pressed`와 파란 밑줄. 도감과 설치물 필터는 투명 표면에서 선택 테두리와 굵은 글자 | [상위 탭·필터 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2022-L2135), [탐험 탭 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2553-L2574) |
-| 별·가구·재료 카드 | 별은 발견·미발견 상태를 구분. 가구 카드는 그림 → 상태 → 이름과 재료 → 행동 순서. 도안은 미발견, 재료 부족, 제작 가능으로 표시. 보유 가구는 배치 상태와 레벨을 표시 | [도감·보관함 카드](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L199-L245), [가구 카드](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L811), [재료·도안 카드](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L1301-L1331) |
-| 공용 팝업·별 상세 | 공용 팝업은 제목과 닫기 버튼을 고정하고 본문을 스크롤. Esc·바깥 클릭으로 닫으며 가능한 경우 이전 포커스를 복원. 은하계의 별 상세는 `#dustPopup .care-dock` | [팝업 열기·닫기](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L416-L424), [공용 표면 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1082-L1119), [별 상세](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2261) |
-| 토스트 | `notice` / `gold` / `sparkle` / `recipe` / `check`에 따라 아이콘과 색 변경. 자동 닫힘 2.5초, 호버·포커스 동안 유지, 닫기 버튼 제공 | [타이머와 포커스](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L83-L119), [표시 위치와 상태색](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1632-L1683) |
-| 배지와 진행률 | 효과 배지·보상 칩에는 짧은 상태나 보상 종류를 넣고, 이야기 순번은 텍스트로 표시. 탐험 중에는 진행 막대와 남은 시간, 귀환 후에는 보상 버튼. 은하계 성장 지도는 현재·목표 값과 막대를 함께 표시 | [배지 표면](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1208-L1215), [성장 진행률](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L657-L666), [탐험 진행·완료](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L1357-L1364) |
-| 스위치와 선택 입력 | 설정 스위치는 꺼짐·켜짐·포커스, 동행 별과 조합 재료는 Select. 목적지 한 곳 선택은 Radio Group으로 표현하고 잠긴 경로에 필요 레벨을 표시 | [설정 스위치 마크업](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L493-L498), [스위치 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1257-L1308), [폼 적용 기준](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/COLOR-TOKENS.md) |
-
-## 모션과 접근성
-
-| 모션 | 시간과 상태 |
-| --- | --- |
-| 버튼 반사 | `--motion-command-reflection` 480ms, 사용 가능한 주요 버튼과 이야기의 다음 버튼에 호버·포커스로 한 번 재생. 터치에서는 누르는 중 표면이 바뀝니다. |
-| 이야기·다음 단서 쉬머 | `--motion-story-shimmer` 2000ms × 표시 줄 수. 문장을 차례로 재생하고 글자는 제자리에 둡니다. 처음 읽는 이야기와 단서에 적용하며, 같은 내용의 재생 이력은 뷰에서 관리합니다. 이전 기록에서는 이 효과를 ‘스켈레톤 애니메이션’으로 표기했습니다. |
-| 골드·반짝이 수령 | 수령 가능 골드 아이콘은 3초 주기로 첫 22% 동안 1회전. 획득 숫자는 1.35초 동안 표시·페이드하며 아이콘은 조작한 지점에서 해당 재화 잔액으로 이동합니다. |
-| 별과 배경 | 은하계 배경 두 레이어는 120초와 84초로 이동. 탐험 중 별의 궤도는 해당 탐험 시간과 진행 시간에 맞춰 재생. 방 안 별의 이동과 포즈는 기본 CSS의 `dust-drift` 및 `.dust-lift`를 사용합니다. |
-
-시스템 동작 줄이기, 게임의 움직임 감소·간소화 효과 설정에서는 쉬머, 반사, 재화 이동을 줄이거나 정지 상태로 표시합니다. 강제 색상에서는 쉬머를 끕니다. 시스템 투명도 줄이기에서는 팝업과 토스트를 불투명하게 표시하고 버튼의 이동 반사를 생략합니다.
-
-근거 · [문장 순서와 줄 수](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/story-effects.mjs#L7-L85) · [쉬머 스타일](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L923-L954) · [재화 효과](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L586-L645) · [골드 회전](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L337-L345) · [별 배경](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L1384-L1415) · [탐험 궤도](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/galaxy-theme.css#L2582-L2591)
-
-## 원화와 아이콘
-
-| 리소스 | 재사용 방법 |
-| --- | --- |
-| UI 아이콘 | `uiIcon()` 또는 `data-ui-icon`으로 24×24 원본을 사용. 16px 보조, 20px 일반, 24px 내비게이션 아이콘. 아이콘 전용 버튼은 접근 가능한 이름을 제공합니다. [UI 아이콘 원본](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/ui-icons.mjs) |
-| 별 캐릭터 | `dustArt()`와 `dustPortrait()`로 도감·은하계·탐험에 같은 캐릭터를 표시. 형태와 단계는 `starAppearance()`, 파스텔·희귀 별 빛은 `starLight()`를 사용. [렌더링](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L54-L82) · [별 원화와 색](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/star-art.mjs#L73-L99) |
-| 루미·나리·모아 | 탐험 수첩·별빛 임무·골드 수령이라는 각 역할에 맞춰 기존 원화 사용. [요정 역할과 말투 원문](https://github.com/crazyjamy/lmmwiki/blob/afc8124decba4db3a60634073f752db4638aeaaf/wiki/overview.md#루미나리모아의-정체성) · [아이콘 원본](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/icons.mjs) |
-| 가구와 재료 | 52×52. 가구와 재료는 [작은 상점의 가구와 재료](#작은-상점의-가구와-재료) 기준을 따릅니다. 나무 스툴·조개 조명·달빛 선반을 상점·수첩·보관함·은하계에서 같은 원화로 표시. [그림과 성장 점](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/icons.mjs#L44-L52) · [탐험 목적지와 재료](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/star-trips.mjs#L11-L17) |
-| 재화와 엽서 | 골드·반짝이 의미를 색과 아이콘으로 함께 표시. 엽서는 `postcardPaper()`로 발신 별·장소·본문·날짜를 같은 틀에 표시. [재화 아이콘](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/ui-icons.mjs) · [엽서 마크업](https://github.com/crazyjamy/dustgame/blob/1c4270da10a3fc41dfb3204d2d14a50c515b4c35/dust.mjs#L918-L924) |
-
 ## 가구 원화와 언어 선택 · 테스트판 227
 
 2026-11-27 확정 · 아래 원화 수치는 테스트판 229 기준입니다. 은하계에서는 별의 고유 색과 빛이 먼저 보이고, 가구는 ‘별빛 창가’처럼 어두운 배경 위에 윤곽이 읽히게 그립니다. 일반 설치물 20종과 탐험 제작 가구 3종에 적용합니다.
@@ -200,6 +207,22 @@
 ## 디자인 변경 기록
 
 [전체 변경 기록](log.md)에서 날짜와 적용 범위를 확인할 수 있습니다.
+
+### 2026-11-28 · 랜덤 탐험 귀환 결과 팝업
+
+귀환 결과는 공용 팝업을 사용한다. 탐험 수첩의 44px 초상 헤더에 동행 별과 장소를 왼쪽 정렬하고, 발견 문장 아래에 실제 획득량을 16px 아이콘이 있는 공용 보상 칩으로 표시한다. 새로 얻은 도안만 보조 문구로 표시한다. 별자리 이름과 별빛 진행률은 별도 카드에 모은다. 이야기 읽기는 주 버튼, 탐험 수첩 복귀는 보조 버튼이고 버튼 간격은 8px이다. 테스트판 247 기준.
+
+### 2026-11-27 · 탐험 카드 배경과 별 상세 단서
+
+랜덤 탐험과 직접 탐사 출발 카드는 도안 단서와 같은 카드 배경색을 사용한다. 별 상세의 설치물 배치·찾기는 너비를 채우는 보조 버튼으로 표시한다. 가까이 놓았을 때의 반응과 Lv.3 추억 조건은 ‘다음 단서’ 배지와 공용 단서 본문으로 묶는다. 별 도감에서 필터 아래의 중복 보유 요약은 숨긴다.
+
+### 2026-11-27 · 루미의 탐험 수첩과 상단 재화 간격
+
+랜덤 탐험과 직접 탐사는 같은 출발 카드로 구성한다. 상단에 별 초상 또는 탐사 아이콘과 제목을 두고, 설명과 필요한 선택 항목 아래에 너비를 채우는 출발 버튼을 둔다. 귀환 기록은 보조 동작으로 구분한다. 월간 별자리 회차는 날짜와 제목 사이의 점으로 구분하고, 회차를 열면 루미의 관측 노트가 펼쳐진다. 모바일 상단은 골드·반짝이와 수첩·설정에 같은 8px 버튼 간격을 적용한다.
+
+### 2026-11-27 · 나리의 별 단서 안내와 팝업
+
+나리의 탭은 할 일 · 부탁 · 설치물 · 성장 · 별 단서 순이다. 추천한 미발견 별의 그룹·희귀도·정수 재료가 모두 충분하면 할 일에서 별 단서 보기로 이동할 수 있다. 다섯 탭은 제목과 탭 위치를 공유하고 긴 내용은 본문 안에서 스크롤한다.
 
 ### 2026-11-26 · 나리의 임무 목록
 

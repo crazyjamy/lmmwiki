@@ -3,10 +3,12 @@
 [고양이 개발자 제니](overview.md#고양이-개발자-제니) · 제니예요. 창가 책상에서 별들이 머물 곳을 만들고 있어요.
 
 - 기준 날짜: 2026-11-25 · v1.13.81
-- 최종 수정일: 2026-11-28
+- 최종 수정일: 2026-11-29
 - 출처: [자료 목록](sources.md), [위키 구성 요청](../raw/2026-11-18-wiki-request.md)
 
 게임 변경 작업은 [개발 변경의 테스트·공개 절차](save-release.md#development-workflow)를 따른다.
+
+[화면별 읽는 순서와 디자인 기준](design-guide.md#hierarchy) · [게임 UI 시각 예시](../docs/design-examples/index.html#hierarchy)
 
 ## 주제별 문서
 
