@@ -8,7 +8,7 @@
 
 게임 변경 작업은 [개발 변경의 테스트·공개 절차](save-release.md#development-workflow)를 따른다.
 
-[화면별 읽는 순서와 디자인 기준](design-guide.md#hierarchy) · [명도와 간격](design-guide.md#contrast-spacing) · [게임 UI 시각 예시](../docs/design-examples/index.html#hierarchy)
+[게임 디자인 점검 결과](design-guide.md#review) · [시각 위계](design-guide.md#hierarchy) · [명도와 간격](design-guide.md#contrast-spacing) · [문구와 행동](design-guide.md#ui-copy) · [화면 예시](../docs/design-examples/index.html#hierarchy)
 
 ## 주제별 문서
 
