@@ -39,6 +39,13 @@
   --color-action-primary-hover: #b4d4ff;
   --color-action-primary-pressed: #73a7eb;
   --color-action-on-primary: #11243d;
+  /* Collectible rewards and new discoveries share one status palette. */
+  --color-reward: var(--color-brand-secondary);
+  --color-reward-hover: var(--color-currency-gold-hover);
+  --color-reward-pressed: var(--color-currency-gold-pressed);
+  --color-on-reward: var(--color-currency-on-gold);
+  --color-reward-surface: color-mix(in srgb, var(--color-reward) 10%, var(--color-surface-panel));
+  --color-reward-border: color-mix(in srgb, var(--color-reward) 32%, var(--color-surface-panel));
   --color-link: #d5dee7;
   --color-currency-gold: var(--color-brand-secondary);
   --color-currency-gold-hover: #f8e1ad;

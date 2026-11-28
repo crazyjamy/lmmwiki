@@ -92,3 +92,14 @@ dialog#modal:not([open]) { display: none; }
 #furniture-art :is(.furniture-art, .supply-art) { opacity: .65; filter: none; }
 #furniture-art .furniture-art { stroke-width: .68px; }
 #furniture-art :is(.furniture-art, .supply-art) :is(path, circle, ellipse, rect) { vector-effect: non-scaling-stroke; }
+
+#action-reward .button.reward {
+  color: var(--color-on-reward); background: var(--color-reward);
+  border: 1px solid transparent; min-height: 44px;
+}
+#action-reward .button.reward:hover { background: var(--color-reward-hover); }
+#action-reward .button.reward:active { background: var(--color-reward-pressed); }
+#action-reward .sample-new {
+  color: var(--color-reward); background: var(--color-reward-surface);
+  padding: 3px 9px; font-size: var(--text-label); border-radius: var(--radius-pill);
+}
