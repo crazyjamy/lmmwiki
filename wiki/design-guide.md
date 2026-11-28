@@ -30,6 +30,34 @@
 
 [화면 위계와 색상 예시](../docs/design-examples/index.html#hierarchy) · [기준 자료](sources.md) · [변경 기록](log.md)
 
+<a id="contrast-spacing"></a>
+
+## 명도 대비와 간격
+
+제목, 읽는 본문, 날짜는 글자 크기와 밝기를 함께 구분한다. 본문에는 `--color-text-reading`, 날짜·분류에는 `--color-text-secondary`를 쓴다. 본문은 일반 크기에서 배경과 4.5:1 이상, 진행 막대의 두 면은 3:1 이상을 기준으로 점검한다. 아래 값은 지정한 글자색과 단색 배경의 상대 휘도로 계산한 값이다.
+
+| 역할 | 앞 색 / 배경색 | 대비 |
+| --- | --- | --- |
+| 수첩 본문 / 기록 면 | #D0D8E0 / #1F242A | 10.85:1 |
+| 날짜·분류 / 기록 면 | #A4ABB4 / #1F242A | 6.74:1 |
+| 읽기 버튼 / 기본 파랑 | #EEF5FB / #265AA3 | 6.21:1 |
+| 받기 버튼 / 보상 노랑 | #242A35 / #F1D397 | 9.95:1 |
+| 지속 혜택 / 칩 | #D6C4FF / #302A3F | 8.63:1 |
+| 진행 막대 바탕 / 카드 | #636F7C / #1F242A | 3.05:1 |
+| 진행 막대 채움 / 바탕 | #B4D4FF / #636F7C | 3.37:1 |
+
+| 간격 | 기준과 사용 예 |
+| --- | --- |
+| 4px · `--space-caption` | 한 기록의 제목과 날짜 |
+| 8px · `--space-related` | 구역 제목과 첫 기록, 이름과 혜택, 나란한 버튼 사이 |
+| 12px · `--space-action` | 연속된 기록 사이, 최근 이야기 본문과 읽기 버튼 사이 |
+| 16px · `--space-panel` | 최근 회차 카드와 별 상세 정보의 안쪽 여백 |
+| 24px · `--space-section` | 생활 수첩의 새 기록과 이전 기록, 달력과 월간 이야기 사이 |
+
+부모의 간격과 자식의 위아래 여백이 같은 경계에 더해지지 않게 한다. 버튼은 최소 44px 높이로 잡고, 문구가 두 줄이면 높이를 늘린다. 달력의 7열 격자와 은하계에서 움직이는 별에는 목록 간격을 일괄 적용하지 않는다. 반투명 면과 글자 빛 효과는 실제 화면에서 확인한다.
+
+[명도와 간격 적용 예시](../docs/design-examples/index.html#contrast-spacing)
+
 ## 기초 토큰
 
 | 역할 | 현재 코드 값과 적용 |
@@ -39,7 +67,7 @@
 | 반투명 표면 | `--color-glass-card` `#161A1FB0` (카드), `--color-glass-overlay` `#161A1FED` (팝업), `--color-glass-reading` `#161A1FF5` (설정·토스트), `--color-glass-surface` `#1F242ABF` (하단 메뉴) |
 | 글자와 포커스 | `--color-text-primary` `#EEF5FB`, `--color-text-secondary` `#A4ABB4`, `--color-text-disabled` `#8B939D`, `--color-focus` `#A9D1FF` |
 | 글꼴과 크기 | DM Sans → Noto Sans KR → sans-serif. 기본 16px 환경에서 `--text-caption` / `--text-meta` 11 / 12px, `--text-label` 13px, `--text-body` / `--text-body-large` 14 / 16px, `--text-title-small` / `--text-title` / `--text-title-large` 18 / 20 / 24px, `--text-heading` / `--text-heading-large` 28 / 32px. 장식 문자와 기호는 40–68px |
-| 여백과 크기 | `--size-reading-target` 2.75rem (44px), `--dialog-desktop-width` 40rem. 여백은 컴포넌트별 선언을 참조합니다. 별 상세 안쪽 상하 10px·좌우 14px, 도안 헤더 간격 12px·아래 10px, 도안 재료 행 간격 6px |
+| 여백과 크기 | `--size-reading-target` 2.75rem (44px), `--dialog-desktop-width` 40rem. 공통 간격은 4·8·12·16·24px이며 개별 화면의 예외는 컴포넌트별 선언을 참조합니다. 별 상세 안쪽 상하 10px·좌우 14px, 도안 헤더 간격 12px·아래 10px, 도안 재료 행 간격 6px |
 | 모서리 | `--radius-tab` 0px, `--radius-field` 10px, `--radius-button` 12px, `--radius-card` 16px, `--radius-popup` 24px, `--radius-pill` 999px |
 | 반사와 깊이 | `--glass-backdrop` 5px 블러, `--glass-panel-sheen` 카드 그라데이션, `--glass-edge-light` 가장자리 반사, `--glass-card-shadow` 안쪽 1px, `--glass-floating-shadow` 안쪽 반사와 바깥 0 12px 32px −16px 그림자 |
 

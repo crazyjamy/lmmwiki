@@ -121,6 +121,95 @@
 <p><a href="../design-examples/index.html#hierarchy">화면 위계와 색상
 예시</a> · <a href="sources.html">기준 자료</a> · <a
 href="log.html">변경 기록</a></p>
+<p><a id="contrast-spacing"></a></p>
+<h2 id="명도-대비와-간격">명도 대비와 간격</h2>
+<p>제목, 읽는 본문, 날짜는 글자 크기와 밝기를 함께 구분한다. 본문에는
+<code>--color-text-reading</code>, 날짜·분류에는
+<code>--color-text-secondary</code>를 쓴다. 본문은 일반 크기에서 배경과
+4.5:1 이상, 진행 막대의 두 면은 3:1 이상을 기준으로 점검한다. 아래 값은
+지정한 글자색과 단색 배경의 상대 휘도로 계산한 값이다.</p>
+<table>
+<thead>
+<tr class="header">
+<th>역할</th>
+<th>앞 색 / 배경색</th>
+<th>대비</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>수첩 본문 / 기록 면</td>
+<td>#D0D8E0 / #1F242A</td>
+<td>10.85:1</td>
+</tr>
+<tr class="even">
+<td>날짜·분류 / 기록 면</td>
+<td>#A4ABB4 / #1F242A</td>
+<td>6.74:1</td>
+</tr>
+<tr class="odd">
+<td>읽기 버튼 / 기본 파랑</td>
+<td>#EEF5FB / #265AA3</td>
+<td>6.21:1</td>
+</tr>
+<tr class="even">
+<td>받기 버튼 / 보상 노랑</td>
+<td>#242A35 / #F1D397</td>
+<td>9.95:1</td>
+</tr>
+<tr class="odd">
+<td>지속 혜택 / 칩</td>
+<td>#D6C4FF / #302A3F</td>
+<td>8.63:1</td>
+</tr>
+<tr class="even">
+<td>진행 막대 바탕 / 카드</td>
+<td>#636F7C / #1F242A</td>
+<td>3.05:1</td>
+</tr>
+<tr class="odd">
+<td>진행 막대 채움 / 바탕</td>
+<td>#B4D4FF / #636F7C</td>
+<td>3.37:1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>간격</th>
+<th>기준과 사용 예</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4px · <code>--space-caption</code></td>
+<td>한 기록의 제목과 날짜</td>
+</tr>
+<tr class="even">
+<td>8px · <code>--space-related</code></td>
+<td>구역 제목과 첫 기록, 이름과 혜택, 나란한 버튼 사이</td>
+</tr>
+<tr class="odd">
+<td>12px · <code>--space-action</code></td>
+<td>연속된 기록 사이, 최근 이야기 본문과 읽기 버튼 사이</td>
+</tr>
+<tr class="even">
+<td>16px · <code>--space-panel</code></td>
+<td>최근 회차 카드와 별 상세 정보의 안쪽 여백</td>
+</tr>
+<tr class="odd">
+<td>24px · <code>--space-section</code></td>
+<td>생활 수첩의 새 기록과 이전 기록, 달력과 월간 이야기 사이</td>
+</tr>
+</tbody>
+</table>
+<p>부모의 간격과 자식의 위아래 여백이 같은 경계에 더해지지 않게 한다.
+버튼은 최소 44px 높이로 잡고, 문구가 두 줄이면 높이를 늘린다. 달력의 7열
+격자와 은하계에서 움직이는 별에는 목록 간격을 일괄 적용하지 않는다.
+반투명 면과 글자 빛 효과는 실제 화면에서 확인한다.</p>
+<p><a href="../design-examples/index.html#contrast-spacing">명도와 간격
+적용 예시</a></p>
 <h2 id="기초-토큰">기초 토큰</h2>
 <table>
 <thead>
@@ -173,9 +262,10 @@ href="log.html">변경 기록</a></p>
 <tr class="even">
 <td>여백과 크기</td>
 <td><code>--size-reading-target</code> 2.75rem (44px),
-<code>--dialog-desktop-width</code> 40rem. 여백은 컴포넌트별 선언을
-참조합니다. 별 상세 안쪽 상하 10px·좌우 14px, 도안 헤더 간격 12px·아래
-10px, 도안 재료 행 간격 6px</td>
+<code>--dialog-desktop-width</code> 40rem. 공통 간격은
+4·8·12·16·24px이며 개별 화면의 예외는 컴포넌트별 선언을 참조합니다. 별
+상세 안쪽 상하 10px·좌우 14px, 도안 헤더 간격 12px·아래 10px, 도안 재료
+행 간격 6px</td>
 </tr>
 <tr class="odd">
 <td>모서리</td>
