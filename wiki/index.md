@@ -3,7 +3,7 @@
 [고양이 개발자 제니](overview.md#고양이-개발자-제니) · 제니예요. 창가 책상에서 별들이 머물 곳을 만들고 있어요.
 
 - 기준 날짜: 2026-11-25 · v1.13.81
-- 최종 수정일: 2026-11-27
+- 최종 수정일: 2026-11-28
 - 출처: [자료 목록](sources.md), [위키 구성 요청](../raw/2026-11-18-wiki-request.md)
 
 게임 변경 작업은 [개발 변경의 테스트·공개 절차](save-release.md#development-workflow)를 따른다.
@@ -24,7 +24,7 @@
 
 - [별자리 월간 이야기](monthly-constellations.md)
 
-  별자리 88개의 이야기, 루미의 관측 노트, 완성 엽서
+  별자리 88개의 이야기, 루미의 관측 노트, 완성 엽서, [모은 이야기와 날짜별 기록](monthly-constellations.md#collected-dates)
 
 - [방과 가구](room-furniture.md)
 

@@ -1,5 +1,9 @@
 # 자료 목록과 출처
 
+## 2026-11-28 · 귀환 알림과 수집 날짜
+
+프로젝트 담당자가 테스트 화면에 남긴 코멘트 11건과 테스트판 250의 플레이 경로를 근거로 기록했다. [확인할 항목의 표시](design-guide.md#review-surfaces) · [별자리 이야기 수집일](monthly-constellations.md#collected-dates) · [검증 기록](log.md)
+
 ## 2026-11-28 · 보상 색상과 이야기 목록
 
 프로젝트 담당자가 테스트 화면에 남긴 코멘트 다섯 건과 기존 단서 카드·함께 쓴 이야기·나리의 탐험 보상 화면을 근거로 정리했다. [색상과 화면 기준](design-guide.md#action-and-reward-colors) · [테스트 사이트](https://little-dragon-nest-hyerin.coursemos-3149.chatgpt.site/)

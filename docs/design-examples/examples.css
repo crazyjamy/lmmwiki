@@ -103,3 +103,10 @@ dialog#modal:not([open]) { display: none; }
   color: var(--color-reward); background: var(--color-reward-surface);
   padding: 3px 9px; font-size: var(--text-label); border-radius: var(--radius-pill);
 }
+
+#action-reward .review-sample {
+  display: grid; gap: 4px; margin-top: 16px; padding: 12px;
+  border-radius: 10px; background: var(--color-reward-surface);
+}
+#action-reward .review-sample small { color: var(--color-reward); }
+#action-reward .review-sample span { color: var(--color-text-secondary); }
